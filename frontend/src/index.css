@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap');
+
+@theme {
+  --color-primary: #002379;
+  --color-navy: #002379;
+  --color-orange: #FF5F00;
+  --color-peach: #FF9F66;
+  --color-cream: #FFFAE6;
+  --color-dark: #002379;
+  --color-light: #FFFAE6;
+
+  --font-sans: 'Poppins', sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+
+  --background-image-gradient-brand: linear-gradient(to right, #002379, #003299);
+  --background-image-gradient-orange: linear-gradient(to right, #FF5F00, #FF9F66);
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-primary font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+/* Glass — light mode version */
+.glass {
+  @apply bg-white/60 backdrop-blur-lg border border-white/80 shadow-lg;
+}
+
+.glass-dark {
+  @apply bg-primary/10 backdrop-blur-lg border border-primary/20 shadow-lg;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
