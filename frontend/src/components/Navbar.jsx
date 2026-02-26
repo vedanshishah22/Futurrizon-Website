@@ -26,7 +26,7 @@ const Navbar = () => {
     const navLinks = [
         { name: 'Home', href: '/' },
         { name: 'About', href: '/about' },
-        { name: 'Services', href: '/#services', hasDropdown: true },
+        { name: 'Services', href: '/services', hasDropdown: true },
         { name: 'Industries', href: '/#industries' },
         { name: 'Contact', href: '/#contact' },
     ];
@@ -84,12 +84,17 @@ const Navbar = () => {
                             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange to-peach transition-all duration-300 group-hover:w-full"></span>
 
                             {link.hasDropdown && (
-                                <div className="absolute top-full left-0 mt-4 w-64 bg-cream border border-primary/10 rounded-xl shadow-xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                <div className="absolute top-full left-0 mt-4 w-72 bg-cream border border-primary/10 rounded-xl shadow-xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                                     <div className="flex flex-col space-y-2">
-                                        <a href="#" className="text-primary/60 hover:text-orange text-sm py-1">Cloud Solutions</a>
-                                        <a href="#" className="text-primary/60 hover:text-orange text-sm py-1">AI & Analytics</a>
-                                        <a href="#" className="text-primary/60 hover:text-orange text-sm py-1">Cybersecurity</a>
-                                        <a href="#" className="text-primary/60 hover:text-orange text-sm py-1">Digital Transformation</a>
+                                        <a href="/services#sharepoint" className="text-primary/60 hover:text-orange text-sm py-1">SharePoint Solution</a>
+                                        <a href="/services#power-platform" className="text-primary/60 hover:text-orange text-sm py-1">Power Platform</a>
+                                        <a href="/services#m365" className="text-primary/60 hover:text-orange text-sm py-1">Microsoft 365 Optimization</a>
+                                        <a href="/services#ai-gpt" className="text-primary/60 hover:text-orange text-sm py-1">AI & GPT Integration</a>
+                                        <a href="/services#migration" className="text-primary/60 hover:text-orange text-sm py-1">Migration & Integration</a>
+                                        <a href="/services#support" className="text-primary/60 hover:text-orange text-sm py-1">Managed Services & Support</a>
+                                        <a href="/services#azure" className="text-primary/60 hover:text-orange text-sm py-1">Azure Cloud Services</a>
+                                        <a href="/services#analytics" className="text-primary/60 hover:text-orange text-sm py-1">Advanced Analytics & Reporting</a>
+                                        <a href="/services#financial" className="text-primary/60 hover:text-orange text-sm py-1">Financial & Operational Modeling</a>
                                     </div>
                                 </div>
                             )}

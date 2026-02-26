@@ -35,6 +35,7 @@ import approach3 from '../assets/approach 3.jpg';
 import approach4 from '../assets/approach 4.jpg';
 import officeImg from '../assets/office.webp';
 import bgImage from '../assets/bg.png';
+import bgAboutUs from '../assets/bg_about_us.png';
 
 const AboutPage = () => {
     const { hash } = useLocation();
@@ -70,8 +71,14 @@ const AboutPage = () => {
                 }}
             ></div>
             {/* HERO */}
-            <section className="pt-32 pb-20 bg-primary text-white relative">
-                <div className="container mx-auto px-6 text-center">
+            <section className="pt-32 pb-20 bg-primary text-white relative overflow-hidden">
+                {/* Background image */}
+                <img
+                    src={bgAboutUs}
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover opacity-[0.06] pointer-events-none select-none" style={{ objectPosition: 'center 57%' }}
+                />
+                <div className="container mx-auto px-6 text-center relative z-10">
                     <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
                         Our <span className="text-orange">Excellence</span> Journey
                     </h1>
@@ -178,25 +185,78 @@ const AboutPage = () => {
                             </div>
                             <h2 className="text-4xl md:text-5xl font-extrabold mb-8">Certified Professionals</h2>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                {['Process Engineering', 'Workflow Automation', 'Data Visualization', 'Executive Reporting', 'Governance & Security', 'Modern Workplace'].map((item, i) => (
+                                {['Process Engineering', 'Workflow Automation', 'Data Visualization', 'Executive Reporting', 'Governance & Security', 'Modern Workplace', 'Cloud Architecture', 'SharePoint Development'].map((item, i) => (
                                     <div key={i} className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-primary/5">
-                                        <CheckCircle2 className="text-orange" size={18} />
+                                        <svg
+                                            width="28" height="34"
+                                            viewBox="0 0 64 78"
+                                            fill="none"
+                                            style={{ transform: 'rotate(-12deg)', flexShrink: 0 }}
+                                        >
+                                            {/* Left ribbon tail */}
+                                            <path
+                                                d="M24 54 L19 76 L29 70 L29 54 Z"
+                                                fill="url(#ribbonGrad)"
+                                                stroke="#d97706"
+                                                strokeWidth="0.8"
+                                            />
+                                            {/* Right ribbon tail */}
+                                            <path
+                                                d="M40 54 L45 76 L35 70 L35 54 Z"
+                                                fill="url(#ribbonGrad)"
+                                                stroke="#d97706"
+                                                strokeWidth="0.8"
+                                            />
+                                            {/* Outer scalloped badge ring */}
+                                            <path
+                                                d="M32 4 L36.5 9.5 L43.5 8 L45.5 15 L52 17.5 L51 24.5 L57 29.5 L53.5 36 L56 43 L49.5 45.5 L48.5 52.5 L42 52 L38 58 L32 55.5 L26 58 L22 52 L15.5 52.5 L14.5 45.5 L8 43 L10.5 36 L7 29.5 L13 24.5 L12 17.5 L18.5 15 L20.5 8 L27.5 9.5 Z"
+                                                fill="url(#goldGrad)"
+                                                stroke="#f59e0b"
+                                                strokeWidth="1"
+                                            />
+                                            {/* Inner circle */}
+                                            <circle cx="32" cy="32" r="16" fill="#1c1c2e" stroke="#fbbf24" strokeWidth="1.5" />
+                                            {/* Glowing checkmark */}
+                                            <polyline
+                                                points="24,32 29,38 40,24"
+                                                stroke="#fbbf24"
+                                                strokeWidth="3.5"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                filter="url(#glow)"
+                                            />
+                                            <defs>
+                                                <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+                                                    <stop offset="0%" stopColor="#fde68a" />
+                                                    <stop offset="50%" stopColor="#f59e0b" />
+                                                    <stop offset="100%" stopColor="#d97706" />
+                                                </linearGradient>
+                                                <linearGradient id="ribbonGrad" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop offset="0%" stopColor="#f59e0b" />
+                                                    <stop offset="100%" stopColor="#b45309" />
+                                                </linearGradient>
+                                                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                                                    <feGaussianBlur stdDeviation="1.5" result="blur" />
+                                                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                                                </filter>
+                                            </defs>
+                                        </svg>
                                         <span className="font-bold text-sm">{item}</span>
                                     </div>
                                 ))}
                             </div>
                         </div>
-                        <div className="lg:w-1/2 bg-white rounded-[3rem] p-10 shadow-lg">
-                            <h3 className="text-2xl font-bold mb-8">Industry-Specific Solutions</h3>
-                            <div className="flex flex-wrap gap-3 mb-12">
+                        <div className="lg:w-1/2 bg-white rounded-3xl p-6 shadow-lg self-end">
+                            <h3 className="text-xl font-bold mb-5">Industry-Specific Solutions</h3>
+                            <div className="flex flex-wrap gap-2 mb-6">
                                 {['Manufacturing', 'Retail', 'Finance', 'Construction', 'Professional Services'].map((industry, i) => (
-                                    <span key={i} className="px-5 py-2.5 bg-cream rounded-xl text-primary font-bold text-sm">{industry}</span>
+                                    <span key={i} className="px-4 py-2 bg-cream rounded-xl text-primary font-bold text-sm">{industry}</span>
                                 ))}
                             </div>
-                            <div className="p-8 bg-primary rounded-3xl text-white text-center">
-                                <Zap className="mx-auto mb-4 text-orange" size={40} />
-                                <h4 className="text-2xl font-extrabold mb-2">Solving Business Bottlenecks</h4>
-                                <p className="opacity-70">We delivery digital excellence through strategic architecture.</p>
+                            <div className="p-5 bg-primary rounded-2xl text-white text-center">
+                                <Zap className="mx-auto mb-2 text-orange" size={28} />
+                                <h4 className="text-lg font-extrabold mb-1">Solving Business Bottlenecks</h4>
+                                <p className="opacity-70 text-sm">We delivery digital excellence through strategic architecture.</p>
                             </div>
                         </div>
                     </div>

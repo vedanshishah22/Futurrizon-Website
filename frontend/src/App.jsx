@@ -4,11 +4,13 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import ScrollToTop from './components/ScrollToTop';
+import FuriChat from './components/FuriChat';
 
 // Lazy load the detail pages for better performance
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
 const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 
 function App() {
   return (
@@ -26,9 +28,11 @@ function App() {
             <Route path="/project/:projectId" element={<ProjectDetail />} />
             <Route path="/blog/:blogId" element={<BlogDetail />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
           </Routes>
         </Suspense>
         <Footer />
+        <FuriChat />
       </div>
     </Router>
   );
