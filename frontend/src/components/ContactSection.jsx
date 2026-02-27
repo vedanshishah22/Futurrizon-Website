@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, CheckCircle, Loader2 } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle, Loader2 } from 'lucide-react';
 
 const ContactSection = () => {
     const [formData, setFormData] = useState({
@@ -70,16 +70,7 @@ const ContactSection = () => {
                                     <p className="text-cream/60">hr@futurrizon.com</p>
                                 </div>
                             </div>
-                            <div className="flex items-start gap-6">
-                                <div className="w-12 h-12 rounded-full bg-orange/15 flex items-center justify-center text-orange shrink-0">
-                                    <Phone size={24} />
-                                </div>
-                                <div>
-                                    <h4 className="text-xl font-bold mb-2 text-cream">Call Us</h4>
-                                    <p className="text-cream/60">+1 (555) 123-4567</p>
-                                    <p className="text-cream/60">Mon - Fri, 9am - 6pm EST</p>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
 

@@ -6,6 +6,11 @@ import svc1 from '../assets/services/1.png';
 import svc2 from '../assets/services/2.png';
 import svc3 from '../assets/services/3.png';
 import svc4 from '../assets/services/4.png';
+import svc5 from '../assets/services/5.png';
+import svc6 from '../assets/services/6.jpg';
+import svc7 from '../assets/services/7.png';
+import svc8 from '../assets/services/8.jpg';
+import svc9 from '../assets/services/9.png';
 
 /* ─── Icon SVGs ─────────────────────────────────────── */
 const SharePointIcon = () => (
@@ -283,7 +288,7 @@ function ServiceSection({ id, icon: Icon, title, subtitle, problems, solutions, 
             </motion.div>
 
             {/* Outcome pill */}
-            <motion.div variants={fadeUp} className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-orange text-white font-semibold text-sm shadow-lg shadow-orange/30">
+            <motion.div variants={fadeUp} className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-orange text-white font-semibold text-sm shadow-sm shadow-orange/20">
                 <span>→</span>
                 <span>{outcome}</span>
             </motion.div>
@@ -425,6 +430,7 @@ const services = [
         ],
         outcome: 'Your business upgrades without halt — seamless, secure & scalable.',
         description: 'We execute structured, secure migration strategies that modernize systems without disrupting business operations. Every migration is supported by governance planning and user enablement to drive long-term adoption and strengthen security posture.',
+        image: svc5,
         imageRight: true,
         dark: false,
     },
@@ -449,6 +455,7 @@ const services = [
         ],
         outcome: 'We keep your systems fast, secure & fully utilized — every single day.',
         description: 'We provide proactive platform management to ensure your systems remain optimized, secure, and aligned with evolving business needs. Our support model emphasizes responsiveness, transparency, and measurable service standards — so your teams can focus on growth.',
+        image: svc6,
         imageRight: false,
         dark: true,
     },
@@ -473,6 +480,7 @@ const services = [
         ],
         outcome: 'Azure becomes your intelligent cloud backbone — secure, stable & ready to scale.',
         description: 'We architect secure, scalable Azure environments tailored to your performance, compliance, and growth objectives. From infrastructure modernization to advanced analytics capabilities, we build foundations that support innovation and long-term scalability.',
+        image: svc7,
         imageRight: true,
         dark: false,
     },
@@ -497,6 +505,7 @@ const services = [
         ],
         outcome: 'Smarter decisions powered by real-time insights you can trust.',
         description: 'We convert fragmented data into structured intelligence that drives confident decision-making. By implementing scalable data models, automated reporting systems, and predictive analytics, we deliver clarity at both operational and executive levels.',
+        image: svc8,
         imageRight: false,
         dark: true,
     },
@@ -521,6 +530,7 @@ const services = [
         ],
         outcome: 'Move from reactive to predictive — improve performance end-to-end.',
         description: 'We design data-driven financial and operational frameworks that provide transparency across revenue, cost, and performance metrics. By replacing static spreadsheets with structured systems, we reduce risk and give leadership the visibility required for proactive decisions.',
+        image: svc9,
         imageRight: true,
         dark: false,
     },
@@ -660,48 +670,113 @@ export default function ServicesPage() {
                         </p>
                     </AnimatedSection>
 
-                    {/* Disconnection chain */}
-                    <AnimatedSection className="max-w-2xl mx-auto mb-16">
-                        <div className="space-y-4">
+                    {/* Disconnection chain — redesigned */}
+                    <AnimatedSection className="max-w-4xl mx-auto mb-16">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {[
-                                'Disconnected Tools',
-                                'Disconnected Teams',
-                                'Disconnected Data',
-                                'Disconnected Outcomes',
-                            ].map((item, i) => (
-                                <div key={i} className="flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400 font-bold text-sm shrink-0">
-                                        {i + 1}
+                                {
+                                    icon: '🔧',
+                                    label: 'Disconnected Tools',
+                                    desc: 'Teams juggle 10+ apps that never talk to each other — creating friction, duplication, and wasted effort every single day.',
+                                    step: '01',
+                                },
+                                {
+                                    icon: '👥',
+                                    label: 'Disconnected Teams',
+                                    desc: 'Without a shared system, collaboration breaks down. Departments operate in silos, slowing delivery and killing accountability.',
+                                    step: '02',
+                                },
+                                {
+                                    icon: '📂',
+                                    label: 'Disconnected Data',
+                                    desc: 'Critical business data is scattered across emails, drives, and spreadsheets — impossible to trust, impossible to act on.',
+                                    step: '03',
+                                },
+                                {
+                                    icon: '📉',
+                                    label: 'Disconnected Outcomes',
+                                    desc: 'When tools, teams, and data don\'t align, business outcomes suffer — missed deadlines, poor decisions, and stalled growth.',
+                                    step: '04',
+                                },
+                            ].map(({ icon, label, desc, step }, i) => (
+                                <div
+                                    key={i}
+                                    className="relative group bg-white/5 hover:bg-white/8 border border-white/10 hover:border-red-500/30 rounded-2xl p-6 transition-all duration-300"
+                                >
+                                    {/* Step number watermark */}
+                                    <span className="absolute top-4 right-5 text-4xl font-display font-black text-red-500/10 group-hover:text-red-500/20 transition-colors select-none">
+                                        {step}
+                                    </span>
+                                    <div className="flex items-start gap-4">
+                                        <div className="w-11 h-11 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-xl shrink-0">
+                                            {icon}
+                                        </div>
+                                        <div>
+                                            <p className="text-cream font-bold text-base mb-1.5">{label}</p>
+                                            <p className="text-cream/50 text-sm leading-relaxed">{desc}</p>
+                                        </div>
                                     </div>
-                                    <div className="flex-1 h-px bg-gradient-to-r from-red-500/30 to-transparent" />
-                                    <span className="text-cream/70 text-sm font-medium">➡ {item}</span>
+                                    {/* Bottom accent line */}
+                                    <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-red-500/40 via-red-500/20 to-transparent rounded-full" />
                                 </div>
                             ))}
                         </div>
+
+                        {/* Connecting arrow */}
+                        <div className="flex items-center justify-center gap-3 mt-8">
+                            <div className="flex-1 h-px bg-gradient-to-r from-transparent to-orange/30" />
+                            <span className="text-orange text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-orange/20 bg-orange/10">
+                                The Result?
+                            </span>
+                            <div className="flex-1 h-px bg-gradient-to-l from-transparent to-orange/30" />
+                        </div>
                     </AnimatedSection>
 
-                    {/* Cost callout */}
+                    {/* Cost callout — redesigned */}
                     <AnimatedSection>
-                        <div className="bg-white/5 border border-white/10 rounded-3xl p-10 max-w-3xl mx-auto text-center">
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                                {[
-                                    ['⏰', 'Time', 'Every hour wasted searching for files'],
-                                    ['📊', 'Decisions', 'Outdated reports guiding major choices'],
-                                    ['💰', 'Revenue', 'Approvals stuck in someone\'s inbox'],
-                                ].map(([emoji, title, desc]) => (
-                                    <div key={title} className="text-center">
-                                        <div className="text-3xl mb-2">{emoji}</div>
-                                        <div className="text-orange font-bold text-lg mb-1">{title}</div>
-                                        <div className="text-cream/50 text-sm">{desc}</div>
-                                    </div>
-                                ))}
+                        <div className="relative bg-gradient-to-br from-white/8 to-white/3 border border-white/10 rounded-3xl p-10 max-w-3xl mx-auto overflow-hidden">
+                            {/* Glow accent */}
+                            <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-64 h-32 bg-orange/10 rounded-full blur-3xl pointer-events-none" />
+                            <div className="relative z-10">
+                                <p className="text-cream/50 text-xs uppercase tracking-widest mb-8 text-center">What disconnection costs your business</p>
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                                    {[
+                                        {
+                                            emoji: '⏰',
+                                            stat: '30%',
+                                            title: 'Time Lost',
+                                            desc: 'Employees spend nearly a third of their day searching for information across disconnected systems.',
+                                        },
+                                        {
+                                            emoji: '📊',
+                                            stat: '60%',
+                                            title: 'Bad Decisions',
+                                            desc: 'Of business decisions are made on stale or incomplete data — leading to costly mistakes.',
+                                        },
+                                        {
+                                            emoji: '💰',
+                                            stat: '3×',
+                                            title: 'Revenue Impact',
+                                            desc: 'Companies with unified platforms grow revenue 3× faster than those running fragmented tools.',
+                                        },
+                                    ].map(({ emoji, stat, title, desc }) => (
+                                        <div key={title} className="text-center p-5 bg-white/5 rounded-2xl border border-white/8">
+                                            <div className="text-2xl mb-2">{emoji}</div>
+                                            <div className="text-3xl font-display font-black text-orange mb-1">{stat}</div>
+                                            <div className="text-cream font-bold text-sm mb-2">{title}</div>
+                                            <div className="text-cream/40 text-xs leading-relaxed">{desc}</div>
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="text-center border-t border-white/10 pt-6">
+                                    <p className="text-xl font-display font-bold text-cream">
+                                        This isn't just an IT Issue.
+                                    </p>
+                                    <p className="text-cream/60 mt-2 text-base">
+                                        It's a Growth Issue. A Performance Issue. A Business Survival Issue.
+                                    </p>
+                                </div>
                             </div>
-                            <p className="text-xl font-display font-bold text-cream">
-                                This isn't just an IT Issue.
-                            </p>
-                            <p className="text-cream/60 mt-2 text-base">
-                                It's a Growth Issue. A Performance Issue. A Business Survival Issue.
-                            </p>
                         </div>
                     </AnimatedSection>
                 </div>

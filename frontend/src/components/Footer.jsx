@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -70,10 +70,6 @@ const Footer = () => {
                                     opp. Nalli Silk Sarees, Pritam Nagar, Paldi,<br />
                                     Ahmedabad, Gujarat 380006
                                 </span>
-                            </li>
-                            <li className="flex items-center gap-4">
-                                <Phone size={20} className="text-orange" />
-                                <span className="text-cream/60">+1 (555) 123-4567</span>
                             </li>
                             <li className="flex items-center gap-4">
                                 <Mail size={20} className="text-orange" />
