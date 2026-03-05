@@ -5,8 +5,6 @@ import {
     Flag, Star, Image as ImageIcon, Briefcase, Users, Globe, Camera
 } from 'lucide-react';
 
-import bgFuturrizonVideo from '../assets/bg_futurrizon.mp4';
-
 /* ─── Animation helpers ─────────────────────────────── */
 const fadeUp = {
     hidden: { opacity: 0, y: 36 },
@@ -114,16 +112,6 @@ export default function LifePage() {
 
             {/* ── HERO ──────────────────────────────────────── */}
             <section className="relative min-h-[70vh] flex items-center bg-primary overflow-hidden">
-                {/* Background Video */}
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover"
-                >
-                    <source src={bgFuturrizonVideo} type="video/mp4" />
-                </video>
 
                 {/* Dark Gradient Overlay for readability */}
                 <div
