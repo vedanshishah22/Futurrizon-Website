@@ -40,11 +40,14 @@ const Testimonials = () => {
     }, []);
 
     return (
-        <section className="py-24 bg-cream relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-orange to-transparent"></div>
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-peach to-transparent"></div>
+        <section
+            className="py-24 bg-cream relative overflow-hidden"
+        >
 
-            <div className="container mx-auto px-6 text-center">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-orange to-transparent z-10"></div>
+            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-peach to-transparent z-10"></div>
+
+            <div className="container mx-auto px-6 text-center relative z-10">
                 <div className="mb-16">
                     <h2 className="text-4xl font-bold text-primary mb-4">Client Success Stories</h2>
                     <p className="text-xl text-primary/50">Don't just take our word for it.</p>

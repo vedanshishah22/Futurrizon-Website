@@ -27,7 +27,7 @@ const Navbar = () => {
         { name: 'Home', href: '/' },
         { name: 'Company', href: '/about', hasDropdown: true, dropdownKey: 'company' },
         { name: 'Services', href: '/services', hasDropdown: true, dropdownKey: 'services' },
-        { name: 'Industries', href: '/#industries' },
+        { name: 'Industries', href: '/industries' },
         { name: 'Contact', href: '/#contact' },
     ];
 
@@ -102,7 +102,7 @@ const Navbar = () => {
                                 <div className="absolute top-full left-0 mt-4 w-60 bg-cream border border-primary/10 rounded-xl shadow-xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                                     <div className="flex flex-col space-y-2">
                                         <a href="/about" className="text-primary/60 hover:text-orange text-sm py-1">About Us</a>
-                                        <a href="/#projects" className="text-primary/60 hover:text-orange text-sm py-1">Portfolio</a>
+                                        <a href="/#portfolio" className="text-primary/60 hover:text-orange text-sm py-1">Portfolio</a>
                                         <a href="/career" className="text-primary/60 hover:text-orange text-sm py-1">Career</a>
                                         <a href="/life" className="text-primary/60 hover:text-orange text-sm py-1">Life at Futurrizon</a>
                                         <a href="/testimonials" className="text-primary/60 hover:text-orange text-sm py-1">Testimonials</a>
@@ -113,9 +113,9 @@ const Navbar = () => {
                             )}
                         </div>
                     ))}
-                    <button className="px-6 py-2 rounded-xl bg-orange text-white font-semibold text-sm hover:bg-orange/90 shadow-sm hover:shadow-md transition-all duration-200">
+                    <Link to="/#contact" className="px-6 py-2 rounded-xl bg-orange text-white font-semibold text-sm hover:bg-orange/90 shadow-sm hover:shadow-md transition-all duration-200">
                         Get Started
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -158,9 +158,9 @@ const Navbar = () => {
                                     </a>
                                 )
                             ))}
-                            <button className="w-full py-3 rounded-xl bg-orange text-white font-semibold">
+                            <Link to="/#contact" onClick={() => setMobileMenuOpen(false)} className="block text-center w-full py-3 rounded-xl bg-orange text-white font-semibold">
                                 Get Started
-                            </button>
+                            </Link>
                         </div>
                     </motion.div>
                 )}

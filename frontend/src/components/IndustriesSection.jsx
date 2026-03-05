@@ -1,53 +1,112 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, ShoppingCart, Landmark, Stethoscope, Truck, GraduationCap } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+import imgHealthcare from '../assets/industry_healthcare.png';
+import imgFinance from '../assets/industry_finance.jpg';
+import imgManufacturing from '../assets/industry_manufacturing.png';
+import imgEducation from '../assets/industry_education.png';
+import imgRetail from '../assets/industry_retail.jpg';
+import imgEnergy from '../assets/industry_energy.png';
 
 const industries = [
-    { icon: <Briefcase size={32} />, name: 'Corporate & Finance', bg: 'bg-primary' },
-    { icon: <ShoppingCart size={32} />, name: 'Retail & E-commerce', bg: 'bg-orange' },
-    { icon: <Landmark size={32} />, name: 'Banking & Insurance', bg: 'bg-navy' },
-    { icon: <Stethoscope size={32} />, name: 'Healthcare & Pharma', bg: 'bg-peach' },
-    { icon: <Truck size={32} />, name: 'Logistics & Supply Chain', bg: 'bg-primary' },
-    { icon: <GraduationCap size={32} />, name: 'Education & EdTech', bg: 'bg-orange' },
+    {
+        id: 'healthcare',
+        name: 'Healthcare & Pharma',
+        image: imgHealthcare,
+        desc: 'Secure patient portals, compliant scheduling, and centralized health records tailored for medical providers.'
+    },
+    {
+        id: 'finance',
+        name: 'Finance & Banking',
+        image: imgFinance,
+        desc: 'Automated lending, real-time analytics, and secure document management for banking and finance.'
+    },
+    {
+        id: 'manufacturing',
+        name: 'Manufacturing',
+        image: imgManufacturing,
+        desc: 'Data-driven supply chains, mobile inventory tracking, and shop floor collaboration tools.'
+    },
+    {
+        id: 'education',
+        name: 'Education & EdTech',
+        image: imgEducation,
+        desc: 'Hybrid learning environments, digital grading solutions, and secure student data management.'
+    },
+    {
+        id: 'retail',
+        name: 'E-Commerce & Retail',
+        image: imgRetail,
+        desc: 'Unified customer data hubs, live sales analytics, and automated order tracking systems.'
+    },
+    {
+        id: 'energy',
+        name: 'Energy & Utilities',
+        image: imgEnergy,
+        desc: 'Mobile field inspections, real-time outage dashboards, and compliance documentation.'
+    },
 ];
 
 const IndustriesSection = () => {
     return (
-        <section id="industries" className="py-24 bg-primary text-cream relative">
-            <div className="container mx-auto px-6">
+        <section id="industries" className="py-24 bg-primary relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-orange/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+
+            <div className="container mx-auto px-6 relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <div>
-                        <h2 className="text-4xl font-bold mb-4 text-cream">Industries We Serve</h2>
-                        <p className="text-cream/60 text-lg max-w-xl">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange/40 bg-orange/10 mb-5">
+                            <span className="text-orange text-xs font-semibold uppercase tracking-widest">Sectors</span>
+                        </div>
+                        <h2 className="text-4xl lg:text-5xl font-display font-bold text-cream">Industries We Serve</h2>
+                        <p className="mt-4 text-cream/70 text-lg max-w-xl leading-relaxed">
                             Tailored IT solutions for diverse sectors, ensuring compliance, security, and growth.
                         </p>
                     </div>
-                    <button className="px-6 py-3 rounded-xl border border-peach/40 hover:bg-peach/10 hover:border-peach/70 text-peach transition-all duration-300">
-                        View All Industries
-                    </button>
+                    <Link to="/industries" className="px-6 py-3 rounded-xl border border-orange/40 hover:bg-orange text-cream hover:text-white transition-all duration-300 font-medium whitespace-nowrap">
+                        Explore All Industries →
+                    </Link>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {industries.map((ind, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            whileHover={{ y: -5 }}
-                            className="group relative overflow-hidden rounded-2xl h-64 bg-cream border border-navy/5 hover:border-orange/20 transition-all duration-500 shadow-sm hover:shadow-xl"
-                        >
-                            <div className="absolute inset-0 bg-gradient-to-t from-cream via-cream/50 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <Link to={`/industries#${ind.id}`} key={index}>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1, duration: 0.5 }}
+                                className="group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer shadow-xl hover:shadow-2xl shadow-[#1D2130]/30 hover:shadow-orange/30 transition-shadow duration-500"
+                            >
+                                {/* Background Image */}
+                                <div
+                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                    style={{ backgroundImage: `url(${ind.image})` }}
+                                ></div>
 
-                            <div className="absolute inset-0 flex flex-col justify-end p-8 z-10">
-                                <div className="mb-4 text-orange transform translate-y-0 transition-transform duration-300">
-                                    {ind.icon}
+                                {/* Dark Overlay Base */}
+                                <div className="absolute inset-0 bg-gray-900/20 transition-opacity duration-500 group-hover:bg-gray-900/60"></div>
+                                {/* Gradient for text readability at bottom */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
+
+                                {/* Content container */}
+                                <div className="absolute inset-0 p-6 lg:p-8 flex flex-col justify-end text-left">
+                                    <h3 className="text-2xl lg:text-3xl font-display font-bold text-white transition-transform duration-500 group-hover:-translate-y-1">
+                                        {ind.name}
+                                    </h3>
+
+                                    <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                                        <div className="overflow-hidden">
+                                            <div className="h-1 w-12 bg-orange rounded-full mt-4 mb-3 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 delay-100"></div>
+                                            <p className="text-cream/90 text-sm lg:text-base leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 pb-2">
+                                                {ind.desc}
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3 className="text-2xl font-bold text-navy transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-300">{ind.name}</h3>
-                                <div className="h-1.5 w-12 bg-orange rounded-full mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100"></div>
-                            </div>
-                        </motion.div>
+                            </motion.div>
+                        </Link>
                     ))}
                 </div>
             </div>

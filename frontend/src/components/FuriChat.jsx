@@ -1,6 +1,10 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { Rocket, ClipboardList, Calendar } from 'lucide-react';
 import './FuriChat.css';
-import { GROQ_API_KEY, GROQ_MODEL, GROQ_ENDPOINT, buildSystemPrompt } from '../data/furiData';
+import { GROQ_API_KEY, GROQ_MODEL, buildSystemPrompt } from '../data/furiData';
+import Groq from 'groq-sdk';
+
+const groq = new Groq({ apiKey: GROQ_API_KEY, dangerouslyAllowBrowser: true });
 
 // ─── Interest detection patterns ──────────────────────────────────────────────
 const INTEREST_PATTERNS = [
@@ -23,7 +27,7 @@ const INITIAL_BOT_MESSAGE = {
     id: 'init',
     role: 'bot',
     type: 'text',
-    text: "Hello! I'm **Furi** — Your Tech Buddy from Futurrizon. 👋\n\nBefore we begin, may I please have your **name** so I can assist you better?",
+    text: "Hello! I'm **Furi** — Your Tech Buddy from Futurrizon.\n\nBefore we begin, may I please have your **name** so I can assist you better?",
     time: timeStr(),
 };
 
@@ -32,7 +36,7 @@ function CTACard() {
     return (
         <div className="mt-2 rounded-2xl overflow-hidden border border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50 shadow-sm">
             <div className="bg-gradient-to-r from-[#002379] to-[#003a9e] px-4 py-3">
-                <p className="text-white font-semibold text-sm">Let's Connect Further 🚀</p>
+                <p className="text-white font-semibold text-sm flex items-center gap-1.5">Let's Connect Further <Rocket size={14} /></p>
                 <p className="text-blue-100 text-xs mt-0.5">We'd love to explore this with you.</p>
             </div>
             <div className="p-3 space-y-2">
@@ -42,7 +46,7 @@ function CTACard() {
                     rel="noopener noreferrer"
                     className="furi-cta-link flex items-center gap-2 px-3 py-2 rounded-xl bg-[#002379] text-white text-xs font-medium"
                 >
-                    <span className="text-base">📋</span>
+                    <ClipboardList size={18} className="text-white" />
                     <span>Fill out our quick form</span>
                     <span className="ml-auto opacity-60">→</span>
                 </a>
@@ -52,7 +56,7 @@ function CTACard() {
                     rel="noopener noreferrer"
                     className="furi-cta-link flex items-center gap-2 px-3 py-2 rounded-xl bg-[#FF5F00] text-white text-xs font-medium"
                 >
-                    <span className="text-base">📅</span>
+                    <Calendar size={18} className="text-white" />
                     <span>Schedule a 30-min meeting</span>
                     <span className="ml-auto opacity-60">→</span>
                 </a>
@@ -211,7 +215,7 @@ export default function FuriChat() {
     const callGroq = useCallback(async (userText) => {
         historyRef.current.push({ role: 'user', content: userText });
 
-        const body = {
+        const chatCompletion = await groq.chat.completions.create({
             model: GROQ_MODEL,
             messages: [
                 { role: 'system', content: buildSystemPrompt(userName) },
@@ -219,20 +223,9 @@ export default function FuriChat() {
             ],
             temperature: 0.4,
             max_tokens: 600,
-        };
-
-        const res = await fetch(GROQ_ENDPOINT, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${GROQ_API_KEY}`,
-            },
-            body: JSON.stringify(body),
         });
 
-        if (!res.ok) throw new Error(`Groq error ${res.status}`);
-        const data = await res.json();
-        const reply = data.choices?.[0]?.message?.content?.trim() ||
+        const reply = chatCompletion.choices?.[0]?.message?.content?.trim() ||
             "I'm sorry, I couldn't process that. Please try again or contact our team directly.";
 
         historyRef.current.push({ role: 'assistant', content: reply });
@@ -253,7 +246,7 @@ export default function FuriChat() {
             setCollectPhase('email');
             setTimeout(() => {
                 addBotMessage(
-                    `Nice to meet you, **${name}**! 😊\n\nCould you also share your **email address** so I can assist you better?`
+                    `Nice to meet you, **${name}**!\n\nCould you also share your **email address** so I can assist you better?`
                 );
             }, 400);
             return;
@@ -271,7 +264,7 @@ export default function FuriChat() {
             setCollectPhase('done');
             setTimeout(() => {
                 addBotMessage(
-                    `Thank you, **${userName}**! I appreciate it. 🎉\n\nHow can I assist you today? Feel free to ask about our services, company, HR policies, or anything else.`
+                    `Thank you, **${userName}**! I appreciate it.\n\nHow can I assist you today? Feel free to ask about our services, company, HR policies, or anything else.`
                 );
             }, 400);
             return;
@@ -291,7 +284,7 @@ export default function FuriChat() {
         } catch (err) {
             console.error('Groq API error:', err);
             addBotMessage(
-                "I'm currently experiencing a connection issue. Please try again in a moment, or contact our team directly at **info@futurrizon.com** or **+91 9825148533**."
+                "I'm currently experiencing a connection issue. Please try again in a moment, or contact our team directly at **info@futurrizon.com**."
             );
         } finally {
             setIsTyping(false);

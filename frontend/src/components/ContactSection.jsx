@@ -15,14 +15,38 @@ const ContactSection = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus('loading');
-        setTimeout(() => {
-            setStatus('success');
-            setFormData({ name: '', email: '', company: '', message: '' });
-            setTimeout(() => setStatus('idle'), 5000);
-        }, 1500);
+
+        try {
+            const response = await fetch('http://127.0.0.1:8000/api/contact/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    company: formData.company || '',
+                    message: formData.message,
+                }),
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                setFormData({ name: '', email: '', company: '', message: '' });
+                setTimeout(() => setStatus('idle'), 5000);
+            } else {
+                console.error('Failed to submit form', await response.text());
+                setStatus('idle');
+                alert('Something went wrong. Please try again later.');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setStatus('idle');
+            alert('Something went wrong. Please check your connection and try again.');
+        }
     };
 
     return (

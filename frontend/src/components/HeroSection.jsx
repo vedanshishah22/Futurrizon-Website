@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronRight, Zap, Shield, BarChart3, Globe, Cpu, Database, Cloud, Lock, CheckCircle2 } from 'lucide-react';
 import heroBg from '../assets/hero-bg.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const problemPoints = [
     "Manual workflows slowing you down",
@@ -56,6 +57,7 @@ const ScrollingColumn = ({ items, direction = "up" }) => {
 };
 
 const HeroSection = () => {
+    const navigate = useNavigate();
     return (
         <section id="hero" className="relative w-full min-h-[90vh] lg:min-h-screen flex items-center pt-20 overflow-hidden bg-[#082071]">
             <style>
@@ -119,16 +121,20 @@ const HeroSection = () => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center sm:justify-start justify-center gap-5">
-                            <motion.button
+                            <motion.a
+                                href="https://calendly.com/futurrizon/30min?month=2026-03"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 whileHover={{ scale: 1.05, y: -2 }}
                                 whileTap={{ scale: 0.98 }}
                                 className="w-full sm:w-auto px-8 py-4 bg-[#E76426] text-white rounded-xl font-bold text-lg shadow-md shadow-orange-500/10 flex items-center justify-center gap-2 group transition-all duration-300 whitespace-nowrap"
                             >
                                 Start Free Consultation
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </motion.button>
+                            </motion.a>
 
                             <motion.button
+                                onClick={() => navigate('/services')}
                                 whileHover={{ scale: 1.05, y: -2 }}
                                 whileTap={{ scale: 0.98 }}
                                 className="w-full sm:w-auto px-8 py-4 bg-[#082071] text-white rounded-xl font-bold text-lg border border-white/10 hover:bg-[#0a288a] transition-all duration-300 flex items-center justify-center gap-2 shadow-md shadow-blue-900/10 whitespace-nowrap"
@@ -139,14 +145,14 @@ const HeroSection = () => {
                         </div>
 
                         {/* Problem Tags Replacement for Trust Badges */}
-                        <div className="mt-8 pt-6 border-t border-white/5 flex flex-wrap gap-2.5 max-w-2xl justify-center lg:justify-start">
+                        <div className="mt-8 pt-6 flex flex-wrap gap-2.5 max-w-2xl justify-center lg:justify-start">
                             {problemPoints.map((point, idx) => (
                                 <motion.div
                                     key={idx}
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.1 + (idx * 0.05) }}
-                                    className="bg-white/95 backdrop-blur-sm px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full flex items-center gap-2 shadow-sm border border-white/20 hover:scale-[1.02] transition-transform cursor-default"
+                                    className="bg-white/95 backdrop-blur-sm px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full flex items-center gap-2 hover:scale-[1.02] transition-transform cursor-default"
                                 >
                                     <CheckCircle2 className="w-3.5 h-3.5 text-blue-500" />
                                     <span className="text-navy/80 text-[11px] sm:text-[13px] font-bold tracking-tight whitespace-nowrap">
@@ -172,15 +178,6 @@ const HeroSection = () => {
                 </div>
             </div>
 
-            {/* Scroll Indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.5 }}
-                className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-            >
-                <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
-            </motion.div>
         </section>
     );
 };

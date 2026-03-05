@@ -1,9 +1,21 @@
 import { Linkedin, Twitter, Instagram, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import footerLogo from '../assets/futurrizon_logo.png';
+import bgFooter from '../assets/footer.png';
 
 const Footer = () => {
     return (
         <footer className="bg-primary text-cream pt-20 pb-10 border-t border-cream/10 relative overflow-hidden">
+            {/* Background Image */}
+            <div
+                className="absolute inset-0 opacity-25 pointer-events-none"
+                style={{
+                    backgroundImage: `url(${bgFooter})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'top',
+                }}
+            ></div>
+
             {/* Background Gradients */}
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-orange/10 rounded-full blur-3xl -translate-y-1/2 pointer-events-none"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-peach/10 rounded-full blur-3xl translate-y-1/2 pointer-events-none"></div>
@@ -14,7 +26,7 @@ const Footer = () => {
                     <div className="col-span-1 md:col-span-1">
                         <Link to="/">
                             <img
-                                src="/logo.png"
+                                src={footerLogo}
                                 alt="Futurrizon Technologies Pvt. Ltd."
                                 className="h-40 w-auto object-contain mb-6 opacity-90 cursor-pointer"
                             />
@@ -29,7 +41,7 @@ const Footer = () => {
                             <a href="#" className="w-10 h-10 rounded-full bg-cream/10 flex items-center justify-center hover:bg-orange transition-colors text-cream">
                                 <Twitter size={18} />
                             </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-cream/10 flex items-center justify-center hover:bg-orange transition-colors text-cream">
+                            <a href="https://www.instagram.com/futurrizon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-cream/10 flex items-center justify-center hover:bg-orange transition-colors text-cream">
                                 <Instagram size={18} />
                             </a>
                         </div>

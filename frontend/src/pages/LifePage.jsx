@@ -1,5 +1,11 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import {
+    Heart, PartyPopper, Handshake, Rocket, Sparkles,
+    Flag, Star, Image as ImageIcon, Briefcase, Users, Globe, Camera
+} from 'lucide-react';
+
+import bgFuturrizonVideo from '../assets/bg_futurrizon.mp4';
 
 /* ─── Animation helpers ─────────────────────────────── */
 const fadeUp = {
@@ -29,17 +35,17 @@ function AnimatedSection({ children, className = '' }) {
 
 /* ─── Data ──────────────────────────────────────────── */
 const pillars = [
-    { icon: '❤️', value: 'People First', desc: 'Our team is our greatest asset — we invest in their growth, happiness, and well-being every day.' },
-    { icon: '🎉', value: 'Celebrate Together', desc: 'From festive Diwalis to Republic Day cookoffs — we find joy in every milestone together.' },
-    { icon: '🤝', value: 'Client Obsessed', desc: 'We don\'t just serve clients, we build lasting partnerships built on trust, impact, and results.' },
-    { icon: '🚀', value: 'Grow Every Day', desc: 'A culture of continuous learning, curiosity, and innovation defines who we are at Futurrizon.' },
+    { icon: <Heart className="w-8 h-8 text-orange" />, value: 'People First', desc: 'Our team is our greatest asset — we invest in their growth, happiness, and well-being every day.' },
+    { icon: <PartyPopper className="w-8 h-8 text-orange" />, value: 'Celebrate Together', desc: 'From festive Diwalis to Republic Day cookoffs — we find joy in every milestone together.' },
+    { icon: <Handshake className="w-8 h-8 text-orange" />, value: 'Client Obsessed', desc: 'We don\'t just serve clients, we build lasting partnerships built on trust, impact, and results.' },
+    { icon: <Rocket className="w-8 h-8 text-orange" />, value: 'Grow Every Day', desc: 'A culture of continuous learning, curiosity, and innovation defines who we are at Futurrizon.' },
 ];
 
 const events = [
     {
         category: 'Celebration',
         categoryColor: 'bg-orange/15 text-orange border-orange/20',
-        emoji: '🪔',
+        icon: <Sparkles className="w-6 h-6 text-orange" />,
         title: 'Futurrizon Diwali 2K25',
         subtitle: 'Festivities, Laughter & Teamwork',
         desc: 'From fun activities to bright Diwali moments, our workplace truly shines with joy, togetherness, sparkling celebrations, endless smiles, and festive fun! The spirit of the festival lit up every corner of our office. ✨',
@@ -48,7 +54,7 @@ const events = [
     {
         category: 'Celebration',
         categoryColor: 'bg-orange/15 text-orange border-orange/20',
-        emoji: '🇮🇳',
+        icon: <PartyPopper className="w-6 h-6 text-orange" />,
         title: 'Fun Friday × Republic Day',
         subtitle: 'When Patriotism Meets Teamwork & Fun',
         desc: 'Energy. Laughter. Togetherness. We celebrated the spirit of Republic Day with loads of enthusiasm — headlined by a Boys vs Girls Cooking Competition 👨‍🍳👩‍🍳. Creative dishes, friendly rivalry, fun games, and cheerful moments made this a day to remember!',
@@ -57,7 +63,7 @@ const events = [
     {
         category: 'Client Meet',
         categoryColor: 'bg-[#002379]/15 text-[#002379] border-[#002379]/20',
-        emoji: '🌟',
+        icon: <Star className="w-6 h-6 text-[#002379]" />,
         title: 'KORMAX Collaboration',
         subtitle: 'A Power-Packed Collaboration Begins!',
         desc: 'We were delighted to host KORMAX for an inspiring session filled with ideas, innovation, and collaboration. Mr. Walter Davis (Director, KORMAX) brought visionary leadership and insights that aligned perfectly with our mission to empower businesses through Microsoft 365, Power Platforms, Azure & AI-driven solutions.',
@@ -66,7 +72,7 @@ const events = [
     {
         category: 'Celebration',
         categoryColor: 'bg-orange/15 text-orange border-orange/20',
-        emoji: '✨',
+        icon: <Heart className="w-6 h-6 text-orange" />,
         title: 'Diwali Decor & Festive Vibes',
         subtitle: 'Work + Festive Fun = Perfect Diwali Vibes',
         desc: 'Lighting up our workplace with festive joy, colors, and togetherness. The office transformed into a festival of lights — a reminder that the best workplaces feel like family. Happy Diwali from our team to yours! 🪔',
@@ -75,7 +81,7 @@ const events = [
     {
         category: 'Campaign',
         categoryColor: 'bg-purple-500/15 text-purple-600 border-purple-500/20',
-        emoji: '🎇',
+        icon: <Camera className="w-6 h-6 text-purple-600" />,
         title: 'Futurrizon × MonkeyMan⌚',
         subtitle: '"We Care" Turns Into "We Collaborate"',
         desc: 'Loved seeing our Futurrizon family featured in MonkeyMan\'s Diwali campaign! Because great partnerships make every celebration brighter. When values align, magic happens — and this collab was proof of exactly that.',
@@ -84,7 +90,7 @@ const events = [
     {
         category: 'Campaign',
         categoryColor: 'bg-purple-500/15 text-purple-600 border-purple-500/20',
-        emoji: '🎌',
+        icon: <ImageIcon className="w-6 h-6 text-purple-600" />,
         title: 'Ghibli-Inspired Transformation',
         subtitle: 'A Ghibli-Style Business Journey',
         desc: 'Step into a Ghibli-style journey where chaos fades into seamless automation! From never-ending paperwork and crashing spreadsheets to real-time dashboards and AI-powered workflows — we redefine efficiency with Power BI, SharePoint, Power Automate & Microsoft 365. ✨ Say goodbye to inefficiency. Say hello to the future.',
@@ -93,7 +99,7 @@ const events = [
     {
         category: 'Client Meet',
         categoryColor: 'bg-[#002379]/15 text-[#002379] border-[#002379]/20',
-        emoji: '🤝',
+        icon: <Handshake className="w-6 h-6 text-[#002379]" />,
         title: 'TexTaxUS × Gandhi Ashram Visit',
         subtitle: 'Adam Minow & TexTaxUS at Futurrizon HQ',
         desc: 'We had the absolute pleasure of hosting Adam Minow & TexTaxUS Corporation at our office! Power-packed strategy meetings, a soulful visit to the historic Gandhi Ashram, and a delicious lunch full of laughter — a perfect blend of collaboration, culture & connection. Here\'s to many more milestones together! 💙',
@@ -108,6 +114,23 @@ export default function LifePage() {
 
             {/* ── HERO ──────────────────────────────────────── */}
             <section className="relative min-h-[70vh] flex items-center bg-primary overflow-hidden">
+                {/* Background Video */}
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
+                >
+                    <source src={bgFuturrizonVideo} type="video/mp4" />
+                </video>
+
+                {/* Dark Gradient Overlay for readability */}
+                <div
+                    className="absolute inset-0"
+                    style={{ backgroundImage: 'linear-gradient(to right, rgba(0, 31, 84, 0.8), rgba(0, 31, 84, 0.4))' }}
+                ></div>
+
                 {/* Dot pattern */}
                 <div
                     className="absolute inset-0 opacity-8"
@@ -146,12 +169,12 @@ export default function LifePage() {
                         {/* Quick stats */}
                         <motion.div variants={fadeUp} className="mt-12 flex flex-wrap gap-8">
                             {[
-                                ['🎉', '20+', 'Events a Year'],
-                                ['🌍', '5+', 'Global Clients'],
-                                ['💼', '∞', 'Memories Made'],
-                            ].map(([emoji, num, label]) => (
+                                [<PartyPopper className="w-6 h-6 text-orange mx-auto mb-1" />, '20+', 'Events a Year'],
+                                [<Globe className="w-6 h-6 text-orange mx-auto mb-1" />, '5+', 'Global Clients'],
+                                [<Briefcase className="w-6 h-6 text-orange mx-auto mb-1" />, '∞', 'Memories Made'],
+                            ].map(([icon, num, label]) => (
                                 <div key={label} className="text-center">
-                                    <div className="text-2xl mb-0.5">{emoji}</div>
+                                    {icon}
                                     <div className="text-2xl font-display font-black text-orange">{num}</div>
                                     <div className="text-cream/40 text-xs mt-0.5">{label}</div>
                                 </div>
@@ -189,7 +212,7 @@ export default function LifePage() {
                                     transition={{ duration: 0.2 }}
                                     className="bg-white rounded-2xl p-6 border border-primary/6 hover:border-orange/20 group h-full"
                                 >
-                                    <div className="text-3xl mb-4">{p.icon}</div>
+                                    <div className="mb-4">{p.icon}</div>
                                     <h3 className="font-display font-bold text-primary text-base mb-2 group-hover:text-orange transition-colors">{p.value}</h3>
                                     <p className="text-primary/50 text-sm leading-relaxed">{p.desc}</p>
                                 </motion.div>
@@ -204,7 +227,8 @@ export default function LifePage() {
                 <div className="container mx-auto px-6">
                     <AnimatedSection className="text-center mb-14">
                         <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange/30 bg-orange/8 mb-4">
-                            <span className="text-orange text-xs font-semibold uppercase tracking-widest">🎊 Stories & Moments</span>
+                            <Sparkles className="w-4 h-4 text-orange" />
+                            <span className="text-orange text-xs font-semibold uppercase tracking-widest">Stories & Moments</span>
                         </motion.div>
                         <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-display font-bold text-primary">
                             Highlights From Our Journey
@@ -234,9 +258,9 @@ export default function LifePage() {
                                         </span>
                                     </div>
 
-                                    {/* Emoji + Title */}
-                                    <div className="flex items-center gap-3 mb-3">
-                                        <span className="text-3xl leading-none">{ev.emoji}</span>
+                                    {/* Icon + Title */}
+                                    <div className="flex items-center gap-4 mb-3">
+                                        <span className="leading-none">{ev.icon}</span>
                                         <div>
                                             <h3 className="font-display font-bold text-primary text-base leading-snug group-hover:text-orange transition-colors">
                                                 {ev.title}

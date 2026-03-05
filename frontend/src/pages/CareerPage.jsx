@@ -1,6 +1,13 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import {
+    Rocket, Globe, Lightbulb, PartyPopper, TrendingUp, Users, Target,
+    RefreshCw, MessageCircle, Brain, Heart, Star, Building2, Briefcase,
+    MapPin, Clock, Calendar, FileText, Handshake
+} from 'lucide-react';
+
+import bgCareer from '../assets/bg_career.png';
 
 /* ─── Animation helpers ─────────────────────────────── */
 const fadeUp = {
@@ -32,12 +39,12 @@ const LINKEDIN_JOBS = 'https://www.linkedin.com/company/futurrizon-technologies/
 
 /* ─── Data ──────────────────────────────────────────── */
 const perks = [
-    { icon: '🚀', title: 'Growth-First Culture', desc: 'Accelerate your career with real-world projects, mentorship, and continuous learning opportunities.' },
-    { icon: '🌍', title: 'Global Exposure', desc: 'Work with international clients across the USA, Middle East, Europe, New Zealand & more.' },
-    { icon: '💡', title: 'Innovation Hub', desc: 'Build with cutting-edge Microsoft tech — Power Platform, Azure, AI/GPT, SharePoint & M365.' },
-    { icon: '🎉', title: 'Vibrant Workplace', desc: 'Festivals, Fun Fridays, team outings, and celebrations that make work feel like family.' },
-    { icon: '📈', title: 'Skill Development', desc: 'Microsoft certifications, internal bootcamps, and dedicated learning time every week.' },
-    { icon: '🤝', title: 'Collaborative Team', desc: 'A flat hierarchy where every voice matters. We brainstorm, we build, we ship — together.' },
+    { icon: <Rocket className="w-8 h-8 text-orange" />, title: 'Growth-First Culture', desc: 'Accelerate your career with real-world projects, mentorship, and continuous learning opportunities.' },
+    { icon: <Globe className="w-8 h-8 text-orange" />, title: 'Global Exposure', desc: 'Work with international clients across the USA, Middle East, Europe, New Zealand & more.' },
+    { icon: <Lightbulb className="w-8 h-8 text-orange" />, title: 'Innovation Hub', desc: 'Build with cutting-edge Microsoft tech — Power Platform, Azure, AI/GPT, SharePoint & M365.' },
+    { icon: <PartyPopper className="w-8 h-8 text-orange" />, title: 'Vibrant Workplace', desc: 'Festivals, Fun Fridays, team outings, and celebrations that make work feel like family.' },
+    { icon: <TrendingUp className="w-8 h-8 text-orange" />, title: 'Skill Development', desc: 'Microsoft certifications, internal bootcamps, and dedicated learning time every week.' },
+    { icon: <Users className="w-8 h-8 text-orange" />, title: 'Collaborative Team', desc: 'A flat hierarchy where every voice matters. We brainstorm, we build, we ship — together.' },
 ];
 
 const openings = [
@@ -106,12 +113,12 @@ const deptColors = {
 };
 
 const values = [
-    { emoji: '🎯', label: 'Impact Over Ego' },
-    { emoji: '🔄', label: 'Iterate Fast' },
-    { emoji: '💬', label: 'Radical Transparency' },
-    { emoji: '🧠', label: 'Always Be Learning' },
-    { emoji: '❤️', label: 'People Over Process' },
-    { emoji: '🌟', label: 'Client Obsession' },
+    { emoji: <Target className="w-4 h-4" />, label: 'Impact Over Ego' },
+    { emoji: <RefreshCw className="w-4 h-4" />, label: 'Iterate Fast' },
+    { emoji: <MessageCircle className="w-4 h-4" />, label: 'Radical Transparency' },
+    { emoji: <Brain className="w-4 h-4" />, label: 'Always Be Learning' },
+    { emoji: <Heart className="w-4 h-4" />, label: 'People Over Process' },
+    { emoji: <Star className="w-4 h-4" />, label: 'Client Obsession' },
 ];
 
 /* ─── Page ──────────────────────────────────────────── */
@@ -122,7 +129,14 @@ export default function CareerPage() {
         <div className="overflow-x-hidden">
 
             {/* ── HERO ──────────────────────────────────────── */}
-            <section className="relative min-h-[75vh] flex items-center bg-primary overflow-hidden">
+            <section
+                className="relative min-h-[75vh] flex items-center bg-primary overflow-hidden"
+                style={{
+                    backgroundImage: `linear-gradient(to right, rgba(0, 31, 84, 1), rgba(0, 31, 84, 0.7)), url(${bgCareer})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center 20%'
+                }}
+            >
                 <div
                     className="absolute inset-0 opacity-8"
                     style={{
@@ -169,12 +183,12 @@ export default function CareerPage() {
 
                         <motion.div variants={fadeUp} className="mt-14 flex flex-wrap gap-8">
                             {[
-                                ['🏢', '6+', 'Open Roles'],
-                                ['🌍', '5+', 'Countries Served'],
-                                ['⭐', '4.8', 'Glassdoor Rating'],
-                            ].map(([emoji, num, label]) => (
+                                [<Building2 className="w-6 h-6 text-orange mx-auto mb-1" />, '6+', 'Open Roles'],
+                                [<Globe className="w-6 h-6 text-orange mx-auto mb-1" />, '5+', 'Countries Served'],
+                                [<Star className="w-6 h-6 text-orange mx-auto mb-1" />, '4.8', 'Glassdoor Rating'],
+                            ].map(([icon, num, label]) => (
                                 <div key={label} className="text-center">
-                                    <div className="text-2xl mb-0.5">{emoji}</div>
+                                    {icon}
                                     <div className="text-2xl font-display font-black text-orange">{num}</div>
                                     <div className="text-cream/40 text-xs mt-0.5">{label}</div>
                                 </div>
@@ -214,7 +228,7 @@ export default function CareerPage() {
                                     transition={{ duration: 0.2 }}
                                     className="bg-white rounded-2xl p-6 border border-primary/6 hover:border-orange/20 group h-full"
                                 >
-                                    <div className="text-3xl mb-4">{p.icon}</div>
+                                    <div className="mb-4">{p.icon}</div>
                                     <h3 className="font-display font-bold text-primary text-base mb-2 group-hover:text-orange transition-colors">{p.title}</h3>
                                     <p className="text-primary/50 text-sm leading-relaxed">{p.desc}</p>
                                 </motion.div>
@@ -260,7 +274,8 @@ export default function CareerPage() {
                 <div className="container mx-auto px-6">
                     <AnimatedSection className="text-center mb-14">
                         <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange/30 bg-orange/8 mb-4">
-                            <span className="text-orange text-xs font-semibold uppercase tracking-widest">💼 Open Positions</span>
+                            <Briefcase className="w-4 h-4 text-orange" />
+                            <span className="text-orange text-xs font-semibold uppercase tracking-widest">Open Positions</span>
                         </motion.div>
                         <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-display font-bold text-primary">
                             Find Your Perfect Role
@@ -278,8 +293,8 @@ export default function CareerPage() {
                                     <motion.div
                                         variants={fadeUp}
                                         className={`rounded-2xl border transition-all duration-300 ${isExpanded
-                                                ? 'bg-cream border-orange/20 shadow-lg shadow-orange/8'
-                                                : 'bg-cream border-primary/8 hover:border-orange/15 hover:shadow-md hover:shadow-orange/5'
+                                            ? 'bg-cream border-orange/20 shadow-lg shadow-orange/8'
+                                            : 'bg-cream border-primary/8 hover:border-orange/15 hover:shadow-md hover:shadow-orange/5'
                                             }`}
                                     >
                                         {/* Collapsed header */}
@@ -294,11 +309,11 @@ export default function CareerPage() {
                                                         <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold border ${deptColors[job.dept]}`}>
                                                             {job.dept}
                                                         </span>
-                                                        <span className="text-primary/40 text-xs">📍 {job.location}</span>
+                                                        <span className="text-primary/40 text-xs flex items-center gap-1"><MapPin className="w-3 h-3" /> {job.location}</span>
                                                         <span className="text-primary/40 text-xs">•</span>
-                                                        <span className="text-primary/40 text-xs">🕐 {job.type}</span>
+                                                        <span className="text-primary/40 text-xs flex items-center gap-1"><Clock className="w-3 h-3" /> {job.type}</span>
                                                         <span className="text-primary/40 text-xs">•</span>
-                                                        <span className="text-primary/40 text-xs">📅 {job.experience}</span>
+                                                        <span className="text-primary/40 text-xs flex items-center gap-1"><Calendar className="w-3 h-3" /> {job.experience}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -391,10 +406,10 @@ export default function CareerPage() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
                         {[
-                            { step: '01', icon: '📝', title: 'Apply', desc: 'Submit your application through LinkedIn. We review every single one.' },
-                            { step: '02', icon: '💬', title: 'Screening Call', desc: 'A quick chat to understand your background, aspirations, and culture fit.' },
-                            { step: '03', icon: '🧠', title: 'Technical Round', desc: 'A hands-on assessment or case study relevant to the role you applied for.' },
-                            { step: '04', icon: '🤝', title: 'Offer & Onboarding', desc: 'Welcome aboard! Fast-tracked onboarding to get you shipping from day one.' },
+                            { step: '01', icon: <FileText className="w-8 h-8 text-orange" />, title: 'Apply', desc: 'Submit your application through LinkedIn. We review every single one.' },
+                            { step: '02', icon: <MessageCircle className="w-8 h-8 text-orange" />, title: 'Screening Call', desc: 'A quick chat to understand your background, aspirations, and culture fit.' },
+                            { step: '03', icon: <Brain className="w-8 h-8 text-orange" />, title: 'Technical Round', desc: 'A hands-on assessment or case study relevant to the role you applied for.' },
+                            { step: '04', icon: <Handshake className="w-8 h-8 text-orange" />, title: 'Offer & Onboarding', desc: 'Welcome aboard! Fast-tracked onboarding to get you shipping from day one.' },
                         ].map((s, i) => (
                             <AnimatedSection key={i}>
                                 <motion.div
@@ -404,7 +419,7 @@ export default function CareerPage() {
                                     <span className="absolute top-4 right-4 text-4xl font-display font-black text-primary/5 group-hover:text-orange/10 transition-colors">
                                         {s.step}
                                     </span>
-                                    <div className="text-3xl mb-4">{s.icon}</div>
+                                    <div className="mb-4">{s.icon}</div>
                                     <h3 className="font-display font-bold text-primary text-base mb-2 group-hover:text-orange transition-colors">{s.title}</h3>
                                     <p className="text-primary/50 text-sm leading-relaxed">{s.desc}</p>
                                 </motion.div>
@@ -428,7 +443,7 @@ export default function CareerPage() {
                 <div className="container mx-auto px-6 relative z-10">
                     <AnimatedSection>
                         <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto">
-                            <div className="text-5xl mb-5">🎯</div>
+                            <Target className="w-12 h-12 text-orange mx-auto mb-5" />
                             <h2 className="text-3xl lg:text-5xl font-display font-bold text-cream leading-tight">
                                 Don't See Your Role?
                                 <span className="text-orange block mt-1">Reach Out Anyway.</span>

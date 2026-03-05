@@ -1,7 +1,7 @@
 // ─── Furi Chatbot — Company Knowledge Base ───────────────────────────────────
 // All data sourced from Futurrizon's official company/HR/contact datasets.
 
-export const GROQ_API_KEY = "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";
+export const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY;
 export const GROQ_MODEL = "llama-3.1-8b-instant";
 export const GROQ_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions";
 
@@ -193,7 +193,7 @@ export const companyData = {
 export const contactData = {
     contact_information: {
         response_time: "We typically respond within 24 hours.",
-        phone_numbers: ["+91 9825148533", "+91 7046414070", "+91 9586779534"],
+        phone_numbers: [],
         email_addresses: ["info@futurrizon.com", "yashesh.nagori@futurrizon.com", "hr@futurrizon.com"],
         office_address: {
             company_name: "Futurrizon Technologies Pvt Ltd",

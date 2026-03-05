@@ -1,6 +1,10 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import {
+    Building2, Zap, Bot, Shield, Cloud, BarChart,
+    RefreshCw, Wrench, Folder, FileText, Mail
+} from 'lucide-react';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 36 },
@@ -29,7 +33,7 @@ const blogs = [
         excerpt: 'Despite newer tools entering the market, SharePoint Online continues to dominate enterprise intranets. Here\'s why organizations choose SharePoint for document management, collaboration, and governance — and how to build a modern intranet that employees actually love.',
         readTime: '7 min read',
         date: 'Feb 20, 2026',
-        emoji: '🏗️',
+        emoji: <Building2 className="w-8 h-8 text-orange" />,
         content: [
             'SharePoint Online has evolved from a simple document library into a full-fledged digital workplace platform. With deep integration into Microsoft 365, Teams, and Power Platform, it offers unmatched flexibility for enterprise content management.',
             'Modern SharePoint sites offer beautiful, responsive layouts out of the box. Combined with SPFx (SharePoint Framework), developers can create custom web parts that deliver app-like experiences directly within the intranet.',
@@ -44,7 +48,7 @@ const blogs = [
         excerpt: 'Power Apps enables business users and developers alike to build production-grade applications without traditional codebases. Learn how enterprises are cutting development timelines by 70% while delivering better user experiences.',
         readTime: '6 min read',
         date: 'Feb 15, 2026',
-        emoji: '⚡',
+        emoji: <Zap className="w-8 h-8 text-orange" />,
         content: [
             'The traditional approach to building enterprise apps — hiring a dev team, writing code from scratch, and deploying on custom infrastructure — is being disrupted by Power Apps.',
             'Canvas Apps provide pixel-perfect UI control, while Model-driven Apps offer structured data management out of the box. Together with Dataverse as the backend, Power Apps delivers a full-stack app development experience.',
@@ -59,7 +63,7 @@ const blogs = [
         excerpt: 'AI-powered chatbots are transforming IT support, customer service, and internal knowledge management. Here\'s our practical guide to building and deploying enterprise chatbots using GPT, Microsoft Teams, and SharePoint.',
         readTime: '9 min read',
         date: 'Feb 10, 2026',
-        emoji: '🤖',
+        emoji: <Bot className="w-8 h-8 text-orange" />,
         content: [
             'Enterprise chatbots powered by GPT aren\'t just answering FAQs — they\'re resolving tickets, searching knowledge bases, generating reports, and even helping with code reviews.',
             'The key to a successful enterprise chatbot is grounding — connecting GPT to your organization\'s actual data. By integrating with SharePoint document libraries and Dataverse, you ensure the bot answers with verified, company-specific information.',
@@ -74,7 +78,7 @@ const blogs = [
         excerpt: 'Without proper governance, Microsoft 365 becomes a sprawl of unmanaged Teams, SharePoint sites, and shared drives. Here are the 10 essential policies that keep your tenant secure, organized, and compliant.',
         readTime: '8 min read',
         date: 'Feb 5, 2026',
-        emoji: '🛡️',
+        emoji: <Shield className="w-8 h-8 text-orange" />,
         content: [
             'Microsoft 365 governance isn\'t about restricting users — it\'s about creating guardrails that enable productivity while maintaining security and compliance.',
             'Essential policies include: Group naming conventions, Teams creation policies, SharePoint site lifecycle management, external sharing controls, data loss prevention (DLP) rules, and sensitivity labeling.',
@@ -89,7 +93,7 @@ const blogs = [
         excerpt: 'Migrating on-premises infrastructure to Azure is one of the most impactful decisions an enterprise can make. But a poorly planned migration can lead to downtime, data loss, and cost overruns. Here\'s how to do it right.',
         readTime: '8 min read',
         date: 'Jan 28, 2026',
-        emoji: '☁️',
+        emoji: <Cloud className="w-8 h-8 text-orange" />,
         content: [
             'Azure migration isn\'t a single event — it\'s a strategy. The right approach depends on your workload type: lift-and-shift for quick wins, re-architecture for long-term optimization, or hybrid for a phased transition.',
             'Assessment is critical. Tools like Azure Migrate help you discover on-prem workloads, assess dependencies, and calculate TCO before you move anything. This prevents surprises during migration.',
@@ -104,7 +108,7 @@ const blogs = [
         excerpt: 'Most Power BI dashboards look impressive but fail to drive action. Here\'s how to build dashboards that executives actually use — with the right KPIs, data modeling, and visual design principles.',
         readTime: '7 min read',
         date: 'Jan 22, 2026',
-        emoji: '📊',
+        emoji: <BarChart className="w-8 h-8 text-orange" />,
         content: [
             'The biggest mistake in dashboard design is showing too much data. Effective dashboards focus on 3-5 KPIs that directly map to business objectives — not every metric available in the dataset.',
             'Data modeling is where most projects fail. A proper star schema with clean fact and dimension tables ensures fast query performance and accurate calculations, even with millions of rows.',
@@ -119,7 +123,7 @@ const blogs = [
         excerpt: 'Switching from Google Workspace to Microsoft 365? It\'s more than just moving emails. Here\'s our battle-tested playbook covering email migration, file transfers, identity management, and user adoption.',
         readTime: '10 min read',
         date: 'Jan 15, 2026',
-        emoji: '🔄',
+        emoji: <RefreshCw className="w-8 h-8 text-orange" />,
         content: [
             'Migrating from Google Workspace to Microsoft 365 requires careful planning across five dimensions: email, files, identity, collaboration tools, and user training.',
             'Email migration using dual delivery ensures zero downtime — users continue receiving emails on both platforms during the transition period. This is critical for companies that can\'t afford even minutes of email downtime.',
@@ -134,7 +138,7 @@ const blogs = [
         excerpt: 'Stop doing manually what Power Automate can handle in seconds. Here are 8 real-world automation flows we\'ve built for clients — from approval routing to data sync — that save significant time every week.',
         readTime: '6 min read',
         date: 'Jan 8, 2026',
-        emoji: '🔧',
+        emoji: <Wrench className="w-8 h-8 text-orange" />,
         content: [
             'Power Automate\'s strength lies in connecting systems that don\'t natively talk to each other. With 500+ connectors, it bridges the gap between Microsoft apps, third-party SaaS, and custom APIs.',
             'High-impact flows we\'ve built: automated document approval chains (saves 5 hrs/week), expense report processing with Power Apps submission (3 hrs/week), client onboarding workflows (4 hrs/week), and scheduled report generation and distribution (8 hrs/week).',
@@ -149,7 +153,7 @@ const blogs = [
         excerpt: 'The path to a paperless office runs through SharePoint. Metadata-driven document management, automated retention policies, and AI-powered search make SharePoint the ultimate document hub.',
         readTime: '7 min read',
         date: 'Jan 2, 2026',
-        emoji: '📁',
+        emoji: <Folder className="w-8 h-8 text-orange" />,
         content: [
             'Traditional folder structures fail at scale. SharePoint\'s metadata-driven approach — using content types, managed metadata, and custom columns — lets you categorize, find, and manage documents without deep folder nesting.',
             'Automated workflows handle document lifecycle: creation triggers, approval routing, version control, retention scheduling, and archival. Power Automate integrates seamlessly for complex multi-step workflows.',
@@ -227,8 +231,8 @@ export default function BlogsPage() {
                                     key={c}
                                     onClick={() => { setActiveCategory(c); setExpandedBlog(null); }}
                                     className={`px-4 py-2 rounded-full text-xs font-semibold border transition-all duration-200 ${activeCategory === c
-                                            ? 'bg-orange text-white border-orange shadow-md shadow-orange/20'
-                                            : 'bg-white text-primary/50 border-primary/10 hover:border-orange/30 hover:text-orange'
+                                        ? 'bg-orange text-white border-orange shadow-md shadow-orange/20'
+                                        : 'bg-white text-primary/50 border-primary/10 hover:border-orange/30 hover:text-orange'
                                         }`}
                                 >
                                     {c}
@@ -258,8 +262,8 @@ export default function BlogsPage() {
                                             <span className="text-primary/30 text-xs">{blog.date}</span>
                                         </div>
 
-                                        {/* Emoji */}
-                                        <div className="text-3xl mb-3">{blog.emoji}</div>
+                                        {/* Icon */}
+                                        <div className="mb-3">{blog.emoji}</div>
 
                                         {/* Title */}
                                         <h3 className="font-display font-bold text-primary text-base leading-snug mb-3 group-hover:text-orange transition-colors">
@@ -307,7 +311,7 @@ export default function BlogsPage() {
 
                     {filtered.length === 0 && (
                         <div className="text-center py-20">
-                            <div className="text-4xl mb-4">📝</div>
+                            <div className="mb-4"><FileText className="w-12 h-12 text-orange/50 mx-auto" /></div>
                             <p className="text-primary/40 text-base">No articles in this category yet. Check back soon!</p>
                         </div>
                     )}
@@ -326,7 +330,7 @@ export default function BlogsPage() {
                 <div className="container mx-auto px-6 relative z-10">
                     <AnimatedSection>
                         <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto">
-                            <div className="text-5xl mb-5">📬</div>
+                            <Mail className="w-12 h-12 text-orange mx-auto mb-5" />
                             <h2 className="text-3xl lg:text-5xl font-display font-bold text-cream leading-tight">
                                 Stay Ahead of the
                                 <span className="text-orange block mt-1">Tech Curve</span>

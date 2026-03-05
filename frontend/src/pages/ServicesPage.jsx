@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Zap, Brain, Users, Rocket } from 'lucide-react';
 import bgServices from '../assets/bg_services.png';
 import svc1 from '../assets/services/1.png';
 import svc2 from '../assets/services/2.png';
@@ -11,6 +12,16 @@ import svc6 from '../assets/services/6.jpg';
 import svc7 from '../assets/services/7.png';
 import svc8 from '../assets/services/8.jpg';
 import svc9 from '../assets/services/9.png';
+
+/* ─── Logo Imports ────────────────────────────────────── */
+import logoM365 from '../assets/logos/Microsoft_365.svg.svg';
+import logoSharePoint from '../assets/logos/sharepoint.svg';
+import logoPowerBI from '../assets/logos/Power bI-png.svg';
+import logoPowerApps from '../assets/logos/power-app.svg.webp';
+import logoPowerAutomate from '../assets/logos/Power_Automate.svg.svg';
+import logoCopilot from '../assets/logos/copilot.png';
+import logoAzure from '../assets/logos/azure.svg';
+import logoTeams from '../assets/logos/teams.svg';
 
 /* ─── Icon SVGs ─────────────────────────────────────── */
 const SharePointIcon = () => (
@@ -537,13 +548,14 @@ const services = [
 ];
 
 const platforms = [
-    { name: 'Microsoft 365', desc: 'Unified Collaboration & Secure Content Management', emoji: '🔷' },
-    { name: 'SharePoint', desc: 'Centralized Knowledge + Automated Processes', emoji: '📁' },
-    { name: 'Power BI', desc: 'Real-Time Insights & Executive Dashboards', emoji: '📊' },
-    { name: 'Power Apps', desc: 'Custom Business Apps Without Coding', emoji: '📱' },
-    { name: 'Power Automate', desc: 'Zero-Touch Approvals & End-to-End Automation', emoji: '⚡' },
-    { name: 'Copilot & AI', desc: 'Intelligent Assistance & Predictive Decisions', emoji: '🤖' },
-    { name: 'Azure', desc: 'Scalable, Secure Cloud Foundation For Business', emoji: '☁️' },
+    { name: 'Microsoft 365', desc: 'Unified Collaboration & Secure Content Management', icon: logoM365 },
+    { name: 'Microsoft Teams', desc: 'Secure Hub for Chat, Meetings & Collaboration', icon: logoTeams },
+    { name: 'SharePoint', desc: 'Centralized Knowledge + Automated Processes', icon: logoSharePoint },
+    { name: 'Power BI', desc: 'Real-Time Insights & Executive Dashboards', icon: logoPowerBI },
+    { name: 'Power Apps', desc: 'Custom Business Apps Without Coding', icon: logoPowerApps },
+    { name: 'Power Automate', desc: 'Zero-Touch Approvals & End-to-End Automation', icon: logoPowerAutomate },
+    { name: 'Copilot & AI', desc: 'Intelligent Assistance & Predictive Decisions', icon: logoCopilot },
+    { name: 'Azure', desc: 'Scalable, Secure Cloud Foundation For Business', icon: logoAzure },
 ];
 
 /* ─── Main Page ─────────────────────────────────────── */
@@ -805,7 +817,9 @@ export default function ServicesPage() {
                                     transition={{ duration: 0.2 }}
                                     className="bg-white rounded-2xl p-5 border border-primary/8 hover:border-orange/30 group cursor-default"
                                 >
-                                    <div className="text-3xl mb-3">{p.emoji}</div>
+                                    <div className="w-10 h-10 mb-4 flex items-center justify-start">
+                                        <img src={p.icon} alt={p.name} className="max-w-full max-h-full object-contain" />
+                                    </div>
                                     <div className="font-display font-semibold text-primary text-sm mb-1 group-hover:text-orange transition-colors">{p.name}</div>
                                     <div className="text-primary/50 text-xs leading-relaxed">{p.desc}</div>
                                 </motion.div>
@@ -826,13 +840,15 @@ export default function ServicesPage() {
                                 <p className="text-cream/60 text-sm uppercase tracking-widest mb-4">When These Platforms Come Together Under One Architecture</p>
                                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                                     {[
-                                        ['⚡', 'Work Becomes Faster'],
-                                        ['🧠', 'Decisions Become Smarter'],
-                                        ['💪', 'Teams Become Stronger'],
-                                        ['🚀', 'Business Becomes Future-Ready'],
-                                    ].map(([emoji, text]) => (
-                                        <div key={text} className="flex flex-col items-center gap-2">
-                                            <span className="text-3xl">{emoji}</span>
+                                        [<Zap className="w-8 h-8 text-orange" strokeWidth={1.5} />, 'Work Becomes Faster'],
+                                        [<Brain className="w-8 h-8 text-orange" strokeWidth={1.5} />, 'Decisions Become Smarter'],
+                                        [<Users className="w-8 h-8 text-orange" strokeWidth={1.5} />, 'Teams Become Stronger'],
+                                        [<Rocket className="w-8 h-8 text-orange" strokeWidth={1.5} />, 'Business Becomes Future-Ready'],
+                                    ].map(([icon, text]) => (
+                                        <div key={text} className="flex flex-col items-center gap-4">
+                                            <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 shadow-sm flex flex-col items-center justify-center hover:bg-white/10 hover:scale-105 transition-all duration-300">
+                                                {icon}
+                                            </div>
                                             <span className="text-cream font-semibold text-sm text-center">{text}</span>
                                         </div>
                                     ))}

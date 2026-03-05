@@ -1,5 +1,11 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import {
+    Building2, Globe, TrendingUp, BarChart, Rocket,
+    Building, Factory, DollarSign, ShoppingCart,
+    Zap, Hospital, Laptop, GraduationCap, MapPin, CheckCircle2
+} from 'lucide-react';
+import bgTestimonials from '../assets/bg_testimonials.png';
 
 /* ─── Animation helpers ─────────────────────────────── */
 const fadeUp = {
@@ -235,14 +241,14 @@ const caseStudies = [
 
 /* ─── Industry emoji map ────────────────────────────── */
 const industryEmoji = {
-    'Construction & Infrastructure': '🏗️',
-    'Manufacturing': '🏭',
-    'Finance': '💰',
-    'Retail': '🛒',
-    'Energy & Utilities': '⚡',
-    'Healthcare': '🏥',
-    'IT Services': '💻',
-    'Education': '🎓',
+    'Construction & Infrastructure': <Building className="w-6 h-6 text-orange" />,
+    'Manufacturing': <Factory className="w-6 h-6 text-orange" />,
+    'Finance': <DollarSign className="w-6 h-6 text-orange" />,
+    'Retail': <ShoppingCart className="w-6 h-6 text-orange" />,
+    'Energy & Utilities': <Zap className="w-6 h-6 text-orange" />,
+    'Healthcare': <Hospital className="w-6 h-6 text-orange" />,
+    'IT Services': <Laptop className="w-6 h-6 text-orange" />,
+    'Education': <GraduationCap className="w-6 h-6 text-orange" />,
 };
 
 /* ─── Page ──────────────────────────────────────────── */
@@ -251,7 +257,14 @@ export default function TestimonialsPage() {
         <div className="overflow-x-hidden">
 
             {/* ── HERO ──────────────────────────────────────── */}
-            <section className="relative min-h-[70vh] flex items-center bg-primary overflow-hidden">
+            <section
+                className="relative min-h-[70vh] flex items-center bg-primary overflow-hidden"
+                style={{
+                    backgroundImage: `linear-gradient(rgba(0, 31, 84, 0.8), rgba(0, 31, 84, 0.9)), url(${bgTestimonials})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}
+            >
                 {/* Grid pattern */}
                 <div
                     className="absolute inset-0 opacity-8"
@@ -288,12 +301,12 @@ export default function TestimonialsPage() {
                         {/* Quick stats */}
                         <motion.div variants={fadeUp} className="mt-12 flex flex-wrap gap-8">
                             {[
-                                ['🏢', '9+', 'Case Studies'],
-                                ['🌍', '6+', 'Industries'],
-                                ['📈', '100%', 'Success Rate'],
-                            ].map(([emoji, num, label]) => (
+                                [<Building2 className="w-6 h-6 text-orange mx-auto mb-1" />, '9+', 'Case Studies'],
+                                [<Globe className="w-6 h-6 text-orange mx-auto mb-1" />, '6+', 'Industries'],
+                                [<TrendingUp className="w-6 h-6 text-orange mx-auto mb-1" />, '100%', 'Success Rate'],
+                            ].map(([icon, num, label]) => (
                                 <div key={label} className="text-center">
-                                    <div className="text-2xl mb-0.5">{emoji}</div>
+                                    {icon}
                                     <div className="text-2xl font-display font-black text-orange">{num}</div>
                                     <div className="text-cream/40 text-xs mt-0.5">{label}</div>
                                 </div>
@@ -315,7 +328,8 @@ export default function TestimonialsPage() {
                 <div className="container mx-auto px-6">
                     <AnimatedSection className="text-center mb-14">
                         <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange/30 bg-orange/8 mb-4">
-                            <span className="text-orange text-xs font-semibold uppercase tracking-widest">📊 Proven Impact</span>
+                            <BarChart className="w-4 h-4 text-orange" />
+                            <span className="text-orange text-xs font-semibold uppercase tracking-widest">Proven Impact</span>
                         </motion.div>
                         <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-display font-bold text-primary">
                             Our Client Transformations
@@ -332,15 +346,15 @@ export default function TestimonialsPage() {
                                 <motion.div
                                     variants={fadeUp}
                                     className={`rounded-3xl overflow-hidden border transition-all duration-300 hover:shadow-xl hover:shadow-orange/8 ${cs.accent === 'primary'
-                                            ? 'bg-primary border-primary/20'
-                                            : 'bg-white border-primary/8'
+                                        ? 'bg-primary border-primary/20'
+                                        : 'bg-white border-primary/8'
                                         }`}
                                 >
                                     {/* Header bar */}
                                     <div className={`flex flex-wrap items-center justify-between gap-3 px-8 py-4 border-b ${cs.accent === 'primary' ? 'border-white/10' : 'border-primary/6'
                                         }`}>
                                         <div className="flex items-center gap-3">
-                                            <span className="text-2xl">{industryEmoji[cs.industry] || '📋'}</span>
+                                            <span>{industryEmoji[cs.industry] || <Building className="w-6 h-6 text-orange" />}</span>
                                             <div>
                                                 <span className={`text-xs font-semibold uppercase tracking-widest ${cs.accent === 'primary' ? 'text-orange' : 'text-orange'
                                                     }`}>
@@ -354,16 +368,16 @@ export default function TestimonialsPage() {
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${cs.accent === 'primary'
-                                                    ? 'bg-white/10 text-cream/80 border-white/15'
-                                                    : 'bg-primary/5 text-primary/60 border-primary/10'
+                                                ? 'bg-white/10 text-cream/80 border-white/15'
+                                                : 'bg-primary/5 text-primary/60 border-primary/10'
                                                 }`}>
                                                 {cs.industry}
                                             </span>
-                                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${cs.accent === 'primary'
-                                                    ? 'bg-orange/15 text-orange border border-orange/20'
-                                                    : 'bg-orange/10 text-orange border border-orange/15'
+                                            <span className={`px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1.5 ${cs.accent === 'primary'
+                                                ? 'bg-orange/15 text-orange border border-orange/20'
+                                                : 'bg-orange/10 text-orange border border-orange/15'
                                                 }`}>
-                                                📍 {cs.region}
+                                                <MapPin className="w-3 h-3" /> {cs.region}
                                             </span>
                                         </div>
                                     </div>
@@ -418,7 +432,7 @@ export default function TestimonialsPage() {
                                                 {cs.results.map((r, i) => (
                                                     <li key={i} className={`text-sm leading-relaxed flex items-start gap-2 ${cs.accent === 'primary' ? 'text-cream/80' : 'text-primary/80'
                                                         }`}>
-                                                        <span className="text-green-500 shrink-0">✅</span>
+                                                        <span className="text-green-500 shrink-0"><CheckCircle2 className="w-4 h-4" /></span>
                                                         <span className="font-medium">{r}</span>
                                                     </li>
                                                 ))}
@@ -446,7 +460,7 @@ export default function TestimonialsPage() {
                 <div className="container mx-auto px-6 relative z-10">
                     <AnimatedSection>
                         <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto">
-                            <div className="text-5xl mb-5">🚀</div>
+                            <Rocket className="w-12 h-12 text-orange mx-auto mb-5" />
                             <h2 className="text-3xl lg:text-5xl font-display font-bold text-cream leading-tight">
                                 Ready to Write Your
                                 <span className="text-orange block mt-1">Success Story?</span>

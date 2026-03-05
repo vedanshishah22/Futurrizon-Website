@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import ContactAPIView, NewsletterAPIView, APIRootView
+from .views import contact_form, NewsletterAPIView, APIRootView
 
 urlpatterns = [
     path('', APIRootView.as_view(), name='api-root'),
-    path('contact/', ContactAPIView.as_view(), name='contact'),
+    path('contact/', contact_form, name='contact'),
     path('newsletter/', NewsletterAPIView.as_view(), name='newsletter'),
 ]
