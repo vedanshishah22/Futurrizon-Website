@@ -16,9 +16,9 @@ const cardData = [
     { icon: <Zap size={24} />, title: "AI Automation", desc: "Smart workflows that learn and adapt.", color: "text-[#E76426]", bg: "bg-orange-500/10" },
     { icon: <Shield size={24} />, title: "Security", desc: "Bank-grade protection for all assets.", color: "text-blue-400", bg: "bg-blue-500/10" },
     { icon: <BarChart3 size={24} />, title: "Analytics", desc: "Data-driven decisions made easy.", color: "text-green-400", bg: "bg-green-500/10" },
-    { icon: <Globe size={24} />, title: "Global Cloud", desc: "Infrastructure at your fingertips.", color: "text-purple-400", bg: "bg-purple-500/10" },
-    { icon: <Cpu size={24} />, title: "Edge Computing", desc: "Processing data where it matters.", color: "text-cyan-400", bg: "bg-cyan-500/10" },
-    { icon: <Database size={24} />, title: "Data Core", desc: "Unified enterprise data layers.", color: "text-red-400", bg: "bg-red-500/10" },
+    { icon: <Globe size={24} />, title: "Microsoft 365", desc: "Unified productivity for your business.", color: "text-purple-400", bg: "bg-purple-500/10" },
+    { icon: <Cpu size={24} />, title: "WorkflowGen", desc: "Automate processes end-to-end.", color: "text-cyan-400", bg: "bg-cyan-500/10" },
+    { icon: <Database size={24} />, title: "Power Platform", desc: "Build apps, bots & workflows fast.", color: "text-red-400", bg: "bg-red-500/10" },
 ];
 
 const ScrollingColumn = ({ items, direction = "up" }) => {

@@ -9,7 +9,6 @@ import {
     ArrowLeft,
     Share2,
     Bookmark,
-    Twitter,
     Linkedin,
     Mail,
     ChevronRight
@@ -119,9 +118,6 @@ const BlogDetail = () => {
                                 <Share2 className="w-5 h-5" />
                             </button>
                             <div className="w-px h-12 bg-navy/10" />
-                            <a href="#" className="w-10 h-10 rounded-full bg-white border border-navy/5 flex items-center justify-center text-navy/40 hover:text-[#1DA1F2] transition-colors shadow-sm">
-                                <Twitter className="w-4 h-4" />
-                            </a>
                             <a href="#" className="w-10 h-10 rounded-full bg-white border border-navy/5 flex items-center justify-center text-navy/40 hover:text-[#0A66C2] transition-colors shadow-sm">
                                 <Linkedin className="w-4 h-4" />
                             </a>

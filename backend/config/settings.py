@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
     'core',
 ]
@@ -137,3 +138,14 @@ EMAIL_HOST_USER = 'vedanshi.shah@futurrizoninterns.onmicrosoft.com'
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# Media Files Configuration
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+}

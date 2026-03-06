@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+﻿import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -124,6 +124,17 @@ const values = [
 /* ─── Page ──────────────────────────────────────────── */
 export default function CareerPage() {
     const [expandedJob, setExpandedJob] = useState(null);
+    const [apiJobs, setApiJobs] = useState([]);
+    const [jobsLoading, setJobsLoading] = useState(true);
+
+    useEffect(() => {
+        fetch('http://127.0.0.1:8000/api/jobs/')
+            .then(res => res.json())
+            .then(data => { setApiJobs(data); setJobsLoading(false); })
+            .catch(() => setJobsLoading(false));
+    }, []);
+
+    const displayJobs = apiJobs.length > 0 ? apiJobs : openings;
 
     return (
         <div className="overflow-x-hidden">
@@ -286,8 +297,26 @@ export default function CareerPage() {
                     </AnimatedSection>
 
                     <div className="space-y-4 max-w-4xl mx-auto">
-                        {openings.map((job, i) => {
+                        {jobsLoading ? (
+                            <div className="flex justify-center py-20">
+                                <div className="w-8 h-8 border-4 border-orange/20 border-t-orange rounded-full animate-spin" />
+                            </div>
+                        ) : displayJobs.map((job, i) => {
                             const isExpanded = expandedJob === i;
+                            // Normalise API shape vs static shape
+                            const jobTitle = job.title;
+                            const jobLocation = job.location;
+                            const jobType = job.employment_type || job.type;
+                            const jobDesc = job.description || job.desc;
+                            const jobRequirements = job.requirements;
+                            const jobExperience = job.experience;
+                            const jobSalary = job.salary_range;
+                            const jobDept = job.department || job.dept;
+                            // skills can be an array (static) or comma-separated string (API)
+                            const rawSkills = job.skills;
+                            const jobSkills = rawSkills
+                                ? (Array.isArray(rawSkills) ? rawSkills : rawSkills.split(',').map(s => s.trim()).filter(Boolean))
+                                : null;
                             return (
                                 <AnimatedSection key={i}>
                                     <motion.div
@@ -304,16 +333,16 @@ export default function CareerPage() {
                                         >
                                             <div className="flex items-center gap-4 flex-wrap">
                                                 <div>
-                                                    <h3 className="font-display font-bold text-primary text-lg">{job.title}</h3>
+                                                    <h3 className="font-display font-bold text-primary text-lg">{jobTitle}</h3>
                                                     <div className="flex flex-wrap items-center gap-2 mt-1.5">
-                                                        <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold border ${deptColors[job.dept]}`}>
-                                                            {job.dept}
-                                                        </span>
-                                                        <span className="text-primary/40 text-xs flex items-center gap-1"><MapPin className="w-3 h-3" /> {job.location}</span>
+                                                        {jobDept && (
+                                                            <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold border ${deptColors[jobDept] || 'bg-orange/10 text-orange border-orange/15'}`}>
+                                                                {jobDept}
+                                                            </span>
+                                                        )}
+                                                        <span className="text-primary/40 text-xs flex items-center gap-1"><MapPin className="w-3 h-3" /> {jobLocation}</span>
                                                         <span className="text-primary/40 text-xs">•</span>
-                                                        <span className="text-primary/40 text-xs flex items-center gap-1"><Clock className="w-3 h-3" /> {job.type}</span>
-                                                        <span className="text-primary/40 text-xs">•</span>
-                                                        <span className="text-primary/40 text-xs flex items-center gap-1"><Calendar className="w-3 h-3" /> {job.experience}</span>
+                                                        <span className="text-primary/40 text-xs flex items-center gap-1"><Clock className="w-3 h-3" /> {jobType}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -340,20 +369,40 @@ export default function CareerPage() {
                                                 >
                                                     <div className="px-6 pb-6 border-t border-primary/6 pt-5">
                                                         <p className="text-primary/60 text-sm leading-relaxed mb-5">
-                                                            {job.desc}
+                                                            {jobDesc}
                                                         </p>
 
-                                                        {/* Skills */}
-                                                        <div className="mb-5">
-                                                            <p className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-2">Required Skills</p>
-                                                            <div className="flex flex-wrap gap-2">
-                                                                {job.skills.map(s => (
-                                                                    <span key={s} className="px-3 py-1 rounded-full bg-primary/5 text-primary/60 text-xs font-medium border border-primary/8">
-                                                                        {s}
-                                                                    </span>
-                                                                ))}
+                                                        {/* Experience + Salary badges */}
+                                                        {(jobExperience || jobSalary) && (
+                                                            <div className="flex flex-wrap gap-2 mb-5">
+                                                                {jobExperience && (
+                                                                    <span className="px-3 py-1 rounded-full bg-primary/5 text-primary/60 text-xs font-semibold border border-primary/8">⏱ {jobExperience}</span>
+                                                                )}
+                                                                {jobSalary && (
+                                                                    <span className="px-3 py-1 rounded-full bg-orange/8 text-orange text-xs font-semibold border border-orange/15">💰 {jobSalary}</span>
+                                                                )}
                                                             </div>
-                                                        </div>
+                                                        )}
+                                                        {/* Skills */}
+                                                        {jobSkills && jobSkills.length > 0 && (
+                                                            <div className="mb-5">
+                                                                <p className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-2">Required Skills</p>
+                                                                <div className="flex flex-wrap gap-2">
+                                                                    {jobSkills.map(s => (
+                                                                        <span key={s} className="px-3 py-1 rounded-full bg-primary/5 text-primary/60 text-xs font-medium border border-primary/8">
+                                                                            {s}
+                                                                        </span>
+                                                                    ))}
+                                                                </div>
+                                                            </div>
+                                                        )}
+                                                        {/* Requirements */}
+                                                        {jobRequirements && (
+                                                            <div className="mb-5">
+                                                                <p className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-2">Requirements</p>
+                                                                <p className="text-primary/60 text-sm leading-relaxed whitespace-pre-line">{jobRequirements}</p>
+                                                            </div>
+                                                        )}
 
                                                         {/* Apply button */}
                                                         <a
@@ -476,3 +525,4 @@ export default function CareerPage() {
         </div>
     );
 }
+

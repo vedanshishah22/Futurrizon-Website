@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+﻿import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -177,8 +177,31 @@ const categoryColors = {
 export default function BlogsPage() {
     const [activeCategory, setActiveCategory] = useState('All');
     const [expandedBlog, setExpandedBlog] = useState(null);
+    const [apiBlogs, setApiBlogs] = useState([]);
 
-    const filtered = activeCategory === 'All' ? blogs : blogs.filter(b => b.category === activeCategory);
+    useEffect(() => {
+        fetch('http://127.0.0.1:8000/api/blogs/')
+            .then(res => res.json())
+            .then(data => setApiBlogs(data))
+            .catch(() => { });
+    }, []);
+
+    // Merge API blogs (they appear first) with static blogs
+    const apiBlogsMapped = apiBlogs.map((b, i) => ({
+        id: `api-${b.id}`,
+        category: 'General',
+        title: b.title,
+        excerpt: b.content ? b.content.substring(0, 200) + '...' : '',
+        readTime: `${Math.max(1, Math.ceil((b.content || '').split(' ').length / 200))} min read`,
+        date: b.publish_date,
+        image: b.image,
+        emoji: <FileText className="w-8 h-8 text-orange" />,
+        content: [b.content],
+        author: b.author,
+    }));
+
+    const allBlogs = [...apiBlogsMapped, ...blogs];
+    const filtered = activeCategory === 'All' ? allBlogs : allBlogs.filter(b => b.category === activeCategory);
 
     return (
         <div className="overflow-x-hidden">
@@ -262,8 +285,13 @@ export default function BlogsPage() {
                                             <span className="text-primary/30 text-xs">{blog.date}</span>
                                         </div>
 
-                                        {/* Icon */}
-                                        <div className="mb-3">{blog.emoji}</div>
+                                        {/* Icon or Image */}
+                                        <div className="mb-3">
+                                            {blog.image ? (
+                                                <div className="w-full h-36 rounded-xl overflow-hidden -mx-0 mb-1">
+                                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover" />
+                                                </div>
+                                            ) : blog.emoji}</div>
 
                                         {/* Title */}
                                         <h3 className="font-display font-bold text-primary text-base leading-snug mb-3 group-hover:text-orange transition-colors">
@@ -355,3 +383,4 @@ export default function BlogsPage() {
         </div>
     );
 }
+

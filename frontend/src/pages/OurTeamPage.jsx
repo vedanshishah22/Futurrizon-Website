@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Users, Trophy, ClipboardList, Briefcase, Building2, Zap, BarChart, Cloud, Bot, Handshake, Palette, Target, Lightbulb, TrendingUp, Lock, Globe, Rocket } from 'lucide-react';
 import bgOurTeam from '../assets/bg_OurTeam.jpg';
@@ -54,6 +54,15 @@ const values = [
 ];
 
 export default function OurTeamPage() {
+    const [apiTeam, setApiTeam] = useState([]);
+
+    useEffect(() => {
+        fetch('http://127.0.0.1:8000/api/team/')
+            .then(res => res.json())
+            .then(data => setApiTeam(data))
+            .catch(() => { });
+    }, []);
+
     return (
         <div className="overflow-x-hidden">
 
@@ -274,6 +283,53 @@ export default function OurTeamPage() {
                     </div>
                 </div>
             </section>
+
+            {/* ── DYNAMIC TEAM MEMBERS ───────────────────────── */}
+            {apiTeam.length > 0 && (
+                <section className="bg-cream py-20">
+                    <div className="container mx-auto px-6">
+                        <AnimatedSection className="text-center mb-14">
+                            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange/30 bg-orange/8 mb-4">
+                                <Users className="w-3.5 h-3.5 text-orange" />
+                                <span className="text-orange text-xs font-semibold uppercase tracking-widest">Our People</span>
+                            </motion.div>
+                            <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-display font-bold text-primary">
+                                Meet the Team
+                            </motion.h2>
+                        </AnimatedSection>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                            {apiTeam.map((member) => (
+                                <AnimatedSection key={member.id}>
+                                    <motion.div
+                                        variants={fadeUp}
+                                        whileHover={{ y: -4, boxShadow: '0 16px 32px -8px rgba(255,95,0,0.1)' }}
+                                        className="bg-white rounded-3xl p-6 border border-primary/6 group hover:border-orange/20 transition-all duration-300 h-full flex flex-col text-center items-center"
+                                    >
+                                        <div className="w-20 h-20 rounded-2xl overflow-hidden bg-orange/10 border border-orange/15 mb-4 flex items-center justify-center">
+                                            {member.photo ? (
+                                                <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+                                            ) : (
+                                                <Users className="w-8 h-8 text-orange/50" strokeWidth={1.5} />
+                                            )}
+                                        </div>
+                                        <h3 className="font-display font-bold text-primary text-lg group-hover:text-orange transition-colors">{member.name}</h3>
+                                        <p className="text-orange text-sm font-semibold mt-0.5 mb-3">{member.role}</p>
+                                        <p className="text-primary/50 text-sm leading-relaxed flex-1">{member.bio}</p>
+                                        {member.linkedin && (
+                                            <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
+                                                className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-orange/8 text-orange text-sm font-semibold hover:bg-orange hover:text-white transition-all duration-300">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+                                                LinkedIn
+                                            </a>
+                                        )}
+                                    </motion.div>
+                                </AnimatedSection>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {/* ── VALUES ────────────────────────────────────── */}
             <section className="bg-cream py-20">

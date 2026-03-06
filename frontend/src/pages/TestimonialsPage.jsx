@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+﻿import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import {
     Building2, Globe, TrendingUp, BarChart, Rocket,
@@ -335,7 +335,7 @@ export default function TestimonialsPage() {
                             Our Client Transformations
                         </motion.h2>
                         <motion.p variants={fadeUp} className="mt-3 text-primary/50 text-base max-w-xl mx-auto">
-                            Each case study represents a real challenge solved — from legacy migrations to AI-powered automation.
+                            Each case study represents a real challenge solved, from legacy migrations to AI-powered automation.
                         </motion.p>
                     </AnimatedSection>
 
@@ -485,3 +485,4 @@ export default function TestimonialsPage() {
         </div>
     );
 }
+

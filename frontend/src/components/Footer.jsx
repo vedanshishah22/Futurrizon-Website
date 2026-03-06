@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Instagram, Mail, MapPin } from 'lucide-react';
+import { Linkedin, Instagram, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import footerLogo from '../assets/futurrizon_logo.png';
 import bgFooter from '../assets/footer.png';
@@ -37,9 +37,6 @@ const Footer = () => {
                         <div className="flex space-x-4">
                             <a href="https://www.linkedin.com/company/futurrizon-technologies/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-cream/10 flex items-center justify-center hover:bg-orange transition-colors text-cream">
                                 <Linkedin size={18} />
-                            </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-cream/10 flex items-center justify-center hover:bg-orange transition-colors text-cream">
-                                <Twitter size={18} />
                             </a>
                             <a href="https://www.instagram.com/futurrizon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-cream/10 flex items-center justify-center hover:bg-orange transition-colors text-cream">
                                 <Instagram size={18} />

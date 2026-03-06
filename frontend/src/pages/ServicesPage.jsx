@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+﻿import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Zap, Brain, Users, Rocket } from 'lucide-react';
@@ -324,18 +324,18 @@ const services = [
         id: 'sharepoint',
         icon: SharePointIcon,
         title: 'SharePoint Solutions',
-        subtitle: 'Your Single Source of Truth — For Documents, Workflows & Knowledge',
+        subtitle: 'Your Single Source of Truth, For Documents, Workflows & Knowledge',
         problems: [
             'Hours wasted searching files across emails & drives',
-            'Team using outdated file versions → costly errors',
+            'Team using outdated file versions, causing costly errors',
             'Compliance risks from insecure file sharing',
-            'Information locked in silos, poor knowledge-sharing',
-            'Email-based approvals with zero transparency',
+            'Information locked in silos, poor knowledge sharing',
+            'Email based approvals with zero transparency',
         ],
         solutions: [
             'Centralized file repositories with version control & metadata',
             'Role-based access for security & compliance',
-            'Smart enterprise search — find any file in seconds',
+            'Smart enterprise search, find any file in seconds',
             'Automated document workflows & digital approval chains',
             'Personalized intranet portals reflecting your brand',
         ],
@@ -349,7 +349,7 @@ const services = [
         id: 'power-platform',
         icon: PowerPlatformIcon,
         title: 'Power Platform',
-        subtitle: 'Apps, Automation & Intelligence — Built Without Heavy IT Dependence',
+        subtitle: 'Apps, Automation & Intelligence, Built Without Heavy IT Dependence',
         problems: [
             'Manual data entry slows teams down daily',
             'Approvals stuck in emails with zero visibility',
@@ -358,9 +358,9 @@ const services = [
             'Heavy IT overhead for small workflow changes',
         ],
         solutions: [
-            'Power Apps — custom mobile & web business applications',
-            'Power Automate — zero-touch workflow automation',
-            'Power BI — real-time dashboards & data insights',
+            'Power Apps: custom mobile & web business applications',
+            'Power Automate: zero-touch workflow automation',
+            'Power BI: real-time dashboards & data insights',
             'Copilot & Virtual Agents for AI-driven support',
             'Seamless integration with M365, ERP & CRM systems',
         ],
@@ -378,7 +378,7 @@ const services = [
         problems: [
             'Data scattered across email, OneDrive & devices',
             'Low adoption of tools you\'re already paying for',
-            'Traditional workflows — slow, error-prone processes',
+            'Traditional workflows, slow, error-prone processes',
             'Security risks from uncontrolled file sharing',
             'No real insights into productivity or collaboration',
         ],
@@ -389,7 +389,7 @@ const services = [
             'Copilot + analytics for productivity intelligence',
             'User adoption training to increase daily usage & ROI',
         ],
-        outcome: 'M365 becomes a unified digital workplace — not just a set of tools.',
+        outcome: 'M365 becomes a unified digital workplace, not just a set of tools.',
         description: 'We help organizations fully leverage their Microsoft 365 investment by aligning tools, governance, and user adoption strategies. Our optimization approach eliminates redundancy, improves information flow, and enhances productivity across teams.',
         image: svc3,
         imageRight: true,
@@ -399,13 +399,13 @@ const services = [
         id: 'ai-gpt',
         icon: AIIcon,
         title: 'AI & GPT Integrations',
-        subtitle: 'Embed Intelligence Where Work Happens — Inside Microsoft 365',
+        subtitle: 'Embed Intelligence Where Work Happens, Inside Microsoft 365',
         problems: [
             'Productivity lost in emails, notes & manual tasks',
             'Employees can\'t leverage the full power of their tools',
             'Leaders lack predictive insights for decision-making',
             'Repetitive admin work consumes skilled talent',
-            'Information overload → slow response & execution',
+            'Information overload leading to slow response and execution',
         ],
         solutions: [
             'Microsoft Copilot for meetings, emails & task automation',
@@ -415,7 +415,7 @@ const services = [
             'Chatbots & virtual agents for 24/7 support',
         ],
         outcome: 'Shift from manual effort to intelligent assistance.',
-        description: 'We embed intelligent automation and generative AI capabilities directly into your existing workflows. Our solutions enhance human productivity by automating repetitive tasks and surfacing relevant insights instantly — ensuring your workforce operates with greater speed and precision.',
+        description: 'We embed intelligent automation and generative AI capabilities directly into your existing workflows. Our solutions enhance human productivity by automating repetitive tasks and surfacing relevant insights instantly, ensuring your workforce operates with greater speed and precision.',
         image: svc4,
         imageRight: false,
         dark: true,
@@ -424,12 +424,12 @@ const services = [
         id: 'migration',
         icon: MigrationIcon,
         title: 'Migration & Integration Services',
-        subtitle: 'Seamless Transitions to Modern Microsoft Platforms — Zero Disruption',
+        subtitle: 'Seamless Transitions to Modern Microsoft Platforms, Zero Disruption',
         problems: [
             'Legacy systems slow down operations & growth',
             'Data migration risks: loss, downtime & corruption',
-            'Tools don\'t talk to each other → data silos',
-            'Poor user experience after migration → low adoption',
+            'Tools don\'t talk to each other, creating data silos',
+            'Poor user experience after migration, leading to low adoption',
             'Compliance & security challenges during transition',
         ],
         solutions: [
@@ -439,7 +439,7 @@ const services = [
             'Secure, zero-downtime migration strategy',
             'Post-migration training & change management',
         ],
-        outcome: 'Your business upgrades without halt — seamless, secure & scalable.',
+        outcome: 'Your business upgrades without halt, seamless, secure & scalable.',
         description: 'We execute structured, secure migration strategies that modernize systems without disrupting business operations. Every migration is supported by governance planning and user enablement to drive long-term adoption and strengthen security posture.',
         image: svc5,
         imageRight: true,
@@ -449,7 +449,7 @@ const services = [
         id: 'support',
         icon: SupportIcon,
         title: 'Support & Managed Services',
-        subtitle: 'Your Platforms Stay Fast, Secure & Fully Utilized — Every Single Day',
+        subtitle: 'Your Platforms Stay Fast, Secure & Fully Utilized, Every Single Day',
         problems: [
             'Slow IT response causing operational delays',
             'Frequent system issues hurting productivity',
@@ -464,8 +464,8 @@ const services = [
             'Security patching & compliance updates',
             'Dedicated support team with SLA-based assistance',
         ],
-        outcome: 'We keep your systems fast, secure & fully utilized — every single day.',
-        description: 'We provide proactive platform management to ensure your systems remain optimized, secure, and aligned with evolving business needs. Our support model emphasizes responsiveness, transparency, and measurable service standards — so your teams can focus on growth.',
+        outcome: 'We keep your systems fast, secure & fully utilized, every single day.',
+        description: 'We provide proactive platform management to ensure your systems remain optimized, secure, and aligned with evolving business needs. Our support model emphasizes responsiveness, transparency, and measurable service standards. So your teams can focus on growth.',
         image: svc6,
         imageRight: false,
         dark: true,
@@ -474,11 +474,11 @@ const services = [
         id: 'azure',
         icon: AzureIcon,
         title: 'Azure Cloud Services',
-        subtitle: 'Scalable, Secure Cloud Infrastructure — Your Intelligent Business Backbone',
+        subtitle: 'Scalable, Secure Cloud Infrastructure, Your Intelligent Business Backbone',
         problems: [
             'Expensive, hard-to-scale on-premises infrastructure',
             'Security & compliance concerns restricting growth',
-            'No disaster recovery → business continuity at risk',
+            'No disaster recovery, putting business continuity at risk',
             'Performance bottlenecks as data volumes increase',
             'Limited AI, analytics & modern app capability',
         ],
@@ -489,7 +489,7 @@ const services = [
             'AI, ML & analytics for predictive decision-making',
             'Backup, restoration & disaster recovery assurance',
         ],
-        outcome: 'Azure becomes your intelligent cloud backbone — secure, stable & ready to scale.',
+        outcome: 'Azure becomes your intelligent cloud backbone, secure, stable & ready to scale.',
         description: 'We architect secure, scalable Azure environments tailored to your performance, compliance, and growth objectives. From infrastructure modernization to advanced analytics capabilities, we build foundations that support innovation and long-term scalability.',
         image: svc7,
         imageRight: true,
@@ -499,12 +499,12 @@ const services = [
         id: 'analytics',
         icon: AnalyticsIcon,
         title: 'Advanced Data Analytics & Reporting',
-        subtitle: 'Smarter, Faster, Confident Decisions — Powered by Insights You Can Trust',
+        subtitle: 'Smarter, Faster, Confident Decisions Powered by Insights You Can Trust',
         problems: [
             'Data scattered across multiple disconnected systems',
             'Static reports with no real-time decision intelligence',
             'Leaders relying on guesswork instead of data',
-            'IT-dependent reporting → delays & bottlenecks',
+            'IT-dependent reporting causing delays and bottlenecks',
             'No visibility into key business performance drivers',
         ],
         solutions: [
@@ -524,11 +524,11 @@ const services = [
         id: 'financial',
         icon: FinanceIcon,
         title: 'Financial & Operational Modeling',
-        subtitle: 'Move From Reactive to Predictive — Improve Business Performance End-to-End',
+        subtitle: 'Move From Reactive to Predictive, Improve Business Performance End-to-End',
         problems: [
-            'Inaccurate budgeting & forecasts → financial risk',
+            'Inaccurate budgeting and forecasts creating financial risk',
             'No real-time visibility into revenue, cost & profitability',
-            'Manual Excel models → error-prone & time-consuming',
+            'Manual Excel models that are error-prone and time-consuming',
             'Operational planning based on assumptions',
             'Leadership decisions without measurable impact',
         ],
@@ -539,7 +539,7 @@ const services = [
             'Performance dashboards for leadership visibility',
             'Data-driven planning frameworks for growth acceleration',
         ],
-        outcome: 'Move from reactive to predictive — improve performance end-to-end.',
+        outcome: 'Move from reactive to predictive, improve performance end-to-end.',
         description: 'We design data-driven financial and operational frameworks that provide transparency across revenue, cost, and performance metrics. By replacing static spreadsheets with structured systems, we reduce risk and give leadership the visibility required for proactive decisions.',
         image: svc9,
         imageRight: true,
@@ -610,7 +610,7 @@ export default function ServicesPage() {
                             transition={{ duration: 0.6, delay: 0.3 }}
                             className="mt-6 text-cream/60 text-lg max-w-2xl leading-relaxed"
                         >
-                            We don't just implement technology — we engineer connected digital ecosystems that make your people faster, your decisions smarter, and your business future-ready.
+                            we don't just implement technology. We engineer connected digital ecosystems that make your people faster, your decisions smarter, and your business future-ready.
                         </motion.p>
 
                         {/* Scroll-to chips */}
@@ -689,7 +689,7 @@ export default function ServicesPage() {
                                 {
                                     icon: '🔧',
                                     label: 'Disconnected Tools',
-                                    desc: 'Teams juggle 10+ apps that never talk to each other — creating friction, duplication, and wasted effort every single day.',
+                                    desc: 'Teams juggle 10+ apps that never talk to each other, creating friction, duplication, and wasted effort every single day.',
                                     step: '01',
                                 },
                                 {
@@ -701,13 +701,13 @@ export default function ServicesPage() {
                                 {
                                     icon: '📂',
                                     label: 'Disconnected Data',
-                                    desc: 'Critical business data is scattered across emails, drives, and spreadsheets — impossible to trust, impossible to act on.',
+                                    desc: 'Critical business data is scattered across emails, drives, and spreadsheets. It is impossible to trust and impossible to act on.',
                                     step: '03',
                                 },
                                 {
                                     icon: '📉',
                                     label: 'Disconnected Outcomes',
-                                    desc: 'When tools, teams, and data don\'t align, business outcomes suffer — missed deadlines, poor decisions, and stalled growth.',
+                                    desc: 'When tools, teams, and data don\'t align, business outcomes suffer: missed deadlines, poor decisions, and stalled growth.',
                                     step: '04',
                                 },
                             ].map(({ icon, label, desc, step }, i) => (
@@ -763,7 +763,7 @@ export default function ServicesPage() {
                                             emoji: '📊',
                                             stat: '60%',
                                             title: 'Bad Decisions',
-                                            desc: 'Of business decisions are made on stale or incomplete data — leading to costly mistakes.',
+                                            desc: 'Of business decisions are made on stale or incomplete data, leading to costly mistakes.',
                                         },
                                         {
                                             emoji: '💰',
@@ -897,3 +897,5 @@ export default function ServicesPage() {
         </div>
     );
 }
+
+

@@ -1,7 +1,12 @@
-from rest_framework import status
+from rest_framework import status, viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import LeadSerializer, NewsletterSubscriberSerializer
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
+from django.contrib.auth import authenticate
+from rest_framework.authtoken.models import Token
+from .models import Lead, NewsletterSubscriber, Blog, Job, TeamMember
+from .serializers import LeadSerializer, NewsletterSubscriberSerializer, BlogSerializer, JobSerializer, TeamMemberSerializer
 
 from django.core.mail import EmailMessage
 from django.conf import settings
@@ -58,6 +63,50 @@ class NewsletterAPIView(APIView):
             serializer.save()
             return Response({"message": "Subscribed successfully!"}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def admin_login(request):
+    username = request.data.get("username")
+    password = request.data.get("password")
+    user = authenticate(username=username, password=password)
+    if user is not None and user.is_staff:
+        token, _ = Token.objects.get_or_create(user=user)
+        return Response({"token": token.key, "message": "Login successful"})
+    return Response({"error": "Invalid credentials or not an admin"}, status=status.HTTP_401_UNAUTHORIZED)
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def admin_logout(request):
+    request.user.auth_token.delete()
+    return Response({"message": "Logout successful"})
+
+class BlogViewSet(viewsets.ModelViewSet):
+    queryset = Blog.objects.all().order_by('-publish_date')
+    serializer_class = BlogSerializer
+
+    def get_permissions(self):
+        if self.request.method in ['GET']:
+            return [AllowAny()]
+        return [IsAuthenticated(), IsAdminUser()]
+
+class JobViewSet(viewsets.ModelViewSet):
+    queryset = Job.objects.all().order_by('created_at')
+    serializer_class = JobSerializer
+
+    def get_permissions(self):
+        if self.request.method in ['GET']:
+            return [AllowAny()]
+        return [IsAuthenticated(), IsAdminUser()]
+
+class TeamMemberViewSet(viewsets.ModelViewSet):
+    queryset = TeamMember.objects.all().order_by('created_at')
+    serializer_class = TeamMemberSerializer
+
+    def get_permissions(self):
+        if self.request.method in ['GET']:
+            return [AllowAny()]
+        return [IsAuthenticated(), IsAdminUser()]
 
 class APIRootView(APIView):
     def get(self, request):
