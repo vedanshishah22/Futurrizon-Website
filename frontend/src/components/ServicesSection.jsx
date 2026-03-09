@@ -79,7 +79,7 @@ const PortfolioCard = ({ svc, index, scrollX, metrics }) => {
                         {svc.title}
                     </h3>
                     <p className="text-[#002379]/60 text-xs md:text-sm leading-relaxed mb-auto line-clamp-2 lg:line-clamp-3">
-                        High-performance enterprise solution tailored for digital acceleration and operational excellence.
+                        {svc.description}
                     </p>
                     <div className="mt-4 md:mt-6 flex items-center text-[#FF5F00] font-bold text-xs md:text-sm tracking-wide">
                         View project

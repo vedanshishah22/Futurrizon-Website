@@ -1,4 +1,4 @@
-﻿import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -214,8 +214,7 @@ export default function BlogsPage() {
                         backgroundSize: '50px 50px',
                     }}
                 />
-                <div className="absolute top-10 -left-28 w-[500px] h-[500px] bg-orange/12 rounded-full blur-3xl pointer-events-none" />
-                <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange/8 rounded-full blur-3xl pointer-events-none" />
+
 
                 <div className="container mx-auto px-6 pt-32 pb-24 relative z-10">
                     <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-3xl">
@@ -354,7 +353,7 @@ export default function BlogsPage() {
                         backgroundSize: '36px 36px',
                     }}
                 />
-                <div className="absolute top-0 left-1/4 w-80 h-80 bg-orange/10 rounded-full blur-3xl pointer-events-none" />
+
                 <div className="container mx-auto px-6 relative z-10">
                     <AnimatedSection>
                         <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto">

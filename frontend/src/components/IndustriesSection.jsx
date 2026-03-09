@@ -51,7 +51,7 @@ const industries = [
 const IndustriesSection = () => {
     return (
         <section id="industries" className="py-24 bg-primary relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-orange/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">

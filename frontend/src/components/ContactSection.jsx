@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Send, CheckCircle, Loader2 } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle, Loader2, ArrowRight } from 'lucide-react';
 
 const ContactSection = () => {
     const [formData, setFormData] = useState({
@@ -78,8 +78,8 @@ const ContactSection = () => {
                                 <div>
                                     <h4 className="text-xl font-bold mb-2 text-cream">Visit Us</h4>
                                     <p className="text-cream/60">
-                                        SivantaOne Business Park, B-1213/1214, Ashram Rd,
-                                        opp. Nalli Silk Sarees, Pritam Nagar, Paldi,
+                                        B1213 & B1214, Sivanta one Business Park, Ashram Rd,<br />
+                                        opp. Nalli Silk Sarees, Pritam Nagar, Paldi,<br />
                                         Ahmedabad, Gujarat 380006
                                     </p>
                                 </div>
@@ -93,6 +93,20 @@ const ContactSection = () => {
                                     <p className="text-cream/60">info@futurrizon.com</p>
                                     <p className="text-cream/60">hr@futurrizon.com</p>
                                 </div>
+                            </div>
+                            
+                            {/* Map Location */}
+                            <div className="mt-8 rounded-2xl overflow-hidden border border-cream/10 h-64 w-full shadow-lg shadow-black/20">
+                                <iframe 
+                                    title="Futurrizon Office Location"
+                                    src="https://maps.google.com/maps?width=100%25&amp;height=100%25&amp;hl=en&amp;q=FUTURRIZON%20TECHNOLOGIES%20PVT%20LTD,%20Ahmedabad&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                                    width="100%" 
+                                    height="100%" 
+                                    style={{ border: 0 }} 
+                                    allowFullScreen="" 
+                                    loading="lazy" 
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                ></iframe>
                             </div>
 
                         </div>
@@ -168,22 +182,17 @@ const ContactSection = () => {
                                     ></textarea>
                                 </div>
 
-                                <motion.button
+                                <motion.a
+                                    href="https://calendly.com/futurrizon/30min?month=2026-03"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
-                                    type="submit"
-                                    disabled={status === 'loading'}
-                                    className="w-full py-4 rounded-xl bg-orange text-white font-bold text-lg shadow-md hover:bg-orange/90 transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                                    className="w-full py-4 rounded-xl bg-orange text-white font-bold text-lg shadow-md hover:bg-orange/90 transition-all flex items-center justify-center gap-2 mt-4"
                                 >
-                                    {status === 'loading' ? (
-                                        <Loader2 size={24} className="animate-spin" />
-                                    ) : (
-                                        <>
-                                            Send Message
-                                            <Send size={20} />
-                                        </>
-                                    )}
-                                </motion.button>
+                                    Get a Free Consultation
+                                    <ArrowRight size={20} />
+                                </motion.a>
                             </form>
                         )}
                     </div>

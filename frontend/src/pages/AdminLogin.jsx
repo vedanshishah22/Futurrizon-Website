@@ -41,8 +41,7 @@ export default function AdminLogin() {
     return (
         <div className="min-h-screen bg-navy flex items-center justify-center px-6 relative overflow-hidden">
             {/* Background Orbs */}
-            <div className="absolute top-0 -left-20 w-96 h-96 bg-orange/10 rounded-full blur-[120px]" />
-            <div className="absolute bottom-0 -right-20 w-96 h-96 bg-orange/5 rounded-full blur-[100px]" />
+
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

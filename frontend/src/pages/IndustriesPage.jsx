@@ -294,8 +294,7 @@ export default function IndustriesPage() {
                         backgroundSize: '36px 36px',
                     }}
                 />
-                <div className="absolute top-10 -left-28 w-[500px] h-[500px] bg-orange/12 rounded-full blur-3xl pointer-events-none" />
-                <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange/8 rounded-full blur-3xl pointer-events-none" />
+
 
                 <div className="container mx-auto px-6 pt-32 pb-24 relative z-10">
                     <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-4xl">
@@ -423,7 +422,7 @@ export default function IndustriesPage() {
                         backgroundSize: '36px 36px',
                     }}
                 />
-                <div className="absolute top-0 left-1/4 w-80 h-80 bg-orange/10 rounded-full blur-3xl pointer-events-none" />
+
                 <div className="container mx-auto px-6 relative z-10 text-center">
                     <AnimatedSection>
                         <motion.div variants={fadeUp} className="max-w-3xl mx-auto">
@@ -435,7 +434,9 @@ export default function IndustriesPage() {
                                 Let's build a custom digital solution tailored to your specific business challenges.
                             </p>
                             <a
-                                href="/#contact"
+                                href="https://calendly.com/futurrizon/30min?month=2026-03"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="mt-10 inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-orange text-white font-semibold text-lg hover:bg-orange/90 shadow-lg shadow-orange/20 transition-all duration-300 hover:-translate-y-1"
                             >
                                 Get a Free Consultation

@@ -17,7 +17,7 @@ const Footer = () => {
             ></div>
 
             {/* Background Gradients */}
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-orange/10 rounded-full blur-3xl -translate-y-1/2 pointer-events-none"></div>
+
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-peach/10 rounded-full blur-3xl translate-y-1/2 pointer-events-none"></div>
 
             <div className="container mx-auto px-6 relative z-10">
@@ -78,7 +78,7 @@ const Footer = () => {
                             <li className="flex items-start gap-4">
                                 <MapPin size={20} className="text-orange mt-1 shrink-0" />
                                 <span className="text-cream/60">
-                                    SivantaOne Business Park, B-1213/1214, Ashram Rd,<br />
+                                    B1213 & B1214, Sivanta one Business Park, Ashram Rd,<br />
                                     opp. Nalli Silk Sarees, Pritam Nagar, Paldi,<br />
                                     Ahmedabad, Gujarat 380006
                                 </span>

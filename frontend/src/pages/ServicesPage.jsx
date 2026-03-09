@@ -1,4 +1,4 @@
-﻿import React, { useRef } from 'react';
+import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Zap, Brain, Users, Rocket } from 'lucide-react';
@@ -579,8 +579,7 @@ export default function ServicesPage() {
                     }}
                 />
                 {/* Glow orbs */}
-                <div className="absolute top-20 -left-32 w-96 h-96 bg-orange/20 rounded-full blur-3xl" />
-                <div className="absolute bottom-10 right-0 w-80 h-80 bg-orange/10 rounded-full blur-3xl" />
+
 
                 <div className="container mx-auto px-6 pt-28 pb-20 relative z-10">
                     <div className="max-w-4xl">
@@ -638,7 +637,7 @@ export default function ServicesPage() {
                             transition={{ delay: 0.8 }}
                             className="mt-14 grid grid-cols-3 gap-6 max-w-md"
                         >
-                            {[['9+', 'Service Areas'], ['100%', 'Microsoft Stack'], ['24/7', 'Managed Support']].map(([num, label]) => (
+                            {[['20+', 'Service Areas'], ['100%', 'Microsoft Stack'], ['24/7', 'Managed Support']].map(([num, label]) => (
                                 <div key={label} className="text-center">
                                     <div className="text-3xl font-display font-bold text-orange">{num}</div>
                                     <div className="text-cream/50 text-xs mt-1">{label}</div>
@@ -748,7 +747,7 @@ export default function ServicesPage() {
                     <AnimatedSection>
                         <div className="relative bg-gradient-to-br from-white/8 to-white/3 border border-white/10 rounded-3xl p-10 max-w-3xl mx-auto overflow-hidden">
                             {/* Glow accent */}
-                            <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-64 h-32 bg-orange/10 rounded-full blur-3xl pointer-events-none" />
+
                             <div className="relative z-10">
                                 <p className="text-cream/50 text-xs uppercase tracking-widest mb-8 text-center">What disconnection costs your business</p>
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -862,8 +861,7 @@ export default function ServicesPage() {
             {/* ── CTA SECTION ──────────────────────────────── */}
             <section className="bg-primary py-28 relative overflow-hidden">
                 <div className="absolute inset-0">
-                    <div className="absolute top-0 left-1/4 w-96 h-96 bg-orange/15 rounded-full blur-3xl" />
-                    <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-orange/10 rounded-full blur-3xl" />
+
                 </div>
                 <div className="container mx-auto px-6 relative z-10 text-center">
                     <AnimatedSection>
@@ -877,12 +875,14 @@ export default function ServicesPage() {
                                 Ready to transform disconnected tools into a unified powerhouse? Let's start with a free consultation.
                             </p>
                             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                                <Link
-                                    to="/#contact"
+                                <a
+                                    href="https://calendly.com/futurrizon/30min?month=2026-03"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="px-8 py-4 rounded-xl bg-orange text-white font-semibold text-sm hover:bg-orange/90 shadow-xl shadow-orange/30 transition-all duration-200 hover:-translate-y-0.5"
                                 >
                                     Book a Free Consultation
-                                </Link>
+                                </a>
                                 <Link
                                     to="/about"
                                     className="px-8 py-4 rounded-xl border border-white/20 text-cream font-semibold text-sm hover:bg-white/5 transition-all duration-200"

@@ -5,6 +5,41 @@ import {
     Heart, PartyPopper, Handshake, Rocket, Star, Briefcase, Users, Globe, Camera, Images
 } from 'lucide-react';
 
+import diwali1 from '../assets/festivals/diwali/1.jpg';
+import diwali2 from '../assets/festivals/diwali/2.jpg';
+import diwali3 from '../assets/festivals/diwali/3.jpg';
+import diwali4 from '../assets/festivals/diwali/4.jpg';
+import diwali5 from '../assets/festivals/diwali/5.jpg';
+
+import rep1 from '../assets/festivals/republic day/1.jpg';
+import rep2 from '../assets/festivals/republic day/2.jpg';
+import rep3 from '../assets/festivals/republic day/3.jpg';
+import rep4 from '../assets/festivals/republic day/4.jpg';
+
+import kor1 from '../assets/festivals/Kormax/1.jpg';
+import kor2 from '../assets/festivals/Kormax/2.jpg';
+import kor3 from '../assets/festivals/Kormax/3.jpg';
+
+import chr1 from '../assets/festivals/Christmas/1.jpg';
+import chr2 from '../assets/festivals/Christmas/2.jpg';
+import chr3 from '../assets/festivals/Christmas/3.jpg';
+import chr4 from '../assets/festivals/Christmas/4.jpg';
+
+import nav1 from '../assets/festivals/Navratri/1.jpg';
+import nav2 from '../assets/festivals/Navratri/2.jpg';
+import nav3 from '../assets/festivals/Navratri/3.jpg';
+
+import ga1 from '../assets/festivals/Gandhi Ashram/1.jpg';
+import ga2 from '../assets/festivals/Gandhi Ashram/2.jpg';
+import ga3 from '../assets/festivals/Gandhi Ashram/3.jpg';
+import ga4 from '../assets/festivals/Gandhi Ashram/4.jpg';
+import ga5 from '../assets/festivals/Gandhi Ashram/5.jpg';
+import ga6 from '../assets/festivals/Gandhi Ashram/6.jpg';
+import ga7 from '../assets/festivals/Gandhi Ashram/7.jpg';
+import ga8 from '../assets/festivals/Gandhi Ashram/8.jpg';
+
+import monkeyVideo from '../assets/festivals/Monekyman/Monkeyman Video.mp4';
+
 /* ─── Animation helpers ─────────────────────────────── */
 const fadeUp = {
     hidden: { opacity: 0, y: 36 },
@@ -47,10 +82,10 @@ const events = [
         icon: <PartyPopper className="w-5 h-5 text-orange" />,
         title: 'Fun Friday × Republic Day',
         subtitle: 'When Patriotism Meets Teamwork & Fun',
-        desc: 'Yes we are a tech company, but apparently we can also cook! 👨‍🍳👩‍🍳 Republic Day called for a Boys vs Girls Cooking Competition and let\'s just say the rivalry was VERY real. Between the questionable dishes, suspicious ingredients, and way too much confidence from both sides, we somehow ended up having an absolute blast. Games, laughter, and zero productivity. 10/10 would do again!',
+        desc: 'Yes we are a tech company, but apparently we can also cook! Republic Day called for a Boys vs Girls Cooking Competition and let\'s just say the rivalry was VERY real. Between the questionable dishes, suspicious ingredients, and way too much confidence from both sides, we somehow ended up having an absolute blast. Games, laughter, and zero productivity. 10/10 would do again!👩‍🍳',
         tag: 'Fun Friday',
         accent: 'orange',
-        images: [], // add image imports here e.g. [img1, img2, img3]
+        images: [rep1, rep2, rep3, rep4],
     },
     {
         category: 'Client Meet',
@@ -61,7 +96,7 @@ const events = [
         desc: 'Big day at Futurrizon HQ! We got to host our client KORMAX for a session that was equal parts inspiring and fun. Mr. Walter Davis, Director at KORMAX, brought his absolute best with some seriously sharp insights and a vision that just clicks with what we do at Futurrizon. Microsoft 365, Power Platform, Power Automate, Azure, AI solutions... yeah we covered it all. The whole KORMAX team brought so much energy and curiosity to the table that the meetup flew by way too fast. These are exactly the kind of partnerships that make us want to build bigger and better every single day. Here is to many more milestones together! 🤝🚀',
         tag: 'Client Meet',
         accent: 'blue',
-        images: [],
+        images: [kor1, kor2, kor3],
     },
     {
         category: 'Celebration',
@@ -69,21 +104,21 @@ const events = [
         icon: <Heart className="w-5 h-5 text-orange" />,
         title: 'Diwali Decor & Festive Vibes',
         subtitle: 'Work + Festive Fun = Perfect Diwali Vibes',
-        desc: 'Diwali at Futurrizon hit different this year! 🪔 We turned the whole office into a proper Diwali mela with decorations in every corner. The Rangoli competition got very competitive very fast and honestly the talent in this office is unfair. We then sat down for a team lunch that nobody wanted to end, and closed the day with sweets and gifts all around because mithai makes everything better. 🍬 Happy Diwali from our very festive, slightly sugar-rushed team!',
+        desc: 'Diwali at Futurrizon hit different this year! 🪔 We turned the whole office into a proper Diwali mela with decorations in every corner. The Rangoli competition got very competitive very fast and honestly the talent in this office is unfair. We then sat down for a team lunch that nobody wanted to end, and closed the day with sweets and gifts all around because mithai makes everything better. Happy Diwali from our very festive, slightly sugar-rushed team!🍬🪔',
         tag: 'Office Decor',
         accent: 'orange',
-        images: [],
+        images: [diwali1, diwali2, diwali3, diwali4, diwali5],
     },
     {
         category: 'Campaign',
         categoryColor: 'bg-purple-500/15 text-purple-600 border-purple-500/20',
         icon: <Camera className="w-5 h-5 text-purple-600" />,
-        title: 'Futurrizon × MonkeyMan⌚',
+        title: 'Futurrizon × MonkeyMan',
         subtitle: '"We Care" Turns Into "We Collaborate"',
-        desc: 'Plot twist: a watch brand and a tech company walked into Diwali together. ⌚ Turns out MonkeyMan and Futurrizon have more in common than we thought, mainly the belief that good things happen when good people team up. Seeing our guys featured in their Diwali campaign was honestly a vibe. Unexpected collab, great vibes, big smiles all around. We love it when partnerships just make sense!',
+        desc: 'Plot twist: a watch brand and a tech company walked into Diwali together. Turns out MonkeyMan and Futurrizon have more in common than we thought, mainly the belief that good things happen when good people team up. Seeing our guys featured in their Diwali campaign was honestly a vibe. Unexpected collab, great vibes, big smiles all around. We love it when partnerships just make sense!⌚',
         tag: 'Brand Collab',
         accent: 'orange',
-        images: [],
+        images: [monkeyVideo],
     },
     {
         category: 'Client Meet',
@@ -91,10 +126,10 @@ const events = [
         icon: <Handshake className="w-5 h-5 text-[#002379]" />,
         title: 'TexTaxUS × Gandhi Ashram Visit',
         subtitle: 'Adam Minow & TexTaxUS at Futurrizon HQ',
-        desc: 'Adam Minow and the TexTaxUS crew flew in and we made sure they got the full Ahmedabad experience. Strategy meetings in the morning, a visit to the Gandhi Ashram for some actual soul food, and then lunch where the conversations got way too good to stop. Great clients, great laughs, and the kind of partnership that just keeps getting better. More milestones incoming! 💙',
+        desc: 'Adam Minow from TexTaxUS flew in, and we made sure he got the full Ahmedabad experience. After productive meetings, we took a serene visit to the Gandhi Ashram where we shared many stories, views, and memories with Adam. We topped it off with an amazing team lunch where the conversations got way too good to stop. Great clients, great laughs, and the kind of partnership that just keeps getting better. More milestones incoming! 💙',
         tag: 'Client Visit',
         accent: 'blue',
-        images: [],
+        images: [ga1, ga2, ga3, ga4, ga5, ga6, ga7, ga8],
     },
     {
         category: 'Celebration',
@@ -105,7 +140,18 @@ const events = [
         desc: 'We are a Microsoft company but on Christmas we turn into absolute elves. 🎅 Secret Santa happened and nobody played it cool. The office got decorated, the team got together for a proper Christmas lunch, and then games broke out and things got surprisingly competitive for a bunch of tech folks. Honestly one of the best days of the year. Merry Christmas from the gang at Futurrizon! 🎄🌟',
         tag: 'Company Event',
         accent: 'orange',
-        images: [],
+        images: [chr1, chr2, chr3, chr4],
+    },
+    {
+        category: 'Cultural',
+        categoryColor: 'bg-pink-500/15 text-pink-600 border-pink-500/20',
+        icon: <Users className="w-5 h-5 text-pink-600" />,
+        title: 'Navratri Celebration ✨',
+        subtitle: 'Garba, Grooves & Unstoppable Energy',
+        desc: 'When it is Navratri in Gujarat, you do not just work, you dance. We swapped our keyboards for Kediyas and Chaniyas and took over the Garba grounds. The energy was unmatched, the steps were (mostly) coordinated, and by the end of the night, everyone was exhausted but still ready for another round. A perfect mix of culture, teamwork, and serious stamina!',
+        tag: 'Cultural Event',
+        accent: 'orange',
+        images: [nav1, nav2, nav3],
     },
 ];
 
@@ -147,7 +193,7 @@ function ImageCollage({ images, accent }) {
 
     /* ── Swipeable gallery ── */
     return (
-        <div className="relative w-full h-52 mb-5 rounded-2xl overflow-hidden select-none" style={{ border: `2.5px solid ${accentHex}22` }}>
+        <div className="relative w-full h-52 mb-5 rounded-2xl overflow-hidden select-none shadow-md shadow-black/15">
 
             {/* Slide area */}
             <AnimatePresence initial={false} custom={direction}>
@@ -167,35 +213,40 @@ function ImageCollage({ images, accent }) {
                     }}
                     className="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing"
                 >
-                    <img src={images[current]} alt={`photo-${current + 1}`} className="w-full h-full object-cover pointer-events-none" />
+                    {images[current].includes('.mp4') ? (
+                        <video
+                            src={images[current]}
+                            className="w-full h-full object-cover"
+                            controls
+                            playsInline
+                            onPointerDownCapture={(e) => e.stopPropagation()}
+                        />
+                    ) : (
+                        <img src={images[current]} alt={`media-${current + 1}`} className="w-full h-full object-cover pointer-events-none" />
+                    )}
                 </motion.div>
             </AnimatePresence>
 
-            {/* Photo counter badge — top right */}
-            <div
-                className="absolute top-3 right-3 z-20 flex items-center gap-1 px-2.5 py-1 rounded-full text-white text-xs font-bold shadow-lg backdrop-blur-sm"
-                style={{ background: accentHex + 'CC' }}
-            >
-                <Images className="w-3 h-3" />
-                <span>{current + 1} / {images.length}</span>
-            </div>
+
 
             {/* Prev / Next arrows — only show when >1 image */}
             {images.length > 1 && (
                 <>
                     <button
                         onClick={prev}
-                        className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm transition-all hover:scale-110 shadow"
-                        style={{ background: accentHex + 'BB' }}
+                        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-1 flex items-center justify-center transition-transform hover:scale-110"
                     >
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.6))' }}>
+                            <polyline points="15 18 9 12 15 6" />
+                        </svg>
                     </button>
                     <button
                         onClick={next}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm transition-all hover:scale-110 shadow"
-                        style={{ background: accentHex + 'BB' }}
+                        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-1 flex items-center justify-center transition-transform hover:scale-110"
                     >
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.6))' }}>
+                            <polyline points="9 18 15 12 9 6" />
+                        </svg>
                     </button>
                 </>
             )}
@@ -238,8 +289,8 @@ export default function LifePage() {
                     src={bgLifeVideo}
                 />
                 <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(120deg, rgba(0,31,84,0.92) 40%, rgba(0,31,84,0.45) 100%)' }} />
-                <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,95,0,0.6) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-                <div className="absolute top-20 -left-32 w-[500px] h-[500px] bg-orange/20 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,95,0,0.6) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+
 
                 <div className="container mx-auto px-6 pt-32 pb-28 relative z-10">
                     <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-3xl">

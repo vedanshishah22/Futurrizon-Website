@@ -184,13 +184,15 @@ const BlogDetail = () => {
                                 <p className="text-white/60 text-sm mb-6 relative z-10 leading-relaxed">
                                     Our experts specialize in the technologies discussed in this article.
                                 </p>
-                                <Link
-                                    to="/"
-                                    className="inline-flex items-center text-orange font-bold text-sm hover:gap-3 transition-all"
+                                <a
+                                    href="https://calendly.com/futurrizon/30min?month=2026-03"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center text-orange font-bold text-sm hover:gap-3 transition-all relative z-10"
                                 >
                                     Get a Free Consultation
                                     <ChevronRight className="w-4 h-4 ml-1" />
-                                </Link>
+                                </a>
                             </div>
 
                             <div className="p-8 bg-white rounded-[32px] border border-navy/5 shadow-sm">

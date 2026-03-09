@@ -86,28 +86,28 @@ const Navbar = () => {
                             {link.hasDropdown && link.dropdownKey === 'services' && (
                                 <div className="absolute top-full left-0 mt-4 w-72 bg-cream border border-primary/10 rounded-xl shadow-xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                                     <div className="flex flex-col space-y-2">
-                                        <a href="/services#sharepoint" className="text-primary/60 hover:text-orange text-sm py-1">SharePoint Solution</a>
-                                        <a href="/services#power-platform" className="text-primary/60 hover:text-orange text-sm py-1">Power Platform</a>
-                                        <a href="/services#m365" className="text-primary/60 hover:text-orange text-sm py-1">Microsoft 365 Optimization</a>
-                                        <a href="/services#ai-gpt" className="text-primary/60 hover:text-orange text-sm py-1">AI & GPT Integration</a>
-                                        <a href="/services#migration" className="text-primary/60 hover:text-orange text-sm py-1">Migration & Integration</a>
-                                        <a href="/services#support" className="text-primary/60 hover:text-orange text-sm py-1">Managed Services & Support</a>
-                                        <a href="/services#azure" className="text-primary/60 hover:text-orange text-sm py-1">Azure Cloud Services</a>
-                                        <a href="/services#analytics" className="text-primary/60 hover:text-orange text-sm py-1">Advanced Analytics & Reporting</a>
-                                        <a href="/services#financial" className="text-primary/60 hover:text-orange text-sm py-1">Financial & Operational Modeling</a>
+                                        <Link to="/services#sharepoint" className="text-primary/60 hover:text-orange text-sm py-1">SharePoint Solution</Link>
+                                        <Link to="/services#power-platform" className="text-primary/60 hover:text-orange text-sm py-1">Power Platform</Link>
+                                        <Link to="/services#m365" className="text-primary/60 hover:text-orange text-sm py-1">Microsoft 365 Optimization</Link>
+                                        <Link to="/services#ai-gpt" className="text-primary/60 hover:text-orange text-sm py-1">AI & GPT Integration</Link>
+                                        <Link to="/services#migration" className="text-primary/60 hover:text-orange text-sm py-1">Migration & Integration</Link>
+                                        <Link to="/services#support" className="text-primary/60 hover:text-orange text-sm py-1">Managed Services & Support</Link>
+                                        <Link to="/services#azure" className="text-primary/60 hover:text-orange text-sm py-1">Azure Cloud Services</Link>
+                                        <Link to="/services#analytics" className="text-primary/60 hover:text-orange text-sm py-1">Advanced Analytics & Reporting</Link>
+                                        <Link to="/services#financial" className="text-primary/60 hover:text-orange text-sm py-1">Financial & Operational Modeling</Link>
                                     </div>
                                 </div>
                             )}
                             {link.hasDropdown && link.dropdownKey === 'company' && (
                                 <div className="absolute top-full left-0 mt-4 w-60 bg-cream border border-primary/10 rounded-xl shadow-xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                                     <div className="flex flex-col space-y-2">
-                                        <a href="/about" className="text-primary/60 hover:text-orange text-sm py-1">About Us</a>
-                                        <a href="/#portfolio" className="text-primary/60 hover:text-orange text-sm py-1">Portfolio</a>
-                                        <a href="/career" className="text-primary/60 hover:text-orange text-sm py-1">Career</a>
-                                        <a href="/life" className="text-primary/60 hover:text-orange text-sm py-1">Life at Futurrizon</a>
-                                        <a href="/testimonials" className="text-primary/60 hover:text-orange text-sm py-1">Testimonials</a>
-                                        <a href="/team" className="text-primary/60 hover:text-orange text-sm py-1">Our Team</a>
-                                        <a href="/blogs" className="text-primary/60 hover:text-orange text-sm py-1">Blogs</a>
+                                        <Link to="/about" className="text-primary/60 hover:text-orange text-sm py-1">About Us</Link>
+                                        <Link to="/#portfolio" className="text-primary/60 hover:text-orange text-sm py-1">Portfolio</Link>
+                                        <Link to="/career" className="text-primary/60 hover:text-orange text-sm py-1">Career</Link>
+                                        <Link to="/life" className="text-primary/60 hover:text-orange text-sm py-1">Life at Futurrizon</Link>
+                                        <Link to="/testimonials" className="text-primary/60 hover:text-orange text-sm py-1">Testimonials</Link>
+                                        <Link to="/team" className="text-primary/60 hover:text-orange text-sm py-1">Our Team</Link>
+                                        <Link to="/blogs" className="text-primary/60 hover:text-orange text-sm py-1">Blogs</Link>
                                     </div>
                                 </div>
                             )}

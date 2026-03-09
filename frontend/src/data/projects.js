@@ -20,6 +20,7 @@ export const projects = [
         image: p1,
         heroBackground: p1,
         summary: 'Expert architectural guidance and strategic consultation for Microsoft 365 ecosystem optimization.',
+        description: 'Strategic consultation to align Microsoft 365 and Power Platform capabilities with your enterprise operational goals.',
         overview: 'This solution was designed to streamline internal operations and eliminate manual dependency by leveraging Microsoft 365 and the Power Platform ecosystem. The objective was to create a secure, scalable, and automation-driven system tailored to enterprise needs.',
         challenges: [
             'Manual approval bottlenecks in existing workflows',
@@ -49,6 +50,7 @@ export const projects = [
         image: p2,
         heroBackground: p2bg,
         summary: 'End-to-end workflow automation reducing manual tasks and improving process accuracy.',
+        description: 'Custom Power Automate workflows designed to eliminate repetitive tasks and ensure seamless data flow across systems.',
         overview: 'Leveraging Power Automate and SharePoint, we built an automated engine that handles repetitive tasks, ensuring 100% accuracy and consistency across enterprise workflows.',
         challenges: [
             'High error rates in manual data entry',
@@ -76,6 +78,7 @@ export const projects = [
         image: p3,
         heroBackground: p3bg,
         summary: 'Secure, centralized document repository with automated lifecycle management.',
+        description: 'A centralized, secure SharePoint document management system featuring version control, metadata tagging, and automated approvals.',
         overview: 'We transformed a fragmented file system into a secure, metadata-driven SharePoint document management solution with automated retention and approval policies.',
         challenges: [
             'Fragmented storage across multiple platforms',
@@ -103,6 +106,7 @@ export const projects = [
         image: p4,
         heroBackground: p4bg,
         summary: 'Intelligent assistant that learns from your corporate documents to provide instant answers.',
+        description: 'An intelligent AI assistant built with Azure Cognitive Search that retrieves and cites information directly from your corporate documents.',
         overview: 'Built using Azure Cognitive Search and OpenAI, this chatbot serves as an internal knowledge base, allowing employees to query millions of document pages with natural language.',
         challenges: [
             'Slow knowledge retrieval from large document sets',
@@ -130,6 +134,7 @@ export const projects = [
         image: p5,
         heroBackground: p5,
         summary: 'Complete vendor lifecycle management from onboarding to performance tracking.',
+        description: 'A comprehensive Power Platform solution to streamline vendor onboarding, contract renewals, and performance analytics.',
         overview: 'A comprehensive Power Platform solution to manage vendor relationships, contracts, and performance metrics in one unified dashboard.',
         challenges: [
             'Manual vendor onboarding processes',
@@ -157,6 +162,7 @@ export const projects = [
         image: p6,
         heroBackground: p6,
         summary: 'Unified hub for project tracking, task management, and team collaboration.',
+        description: 'A custom SharePoint-based portal integrating Project Online and Power Apps for a centralized project management experience.',
         overview: 'A custom SharePoint-based portal that integrates Project Online data with custom Power Apps for a tailored PMO experience.',
         challenges: [
             'Siloed project data across teams',
@@ -184,6 +190,7 @@ export const projects = [
         image: p7,
         heroBackground: p7,
         summary: 'Tailored CRM solution focused on lead management and sales pipeline automation.',
+        description: 'A lean, high-efficiency CRM using SharePoint and Power Apps tailored specifically for dynamic sales teams and pipeline automation.',
         overview: 'We built a lean, high-efficiency CRM using SharePoint as a back-end and Power Apps as the front-end, designed for rapid sales teams.',
         challenges: [
             'Expensive licensing for enterprise CRMs',
@@ -211,6 +218,7 @@ export const projects = [
         image: p8,
         heroBackground: p8,
         summary: 'Data-driven insights to transform raw information into strategic business decisions.',
+        description: 'Advanced Power BI dashboards delivering automated, real-time insights from diverse data sources to empower strategic decision-making.',
         overview: 'Designing and implementing advanced Power BI dashboards that connect to diverse data sources to provide real-time, actionable insights.',
         challenges: [
             'Manual data preparation and cleaning effort',
@@ -238,6 +246,7 @@ export const projects = [
         image: p9,
         heroBackground: p9,
         summary: 'Streamlining HR processes from recruitment to exit interviews.',
+        description: 'A comprehensive M365-based HR management system for tracking employee records, leave requests, and performance reviews securely.',
         overview: 'A comprehensive HR management system built on M365 to handle employee records, leave requests, and performance reviews.',
         challenges: [
             'Manual leave tracking and approvals',

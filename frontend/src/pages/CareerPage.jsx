@@ -1,4 +1,4 @@
-﻿import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 
 import bgCareer from '../assets/bg_career.png';
+import JobApplicationModal from '../components/JobApplicationModal';
 
 /* ─── Animation helpers ─────────────────────────────── */
 const fadeUp = {
@@ -126,6 +127,13 @@ export default function CareerPage() {
     const [expandedJob, setExpandedJob] = useState(null);
     const [apiJobs, setApiJobs] = useState([]);
     const [jobsLoading, setJobsLoading] = useState(true);
+    const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
+    const [selectedJobTitle, setSelectedJobTitle] = useState('');
+
+    const openApplyModal = (title) => {
+        setSelectedJobTitle(title);
+        setIsApplyModalOpen(true);
+    };
 
     useEffect(() => {
         fetch('http://127.0.0.1:8000/api/jobs/')
@@ -155,8 +163,7 @@ export default function CareerPage() {
                         backgroundSize: '36px 36px',
                     }}
                 />
-                <div className="absolute top-10 -left-28 w-[500px] h-[500px] bg-orange/12 rounded-full blur-3xl pointer-events-none" />
-                <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange/8 rounded-full blur-3xl pointer-events-none" />
+
 
                 <div className="container mx-auto px-6 pt-32 pb-24 relative z-10">
                     <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-3xl">
@@ -181,21 +188,19 @@ export default function CareerPage() {
                             >
                                 View Open Positions
                             </a>
-                            <a
-                                href={LINKEDIN_JOBS}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <button
+                                onClick={() => openApplyModal('General Application')}
                                 className="px-8 py-4 rounded-xl border border-white/20 text-cream font-semibold text-sm hover:bg-white/5 transition-all duration-200 inline-flex items-center gap-2"
                             >
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
-                                Apply on LinkedIn
-                            </a>
+                                <Briefcase size={18} />
+                                Apply Now
+                            </button>
                         </motion.div>
 
                         <motion.div variants={fadeUp} className="mt-14 flex flex-wrap gap-8">
                             {[
-                                [<Building2 className="w-6 h-6 text-orange mx-auto mb-1" />, '6+', 'Open Roles'],
-                                [<Globe className="w-6 h-6 text-orange mx-auto mb-1" />, '5+', 'Countries Served'],
+                                [<Building2 className="w-6 h-6 text-orange mx-auto mb-1" />, '5+', 'Open Roles'],
+                                [<Globe className="w-6 h-6 text-orange mx-auto mb-1" />, '15+', 'Countries Served'],
                                 [<Star className="w-6 h-6 text-orange mx-auto mb-1" />, '4.8', 'Glassdoor Rating'],
                             ].map(([icon, num, label]) => (
                                 <div key={label} className="text-center">
@@ -405,15 +410,16 @@ export default function CareerPage() {
                                                         )}
 
                                                         {/* Apply button */}
-                                                        <a
-                                                            href={LINKEDIN_JOBS}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
+                                                        <button
+                                                            onClick={(e) => {
+                                                                e.stopPropagation();
+                                                                openApplyModal(jobTitle);
+                                                            }}
                                                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-orange text-white font-semibold text-sm hover:bg-orange/90 shadow-md shadow-orange/15 transition-all duration-200 hover:-translate-y-0.5"
                                                         >
-                                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
-                                                            Apply on LinkedIn
-                                                        </a>
+                                                            <Briefcase size={16} />
+                                                            Apply
+                                                        </button>
                                                     </div>
                                                 </motion.div>
                                             )}
@@ -424,19 +430,17 @@ export default function CareerPage() {
                         })}
                     </div>
 
-                    {/* View all on LinkedIn */}
+                    {/* View all open positions */}
                     <div className="text-center mt-10">
-                        <a
-                            href={LINKEDIN_JOBS}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <button
+                            onClick={() => openApplyModal('Open Application')}
                             className="inline-flex items-center gap-2 text-orange font-semibold text-sm hover:underline"
                         >
-                            View All Openings on LinkedIn
+                            Submit Open Application
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M7 17L17 7M17 7H7M17 7v10" />
                             </svg>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </section>
@@ -455,7 +459,7 @@ export default function CareerPage() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
                         {[
-                            { step: '01', icon: <FileText className="w-8 h-8 text-orange" />, title: 'Apply', desc: 'Submit your application through LinkedIn. We review every single one.' },
+                            { step: '01', icon: <FileText className="w-8 h-8 text-orange" />, title: 'Apply', desc: 'Submit your application right here. We review every single one.' },
                             { step: '02', icon: <MessageCircle className="w-8 h-8 text-orange" />, title: 'Screening Call', desc: 'A quick chat to understand your background, aspirations, and culture fit.' },
                             { step: '03', icon: <Brain className="w-8 h-8 text-orange" />, title: 'Technical Round', desc: 'A hands-on assessment or case study relevant to the role you applied for.' },
                             { step: '04', icon: <Handshake className="w-8 h-8 text-orange" />, title: 'Offer & Onboarding', desc: 'Welcome aboard! Fast-tracked onboarding to get you shipping from day one.' },
@@ -486,8 +490,7 @@ export default function CareerPage() {
                         backgroundSize: '36px 36px',
                     }}
                 />
-                <div className="absolute top-0 left-1/4 w-80 h-80 bg-orange/10 rounded-full blur-3xl pointer-events-none" />
-                <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-orange/8 rounded-full blur-3xl pointer-events-none" />
+
 
                 <div className="container mx-auto px-6 relative z-10">
                     <AnimatedSection>
@@ -501,15 +504,13 @@ export default function CareerPage() {
                                 We're always looking for exceptional people. Send us your profile and let's see if there's a fit.
                             </p>
                             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-                                <a
-                                    href={LINKEDIN_JOBS}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                <button
+                                    onClick={() => openApplyModal('Open Application')}
                                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-orange text-white font-semibold text-sm hover:bg-orange/90 shadow-lg shadow-orange/20 transition-all duration-200 hover:-translate-y-0.5"
                                 >
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
-                                    Browse All Jobs on LinkedIn
-                                </a>
+                                    <Briefcase size={18} />
+                                    Submit Open Application
+                                </button>
                                 <Link
                                     to="/#contact"
                                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/20 text-cream font-semibold text-sm hover:bg-white/5 transition-all duration-200"
@@ -522,6 +523,12 @@ export default function CareerPage() {
                 </div>
             </section>
 
+            {/* Modal */}
+            <JobApplicationModal
+                isOpen={isApplyModalOpen}
+                onClose={() => setIsApplyModalOpen(false)}
+                jobTitle={selectedJobTitle}
+            />
         </div>
     );
 }

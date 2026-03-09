@@ -22,7 +22,7 @@ export default function TermsPage() {
                         backgroundSize: '36px 36px',
                     }}
                 />
-                <div className="absolute top-10 -left-20 w-80 h-80 bg-orange/15 rounded-full blur-3xl pointer-events-none" />
+
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange/40 bg-orange/10 mb-5">
                         <span className="text-orange text-xs font-semibold uppercase tracking-widest">📄 Legal</span>
@@ -105,7 +105,7 @@ export default function TermsPage() {
                     <Section title="11. Contact">
                         <p>For questions regarding these Terms of Service, please contact us at:</p>
                         <p className="mt-2"><strong className="text-primary">Email:</strong> <a href="mailto:info@futurrizon.com" className="text-orange hover:underline">info@futurrizon.com</a></p>
-                        <p><strong className="text-primary">Address:</strong> SivantaOne Business Park, B-1213/1214, Ashram Rd, Ahmedabad, Gujarat 380006</p>
+                        <p><strong className="text-primary">Address:</strong> B1213 & B1214, Sivanta one Business Park, Ashram Rd, opp. Nalli Silk Sarees, Pritam Nagar, Paldi, Ahmedabad, Gujarat 380006</p>
                     </Section>
 
                     {/* Navigation */}

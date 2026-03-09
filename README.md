@@ -1,86 +1,131 @@
-# Futurrizon Technologies Website
+# Futurrizon
 
-Premium futuristic enterprise IT services website built with React + Vite (Frontend) and Django REST Framework (Backend).
+![Futurrizon Hero](frontend/src/assets/logo.png) <!-- Update later with a real hero screenshot if available -->
 
-## 🚀 Tech Stack
+Futurrizon is a modern, high-performance corporate website designed to showcase services, culture, and expertise in Microsoft ecosystem technologies (SharePoint, M365, Power Platform, Azure, and AI integrations). 
+
+Built with a premium UI/UX focus, it features dynamic animations, responsive design, and an integrated Admin Dashboard for managing content seamlessly.
+
+---
+
+## ⚡ Tech Stack
 
 **Frontend:**
-- React 18
-- Vite
-- Tailwind CSS
-- Framer Motion
-- Lucide React
+- **Framework:** [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/) & [GSAP](https://gsap.com/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Routing:** React Router DOM (v7)
 
 **Backend:**
-- Django 6.0
-- Django REST Framework
-- SQLite (Development) / PostgreSQL (Production ready)
+- **Framework:** [Django](https://www.djangoproject.com/) (Python)
+- **Database:** SQLite (default)
+- **Architecture:** RESTful API delivering content to the React frontend
 
-## 🛠️ Setup Instructions
+---
+
+## ✨ Key Features
+
+- **Premium UI/UX:** Glassmorphism, smooth scroll, interactive hover states, and dynamic gradient effects.
+- **Dynamic Content Management:** 
+  - Admin Panel for managing **Blogs**, **Job Postings**, and **Team Members**.
+  - Integrated leads management and newsletter subscriptions.
+- **Interactive Pages:**
+  - **Services:** Detailed breakdown of M365, SharePoint, and Power Platform offerings.
+  - **Life at Futurrizon:** Swipeable photo galleries, culture pillars, and video hero sections.
+  - **Career Page:** Open roles dynamic listing with detailed requirements.
+  - **AI Chatbot:** Built-in "FuriChat" integration for automated visitor assistance.
+- **Performance Optimized:** Fast load times powered by Vite and optimized asset delivery.
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v16+)
-- Python (v3.10+)
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [Python](https://www.python.org/) (v3.10+ recommended)
+- npm or yarn
 
-### 1. Backend Setup
+### 1. Clone the repository
 ```bash
-# Navigate to backend
+git clone <repository-url>
+cd Futurrizon
+```
+
+### 2. Setup the Backend (Django)
+```bash
 cd backend
-
-# Create virtual environment (if not already created)
 python -m venv venv
-# Activate: venv\Scripts\activate (Windows) or source venv/bin/activate (Mac/Linux)
 
-# Install dependencies
-pip install django djangorestframework django-cors-headers
+# Activate virtual environment
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+
+# Install dependencies 
+# (Assuming a requirements.txt exists; if not, `pip install django djangorestframework django-cors-headers pillow`)
+pip install -r requirements.txt
 
 # Run migrations
 python manage.py migrate
 
-# Start server
+# Create a superuser for the Admin Panel
+python manage.py createsuperuser
+
+# Start the Django server (runs on port 8000)
 python manage.py runserver
 ```
-The API will be available at `http://127.0.0.1:8000/api/`.
 
-### 2. Frontend Setup
+### 3. Setup the Frontend (React + Vite)
+Open a new terminal window.
 ```bash
-# Navigate to frontend
 cd frontend
 
 # Install dependencies
 npm install
 
-# Start development server
+# Start the Vite development server (runs on port 5173 natively)
 npm run dev
 ```
-The application will run at `http://localhost:5173`.
 
-## 🌍 Deployment
-
-### Frontend (Vercel/Netlify)
-1. Build the project: `npm run build`
-2. Deploy the `dist` folder.
-3. Set environment variable `VITE_API_URL` to your backend URL.
-
-### Backend (AWS/DigitalOcean/Render)
-1. Install `gunicorn` and `psycopg2-binary`.
-2. Set `DEBUG = False` in `settings.py`.
-3. Configure `ALLOWED_HOSTS`.
-4. Use a production database like PostgreSQL.
-5. Serve static files using generic storage or WhiteNoise.
+---
 
 ## 📂 Project Structure
-```
+
+```text
 Futurrizon/
-├── backend/            # Django Project
-│   ├── config/         # Settings & URLs
-│   ├── core/           # API Apps (Views, Models, Serializers)
-│   └── manage.py
-├── frontend/           # React Project
-│   ├── src/
-│   │   ├── components/ # UI Components
-│   │   ├── App.jsx     # Main Component
-│   │   └── main.jsx    # Entry Point
-│   └── tailwind.config.js
-└── README.md           # Documentation
+├── backend/                  # Django Backend API
+│   ├── config/               # Main Django settings & routing
+│   ├── core/                 # Core app (Models: Blog, Job, Team, Leads, etc.)
+│   ├── media/                # Uploaded images (blogs, team photos)
+│   ├── db.sqlite3            # Database
+│   └── manage.py             # Django CLI
+│
+└── frontend/                 # React Frontend
+    ├── public/               # Static public assets
+    ├── src/
+    │   ├── assets/           # Images, SVGs, Videos
+    │   ├── components/       # Reusable UI components & Admin Dashboard
+    │   ├── data/             # Static JSON/JS data (e.g., FuriChat logic)
+    │   ├── pages/            # Main route pages (Home, Services, Life, etc.)
+    │   ├── App.jsx           # Main Application Router
+    │   ├── index.css         # Tailwind directives & global styles
+    │   └── main.jsx          # React DOM mounting point
+    ├── package.json          # Frontend dependencies
+    └── vite.config.js        # Vite bundler configuration
 ```
+
+---
+
+## 🛠️ Admin Dashboard
+To manage content dynamically:
+1. Ensure the Django backend is running.
+2. Navigate to the frontend Admin login route (usually `/admin/login`).
+3. Log in using the superuser credentials created during backend setup.
+4. From the dashboard, you can add/edit/delete Blogs, Jobs, and Team Members. Real-time updates reflect instantly on the public-facing pages.
+
+---
+
+## 📝 License
+Proprietary software. All rights reserved by Futurrizon.

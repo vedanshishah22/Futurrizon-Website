@@ -197,11 +197,11 @@ export const contactData = {
         email_addresses: ["info@futurrizon.com", "yashesh.nagori@futurrizon.com", "hr@futurrizon.com"],
         office_address: {
             company_name: "Futurrizon Technologies Pvt Ltd",
-            street: "B1213 & B1214, Sivanta One Business Park",
-            area: "Ashram Road, Paldi",
+            street: "B1213 & B1214, Sivanta one Business Park",
+            area: "Ashram Rd, opp. Nalli Silk Sarees, Pritam Nagar, Paldi",
             city: "Ahmedabad",
             state: "Gujarat",
-            postal_code: "380007",
+            postal_code: "380006",
             country: "India",
         },
         business_hours: {
