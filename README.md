@@ -129,3 +129,7 @@ To manage content dynamically:
 
 ## 📝 License
 Proprietary software. All rights reserved by Futurrizon.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 18bf093b5700b12a5f03f194c394480f238dfbbd
