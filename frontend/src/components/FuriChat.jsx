@@ -421,24 +421,19 @@ export default function FuriChat() {
             <button
                 onClick={() => setIsOpen((o) => !o)}
                 aria-label={isOpen ? 'Close Furi chat' : 'Open Furi chat'}
-                className={`fixed bottom-5 right-5 z-[9999] w-16 h-16 rounded-full flex items-center justify-center border-[3px] border-white transition-all duration-300 hover:scale-110 active:scale-95 ${!isOpen ? 'furi-launcher-bounce hover:shadow-[0_0_30px_rgba(255,107,0,0.6)] shadow-[0_8px_25px_rgba(255,95,0,0.4)]' : 'shadow-xl'}`}
-                style={{
-                    background: isOpen
-                        ? 'linear-gradient(135deg, #333, #555)'
-                        : 'linear-gradient(135deg, #FF7B00, #FF4500)', // Vibrant gradient
-                }}
+                className={`fixed bottom-5 right-5 z-[9999] w-16 h-16 rounded-full flex items-center justify-center border-2 transition-all duration-300 hover:scale-110 hover:rotate-2 active:scale-95 ${!isOpen ? 'bg-white border-blue-100 furi-launcher-bounce shadow-[0_12px_25px_rgba(139,92,246,0.3)] hover:shadow-[0_15px_35px_rgba(139,92,246,0.45)]' : 'bg-gray-800 border-gray-700 shadow-xl'}`}
             >
                 {/* Pulse ring – shown only when closed */}
                 {!isOpen && (
                     <span
                         className="furi-launcher-ring absolute inset-0 rounded-full"
-                        style={{ background: 'rgba(255, 123, 0, 0.5)' }} 
+                        style={{ background: 'rgba(139, 92, 246, 0.4)' }} 
                     />
                 )}
 
                 {/* Unread badge */}
                 {hasUnread && !isOpen && (
-                    <span className="absolute top-0.5 right-0.5 w-4 h-4 bg-[#002379] rounded-full flex items-center justify-center text-white text-[9px] font-bold shadow border border-white">
+                    <span className="absolute top-0 right-0 w-4 h-4 bg-gradient-to-tr from-[#3b82f6] to-[#d946ef] rounded-full flex items-center justify-center text-white text-[9px] font-bold shadow-md border-2 border-white">
                         1
                     </span>
                 )}
@@ -449,14 +444,29 @@ export default function FuriChat() {
                         <path d="M18 6L6 18M6 6l12 12" />
                     </svg>
                 ) : (
-                    <div className="relative flex items-center justify-center drop-shadow-md">
-                       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                           <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                    <div className="relative flex items-center justify-center drop-shadow-sm">
+                       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="url(#furi-grad)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                           <defs>
+                               <linearGradient id="furi-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                   <stop offset="0%" stopColor="#3b82f6" />
+                                   <stop offset="50%" stopColor="#8b5cf6" />
+                                   <stop offset="100%" stopColor="#d946ef" />
+                               </linearGradient>
+                           </defs>
+                           {/* Antenna */}
+                           <circle cx="12" cy="3.5" r="1.5" />
+                           <path d="M12 5V7.5" />
+                           {/* Body */}
+                           <path d="M6 7.5h12a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H14l-2 3-2-3H6a3 3 0 0 1-3-3v-6a3 3 0 0 1 3-3z" />
+                           {/* Ears */}
+                           <path d="M3 11.5H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h1" />
+                           <path d="M21 11.5h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-1" />
+                           {/* Eyes */}
+                           <circle cx="8.5" cy="13" r="1.5" fill="url(#furi-grad)" stroke="none" />
+                           <circle cx="15.5" cy="13" r="1.5" fill="url(#furi-grad)" stroke="none" />
+                           {/* Mouth */}
+                           <path d="M10 15.5 A 2 2 0 0 0 14 15.5 Z" fill="url(#furi-grad)" stroke="none" />
                        </svg>
-                       <span className="absolute -top-0.5 -right-0.5 flex h-3 w-3">
-                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                         <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
-                       </span>
                     </div>
                 )}
             </button>

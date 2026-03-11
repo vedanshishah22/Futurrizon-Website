@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Users, Trophy, ClipboardList, Briefcase, Building2, Zap, BarChart, Cloud, Bot, Handshake, Palette, Target, Lightbulb, TrendingUp, Lock, Globe, Rocket } from 'lucide-react';
 import bgOurTeam from '../assets/bg_OurTeam.jpg';
-import yasheshImg from '../assets/Yashesh Sir.png';
+import yasheshImg from '../assets/1final.png';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 36 },
