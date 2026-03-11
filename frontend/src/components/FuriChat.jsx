@@ -421,37 +421,43 @@ export default function FuriChat() {
             <button
                 onClick={() => setIsOpen((o) => !o)}
                 aria-label={isOpen ? 'Close Furi chat' : 'Open Furi chat'}
-                className={`fixed bottom-5 right-5 z-[9999] w-16 h-16 rounded-full shadow-2xl flex items-center justify-center border-[3px] border-white transition-transform duration-200 hover:scale-110 active:scale-95 ${!isOpen ? 'furi-launcher-bounce' : ''}`}
+                className={`fixed bottom-5 right-5 z-[9999] w-16 h-16 rounded-full flex items-center justify-center border-[3px] border-white transition-all duration-300 hover:scale-110 active:scale-95 ${!isOpen ? 'furi-launcher-bounce hover:shadow-[0_0_30px_rgba(255,107,0,0.6)] shadow-[0_8px_25px_rgba(255,95,0,0.4)]' : 'shadow-xl'}`}
                 style={{
                     background: isOpen
                         ? 'linear-gradient(135deg, #333, #555)'
-                        : '#FF5F00', // Bright Futurrizon Orange
+                        : 'linear-gradient(135deg, #FF7B00, #FF4500)', // Vibrant gradient
                 }}
             >
                 {/* Pulse ring – shown only when closed */}
                 {!isOpen && (
                     <span
                         className="furi-launcher-ring absolute inset-0 rounded-full"
-                        style={{ background: 'rgba(255, 95, 0, 0.45)' }} // Matches #FF5F00 orange
+                        style={{ background: 'rgba(255, 123, 0, 0.5)' }} 
                     />
                 )}
 
                 {/* Unread badge */}
                 {hasUnread && !isOpen && (
-                    <span className="absolute top-0.5 right-0.5 w-4 h-4 bg-[#FF5F00] rounded-full flex items-center justify-center text-white text-[9px] font-bold shadow">
+                    <span className="absolute top-0.5 right-0.5 w-4 h-4 bg-[#002379] rounded-full flex items-center justify-center text-white text-[9px] font-bold shadow border border-white">
                         1
                     </span>
                 )}
 
                 {/* Icon */}
                 {isOpen ? (
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
                         <path d="M18 6L6 18M6 6l12 12" />
                     </svg>
                 ) : (
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
-                        <path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z" />
-                    </svg>
+                    <div className="relative flex items-center justify-center drop-shadow-md">
+                       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                           <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                       </svg>
+                       <span className="absolute -top-0.5 -right-0.5 flex h-3 w-3">
+                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                         <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+                       </span>
+                    </div>
                 )}
             </button>
         </>

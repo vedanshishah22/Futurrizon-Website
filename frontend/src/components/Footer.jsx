@@ -77,10 +77,8 @@ const Footer = () => {
                         <ul className="space-y-4">
                             <li className="flex items-start gap-4">
                                 <MapPin size={20} className="text-orange mt-1 shrink-0" />
-                                <span className="text-cream/60">
-                                    B-1212, B-1213, B-1214, Sivanta one Business Park, Ashram Rd,<br />
-                                    opp. Nalli Silk Sarees, Pritam Nagar, Paldi,<br />
-                                    Ahmedabad, Gujarat 380006
+                                <span className="text-cream/60 leading-relaxed">
+                                    B-1212, B-1213, B-1214, Sivanta one Business Park, Ashram Rd, opp. Nalli Silk Sarees, Pritam Nagar, Paldi, Ahmedabad, Gujarat 380006
                                 </span>
                             </li>
                             <li className="flex items-center gap-4">
