@@ -94,7 +94,7 @@ const ContactSection = () => {
                                 <div>
                                     <h4 className="text-xl font-bold mb-2 text-cream">Visit Us</h4>
                                     <p className="text-cream/60">
-                                        B1213 & B1214, Sivanta one Business Park, Ashram Rd,<br />
+                                        B-1212, B-1213, B-1214, Sivanta one Business Park, Ashram Rd,<br />
                                         opp. Nalli Silk Sarees, Pritam Nagar, Paldi,<br />
                                         Ahmedabad, Gujarat 380006
                                     </p>

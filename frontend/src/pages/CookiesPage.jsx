@@ -160,7 +160,7 @@ export default function CookiesPage() {
                         <div className="mt-3 bg-white rounded-xl p-5 border border-primary/6">
                             <p className="font-semibold text-primary text-sm">{COMPANY}</p>
                             <p className="text-xs text-primary/50 mt-2"><strong>Email:</strong> <a href="mailto:info@futurrizon.com" className="text-orange hover:underline">info@futurrizon.com</a></p>
-                            <p className="text-xs text-primary/50"><strong>Address:</strong> B1213 & B1214, Sivanta one Business Park, Ashram Rd, opp. Nalli Silk Sarees, Pritam Nagar, Paldi, Ahmedabad, Gujarat 380006</p>
+                            <p className="text-xs text-primary/50"><strong>Address:</strong> B-1212, B-1213, B-1214, Sivanta one Business Park, Ashram Rd, opp. Nalli Silk Sarees, Pritam Nagar, Paldi, Ahmedabad, Gujarat 380006</p>
                         </div>
                     </Section>
 

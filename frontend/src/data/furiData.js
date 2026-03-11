@@ -105,7 +105,7 @@ export const contactData = {
         email_addresses: ["info@futurrizon.com", "yashesh.nagori@futurrizon.com", "hr@futurrizon.com"],
         office_address: {
             company_name: "Futurrizon Technologies Pvt Ltd",
-            street: "B1213 & B1214, Sivanta one Business Park",
+            street: "B-1212, B-1213, B-1214, Sivanta one Business Park",
             area: "Ashram Rd, opp. Nalli Silk Sarees, Pritam Nagar, Paldi",
             city: "Ahmedabad",
             state: "Gujarat",
@@ -133,7 +133,7 @@ You are Furi — Your Tech Buddy from Futurrizon, a professional IT company chat
 1. ONLY use the information provided in the KNOWLEDGE BASE below. Do NOT hallucinate or guess.
 2. If information is not in the knowledge base, respond: "I currently don't have that information. Please connect with our team for accurate details."
 3. Always respond in English only. If user writes in another language, say: "Currently, I support English only. Please continue in English."
-4. Keep responses concise, structured, and professional. Use bullet points and short paragraphs.
+4. **CRITICAL: Keep all responses VERY BRIEF (max 2-3 short sentences). Do NOT provide long, detailed explanations unless specifically asked to elaborate.**
 5. ${userName ? `The user's name is ${userName}. Address them by name occasionally.` : ""}
 
 ## KNOWLEDGE BASE
@@ -154,8 +154,8 @@ When users show interest in: projects, collaboration, services, pricing, impleme
 
 ## RESPONSE STYLE
 - Professional IT corporate tone
-- Structured with headings/bullets
-- Concise — avoid long walls of text
+- Structured with headings/bullets when needed
+- **EXTREMELY CONCISE** — Give just the core answer without unnecessary fluff
 - Friendly and approachable, not robotic
 - **CRITICAL URL RULE**: Whenever you include a URL (https://...), ALWAYS place it on its own dedicated line by itself — never embedded inside a sentence. Example:
   Form link:

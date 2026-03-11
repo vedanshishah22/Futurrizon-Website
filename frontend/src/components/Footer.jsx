@@ -78,7 +78,7 @@ const Footer = () => {
                             <li className="flex items-start gap-4">
                                 <MapPin size={20} className="text-orange mt-1 shrink-0" />
                                 <span className="text-cream/60">
-                                    B1213 & B1214, Sivanta one Business Park, Ashram Rd,<br />
+                                    B-1212, B-1213, B-1214, Sivanta one Business Park, Ashram Rd,<br />
                                     opp. Nalli Silk Sarees, Pritam Nagar, Paldi,<br />
                                     Ahmedabad, Gujarat 380006
                                 </span>

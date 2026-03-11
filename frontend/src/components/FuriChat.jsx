@@ -421,18 +421,18 @@ export default function FuriChat() {
             <button
                 onClick={() => setIsOpen((o) => !o)}
                 aria-label={isOpen ? 'Close Furi chat' : 'Open Furi chat'}
-                className={`fixed bottom-5 right-5 z-[9999] w-14 h-14 rounded-full shadow-xl flex items-center justify-center transition-transform duration-200 hover:scale-110 active:scale-95 ${!isOpen ? 'furi-launcher-bounce' : ''}`}
+                className={`fixed bottom-5 right-5 z-[9999] w-16 h-16 rounded-full shadow-2xl flex items-center justify-center border-[3px] border-white transition-transform duration-200 hover:scale-110 active:scale-95 ${!isOpen ? 'furi-launcher-bounce' : ''}`}
                 style={{
                     background: isOpen
                         ? 'linear-gradient(135deg, #333, #555)'
-                        : 'linear-gradient(135deg, #002379, #003a9e)',
+                        : '#FF5F00', // Bright Futurrizon Orange
                 }}
             >
                 {/* Pulse ring – shown only when closed */}
                 {!isOpen && (
                     <span
                         className="furi-launcher-ring absolute inset-0 rounded-full"
-                        style={{ background: 'rgba(0,35,121,0.35)' }}
+                        style={{ background: 'rgba(255, 95, 0, 0.45)' }} // Matches #FF5F00 orange
                     />
                 )}
 
