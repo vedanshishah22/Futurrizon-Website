@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Users, Trophy, ClipboardList, Briefcase, Building2, Zap, BarChart, Cloud, Bot, Handshake, Palette, Target, Lightbulb, TrendingUp, Lock, Globe, Rocket } from 'lucide-react';
 import bgOurTeam from '../assets/bg_OurTeam.jpg';
+import yasheshImg from '../assets/Yashesh Sir.png';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 36 },
@@ -29,7 +30,8 @@ const leadership = [
         bio: 'Visionary leader with 15+ years of Microsoft expertise, focused on empowering businesses with digital transformation, automation, and intelligent technology solutions.',
         expertise: ['Microsoft 365', 'SharePoint', 'Power Platform', 'Azure', 'AI Automation'],
         icon: <Briefcase className="w-12 h-12 text-white" strokeWidth={1.5} />,
-        linkedin: LINKEDIN,
+        image: yasheshImg,
+        linkedin: 'https://www.linkedin.com/in/yasheshnagori/',
     },
 ];
 
@@ -153,9 +155,15 @@ export default function OurTeamPage() {
                                         className="bg-white rounded-3xl p-8 border border-primary/6 shadow-xl shadow-orange/5"
                                     >
                                         <div className="flex flex-col items-center text-center">
-                                            <div className="w-32 h-32 rounded-3xl bg-gradient-to-br from-orange to-peach flex items-center justify-center shadow-lg shadow-orange/20 mb-6">
-                                                {leader.icon}
-                                            </div>
+                                            {leader.image ? (
+                                                <div className="w-full max-w-sm rounded-3xl overflow-hidden mb-6 shadow-lg bg-orange/5">
+                                                    <img src={leader.image} alt={leader.name} className="w-full h-auto object-contain" />
+                                                </div>
+                                            ) : (
+                                                <div className="w-32 h-32 rounded-3xl bg-gradient-to-br from-orange to-peach flex items-center justify-center shadow-lg shadow-orange/20 mb-6">
+                                                    {leader.icon}
+                                                </div>
+                                            )}
                                             <h3 className="text-2xl font-display font-bold text-primary">{leader.name}</h3>
                                             <p className="text-orange font-semibold text-sm mt-1 mb-6">{leader.role}</p>
 
