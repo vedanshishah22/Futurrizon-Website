@@ -2,24 +2,56 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Quote, ArrowLeft, ArrowRight } from 'lucide-react';
 
+import andrewImg from '../assets/clients/andrew.jpg';
+import dominikImg from '../assets/clients/dominik.jpg';
+import danImg from '../assets/clients/Dan.jpg';
+import zotyImg from '../assets/clients/Zoty.jpg';
+import tasImg from '../assets/clients/Tas.jpg';
+import shaneImg from '../assets/clients/Shane.jpg';
+import carlinImg from '../assets/clients/Carlin.jpg';
+
 const testimonials = [
     {
-        quote: "Futurrizon transformed our legacy systems into a modern cloud infrastructure, boosting our efficiency by 40%.",
-        author: "Sarah Johnson",
-        role: "CTO, TechFlow Inc.",
-        image: "https://randomuser.me/api/portraits/women/44.jpg"
+        quote: "Working with the Futurrizon team has been a great experience. Their willingness to solve problems and go the extra mile to find the right solution truly stands out. We were especially impressed with their expertise in Azure and AI services and would highly recommend them for related projects",
+        author: "Andrew Satanovsky",
+        role: "Associate Director, Motion Graphics, Graphic Design and Web Design",
+        image: andrewImg
     },
     {
-        quote: "Their AI solutions helped us predict market trends with scary accuracy. A truly visionary partner.",
-        author: "David Chen",
-        role: "Director of Product, FinEdge",
-        image: "https://randomuser.me/api/portraits/men/32.jpg"
+        quote: "Focused and well organized specialist in the fields of BI, data analytics and MS SQL. Always a pleasure working together with Yashesh!",
+        author: "Dominik Zehetner",
+        role: "CEO at Clearvision Consulting",
+        image: dominikImg
     },
     {
-        quote: "Professional, timely, and innovative. The mobile app they built for us has won three industry awards.",
-        author: "Emily Davis",
-        role: "Founder, HealthFirst",
-        image: "https://randomuser.me/api/portraits/women/68.jpg"
+        quote: "Yashesh was recommended to us and has since become a trusted part of our team. He has successfully delivered multiple projects across areas like Infrastructure as Code, AngularJS, and Power BI, consistently producing strong results. His ability to manage resources, understand project scope, and deliver high-quality work within tight timelines has exceeded our expectations every time.",
+        author: "Dan G.",
+        role: "CTO & Chief Software Architect at Active Cypher",
+        image: danImg
+    },
+    {
+        quote: "Have worked with Yashesh on a number of PowerShell projects over the years and always found him to be knowledgable, reliable and most importantly capable of delivering quality results in agreed timeframes. He's a great person to work with.",
+        author: "Tas Gray",
+        role: "Managing Director - Cloud at Axiom IT",
+        image: tasImg
+    },
+    {
+        quote: "The Futurrizon team is professional, collaborative, and committed to delivering the best outcomes. They take the time to understand a client’s business in depth, which helps them design effective and practical solutions. Their dedication and readiness to go the extra mile make them a reliable technology partner.",
+        author: "Shane Rigney",
+        role: "Head of Enterprise Solutions at Allens",
+        image: shaneImg
+    },
+    {
+        quote: "I have had the pleasure of working with Yashesh Nagori in the past, and I am a testament to his engineering capabilities and genius. In the almost two years project we collaborated on together, I was constantly impressed by Yashesh's practical approach to our engineering challenges. I strongly recommend Yashesh to any Engineering team looking to augment their staff.",
+        author: "Zoty De La Mota",
+        role: "Sr. Data Professional (Architecture/Engineering/Analytical/Cloud/Agentic AI/Data Governance)",
+        image: zotyImg
+    },
+    {
+        quote: "The Futurrizon team has been highly responsive, knowledgeable, and easy to work with. Their strong expertise in SharePoint helped them deliver a custom solution for us efficiently and with great quality. We truly appreciate their timely support and would highly recommend their services.",
+        author: "Carlin Atkinson",
+        role: "IT Administrator",
+        image: carlinImg
     }
 ];
 
@@ -68,7 +100,7 @@ const Testimonials = () => {
                                 transition={{ duration: 0.5 }}
                                 className="flex flex-col items-center"
                             >
-                                <p className="text-2xl md:text-3xl font-light text-primary italic leading-relaxed mb-8">
+                                <p className="text-lg md:text-xl font-light text-primary italic leading-relaxed mb-8">
                                     "{testimonials[current].quote}"
                                 </p>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Users, Globe, Zap, Star } from 'lucide-react';
+import { Check, Users, Globe, Zap, Star, Award } from 'lucide-react';
 
 const features = [
     { title: 'Industry Expertise', desc: 'Over a decade of experience delivering enterprise-grade solutions.' },
@@ -10,6 +10,9 @@ const features = [
 ];
 
 const WhyChooseUs = () => {
+    const currentYear = new Date().getFullYear();
+    const yearsExperience = currentYear - 2021; // Founded around 2022, 5+ in 2026
+
     return (
         <section id="why" className="py-24 bg-white overflow-hidden">
             <div className="container mx-auto px-6">
@@ -59,12 +62,12 @@ const WhyChooseUs = () => {
                         <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div className="bg-cream p-8 rounded-2xl shadow-md border-l-4 border-orange transform sm:translate-y-12">
                                 <Users size={40} className="text-orange mb-4" />
-                                <h3 className="text-4xl font-bold text-primary mb-1">500+</h3>
+                                <h3 className="text-4xl font-bold text-primary mb-1">50+</h3>
                                 <p className="text-primary/50">Satisfied Clients</p>
                             </div>
                             <div className="bg-primary p-8 rounded-2xl shadow-md border-l-4 border-peach text-cream">
                                 <Globe size={40} className="text-peach mb-4" />
-                                <h3 className="text-4xl font-bold mb-1">30+</h3>
+                                <h3 className="text-4xl font-bold mb-1">15+</h3>
                                 <p className="text-cream/60">Countries Served</p>
                             </div>
                             <div className="bg-orange p-8 rounded-2xl shadow-md border-l-4 border-cream text-white">
@@ -73,9 +76,9 @@ const WhyChooseUs = () => {
                                 <p className="text-white/80">Project Success Rate</p>
                             </div>
                             <div className="bg-cream p-8 rounded-2xl shadow-md border-l-4 border-peach transform sm:translate-y-12">
-                                <Star size={40} className="text-peach mb-4" />
-                                <h3 className="text-4xl font-bold text-primary mb-1">4.9/5</h3>
-                                <p className="text-primary/50">Clutch Review Score</p>
+                                <Award size={40} className="text-peach mb-4" />
+                                <h3 className="text-4xl font-bold text-primary mb-1">{yearsExperience}+</h3>
+                                <p className="text-primary/50">Years of Expertise</p>
                             </div>
                         </div>
 

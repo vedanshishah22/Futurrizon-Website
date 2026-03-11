@@ -10,19 +10,6 @@ import Testimonials from '../components/Testimonials';
 import ContactSection from '../components/ContactSection';
 
 const Home = () => {
-    const { hash } = useLocation();
-
-    React.useEffect(() => {
-        if (hash) {
-            const element = document.getElementById(hash.replace('#', ''));
-            if (element) {
-                setTimeout(() => {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-            }
-        }
-    }, [hash]);
-
     return (
         <main>
             <HeroSection />

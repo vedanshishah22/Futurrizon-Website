@@ -199,14 +199,16 @@ export default function CareerPage() {
 
                         <motion.div variants={fadeUp} className="mt-14 flex flex-wrap gap-8">
                             {[
-                                [<Building2 className="w-6 h-6 text-orange mx-auto mb-1" />, '5+', 'Open Roles'],
-                                [<Globe className="w-6 h-6 text-orange mx-auto mb-1" />, '15+', 'Countries Served'],
-                                [<Star className="w-6 h-6 text-orange mx-auto mb-1" />, '4.8', 'Glassdoor Rating'],
+                                [<Building2 className="w-5 h-5 text-orange" strokeWidth={1.5} />, `${displayJobs.length}+`, 'Open Roles'],
+                                [<Globe className="w-5 h-5 text-orange" strokeWidth={1.5} />, '15+', 'Countries Served'],
+                                [<Star className="w-5 h-5 text-orange" strokeWidth={1.5} />, '4.8', 'Glassdoor Rating'],
                             ].map(([icon, num, label]) => (
-                                <div key={label} className="text-center">
-                                    {icon}
-                                    <div className="text-2xl font-display font-black text-orange">{num}</div>
-                                    <div className="text-cream/40 text-xs mt-0.5">{label}</div>
+                                <div key={label} className="text-center flex flex-col items-center group">
+                                    <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-white/5 border border-white/10 mb-3 shadow-lg backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300">
+                                        {icon}
+                                    </div>
+                                    <div className="text-3xl font-display font-black text-orange">{num}</div>
+                                    <div className="text-cream/50 text-xs mt-1 uppercase tracking-wider font-semibold">{label}</div>
                                 </div>
                             ))}
                         </motion.div>

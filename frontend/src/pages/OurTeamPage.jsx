@@ -34,13 +34,13 @@ const leadership = [
 ];
 
 const teamMembers = [
-    { name: 'SharePoint Team', count: '5+', icon: <Building2 className="w-8 h-8 text-blue-600" strokeWidth={1.5} />, desc: 'SPFx, Intranets, Document Mgmt, Custom Solutions', color: 'bg-blue-500/10 text-blue-600 border-blue-500/15' },
+    { name: 'SharePoint Team', count: '6+', icon: <Building2 className="w-8 h-8 text-blue-600" strokeWidth={1.5} />, desc: 'SPFx, Intranets, Document Mgmt, Custom Solutions', color: 'bg-blue-500/10 text-blue-600 border-blue-500/15' },
     { name: 'Power Platform Team', count: '4+', icon: <Zap className="w-8 h-8 text-purple-600" strokeWidth={1.5} />, desc: 'Power Apps, Power Automate, Dataverse, Integration', color: 'bg-purple-500/10 text-purple-600 border-purple-500/15' },
-    { name: 'Power BI & Analytics', count: '3+', icon: <BarChart className="w-8 h-8 text-green-600" strokeWidth={1.5} />, desc: 'Dashboards, DAX, Data Modeling, ETL Pipelines', color: 'bg-green-500/10 text-green-600 border-green-500/15' },
-    { name: 'Azure & Cloud', count: '3+', icon: <Cloud className="w-8 h-8 text-cyan-600" strokeWidth={1.5} />, desc: 'Infrastructure, Migration, DevOps, Security', color: 'bg-cyan-500/10 text-cyan-600 border-cyan-500/15' },
-    { name: 'AI & GPT', count: '3+', icon: <Bot className="w-8 h-8 text-orange" strokeWidth={1.5} />, desc: 'Chatbots, Copilot, Automation, Knowledge Systems', color: 'bg-orange/10 text-orange border-orange/15' },
-    { name: 'M365 Consulting', count: '4+', icon: <Briefcase className="w-8 h-8 text-indigo-600" strokeWidth={1.5} />, desc: 'Tenant Setup, Governance, Adoption, Training', color: 'bg-indigo-500/10 text-indigo-600 border-indigo-500/15' },
-    { name: 'Business Development', count: '3+', icon: <Handshake className="w-8 h-8 text-pink-600" strokeWidth={1.5} />, desc: 'Client Relations, Proposals, Global Outreach', color: 'bg-pink-500/10 text-pink-600 border-pink-500/15' },
+    { name: 'Power BI & Analytics', count: '8+', icon: <BarChart className="w-8 h-8 text-green-600" strokeWidth={1.5} />, desc: 'Dashboards, DAX, Data Modeling, ETL Pipelines', color: 'bg-green-500/10 text-green-600 border-green-500/15' },
+    { name: 'Azure & Cloud', count: '2+', icon: <Cloud className="w-8 h-8 text-cyan-600" strokeWidth={1.5} />, desc: 'Infrastructure, Migration, DevOps, Security', color: 'bg-cyan-500/10 text-cyan-600 border-cyan-500/15' },
+    { name: 'AI & GPT', count: '10+', icon: <Bot className="w-8 h-8 text-orange" strokeWidth={1.5} />, desc: 'Chatbots, Copilot, Automation, Knowledge Systems', color: 'bg-orange/10 text-orange border-orange/15' },
+    { name: 'M365 Consulting', count: '3+', icon: <Briefcase className="w-8 h-8 text-indigo-600" strokeWidth={1.5} />, desc: 'Tenant Setup, Governance, Adoption, Training', color: 'bg-indigo-500/10 text-indigo-600 border-indigo-500/15' },
+    { name: 'Business Development', count: '2+', icon: <Handshake className="w-8 h-8 text-pink-600" strokeWidth={1.5} />, desc: 'Client Relations, Proposals, Global Outreach', color: 'bg-pink-500/10 text-pink-600 border-pink-500/15' },
     { name: 'UI/UX & Design', count: '2+', icon: <Palette className="w-8 h-8 text-yellow-700" strokeWidth={1.5} />, desc: 'Brand Design, Web Development, User Experience', color: 'bg-yellow-500/10 text-yellow-700 border-yellow-500/15' },
 ];
 
@@ -55,6 +55,8 @@ const values = [
 
 export default function OurTeamPage() {
     const [apiTeam, setApiTeam] = useState([]);
+    const currentYear = new Date().getFullYear();
+    const yearsExperience = currentYear - 2021; // Founded around 2022, 5+ in 2026
 
     useEffect(() => {
         fetch('http://127.0.0.1:8000/api/team/')
@@ -101,18 +103,18 @@ export default function OurTeamPage() {
                             A team of certified Microsoft experts, creative problem-solvers, and digital strategists driving transformation for businesses worldwide.
                         </motion.p>
 
-                        <motion.div variants={fadeUp} className="mt-12 flex flex-wrap gap-10">
+                        <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-8">
                             {[
-                                [<Users className="w-7 h-7 text-orange group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />, '20+', 'Team Members'],
-                                [<Trophy className="w-7 h-7 text-orange group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />, '5+', 'Years Expertise'],
-                                [<ClipboardList className="w-7 h-7 text-orange group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />, '100+', 'Projects'],
+                                [<Users className="w-6 h-6 text-orange group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />, '20+', 'Team Members'],
+                                [<Trophy className="w-6 h-6 text-orange group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />, `${yearsExperience}+`, 'Years Expertise'],
+                                [<ClipboardList className="w-6 h-6 text-orange group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />, '100+', 'Projects'],
                             ].map(([icon, num, label]) => (
                                 <div key={label} className="text-center flex flex-col items-center group">
-                                    <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-white/5 border border-white/10 mb-3 shadow-lg backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300">
+                                    <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-white/5 border border-white/10 mb-3 shadow-lg backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300">
                                         {icon}
                                     </div>
-                                    <div className="text-4xl font-display font-black text-orange">{num}</div>
-                                    <div className="text-cream/50 text-sm mt-1 uppercase tracking-wider font-semibold">{label}</div>
+                                    <div className="text-3xl font-display font-black text-orange">{num}</div>
+                                    <div className="text-cream/50 text-xs mt-1 uppercase tracking-wider font-semibold">{label}</div>
                                 </div>
                             ))}
                         </motion.div>
@@ -270,7 +272,8 @@ export default function OurTeamPage() {
                                         <div className="w-12 h-12 rounded-xl bg-white border border-primary/5 shadow-sm flex items-center justify-center">
                                             {t.icon}
                                         </div>
-                                        <span className={`text-lg font-display font-black px-3 py-0.5 rounded-full border ${t.color}`}>
+                                        <span className={`text-base font-display font-semibold px-3 py-1 rounded-full border flex items-center gap-1.5 ${t.color}`}>
+                                            <Users className="w-3.5 h-3.5" strokeWidth={2} />
                                             {t.count}
                                         </span>
                                     </div>

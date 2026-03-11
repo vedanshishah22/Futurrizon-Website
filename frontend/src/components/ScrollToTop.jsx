@@ -13,12 +13,11 @@ const ScrollToTop = () => {
                 const id = hash.replace('#', '');
                 const element = document.getElementById(id);
                 if (element) {
-                    // Try to scroll precisely to the element, adding offset for fixed navbar
-                    const yOffset = -80; 
+                    const yOffset = -100; // Increased offset slightly for better spacing
                     const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
                     window.scrollTo({ top: y, behavior: 'smooth' });
                 }
-            }, 500); // 500ms delay helps with Lazy Load and Framer Motion
+            }, 400); // Shorter duration for snappier response
         }
     }, [pathname, hash, key]);
 

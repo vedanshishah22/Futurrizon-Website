@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Send, CheckCircle, Loader2, ArrowRight } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+import { Mail, MapPin, Send, CheckCircle, Loader2 } from 'lucide-react';
 
 const ContactSection = () => {
     const [formData, setFormData] = useState({
@@ -10,6 +11,21 @@ const ContactSection = () => {
         message: ''
     });
     const [status, setStatus] = useState('idle');
+    const nameInputRef = useRef(null);
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash === '#contact' && status === 'idle') {
+            // Coordinate with ScrollToTop's 500ms timeout.
+            // We wait slightly longer (800ms) to ensure smooth scroll is well underway or finished.
+            const timer = setTimeout(() => {
+                if (nameInputRef.current) {
+                    nameInputRef.current.focus({ preventScroll: true });
+                }
+            }, 800);
+            return () => clearTimeout(timer);
+        }
+    }, [location.hash, status]);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -90,8 +106,12 @@ const ContactSection = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-xl font-bold mb-2 text-cream">Email Us</h4>
-                                    <p className="text-cream/60">info@futurrizon.com</p>
-                                    <p className="text-cream/60">hr@futurrizon.com</p>
+                                    <p className="text-cream/60">
+                                        <a href="mailto:info@futurrizon.com" className="hover:text-cream transition-colors">info@futurrizon.com</a>
+                                    </p>
+                                    <p className="text-cream/60">
+                                        <a href="mailto:hr@futurrizon.com" className="hover:text-cream transition-colors">hr@futurrizon.com</a>
+                                    </p>
                                 </div>
                             </div>
                             
@@ -134,6 +154,8 @@ const ContactSection = () => {
                                     <div>
                                         <label htmlFor="name" className="block text-sm font-medium text-primary/70 mb-2">Name</label>
                                         <input
+                                            ref={nameInputRef}
+                                            id="name"
                                             type="text"
                                             name="name"
                                             value={formData.name}
@@ -182,17 +204,22 @@ const ContactSection = () => {
                                     ></textarea>
                                 </div>
 
-                                <motion.a
-                                    href="https://calendly.com/futurrizon/30min?month=2026-03"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                <motion.button
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="w-full py-4 rounded-xl bg-orange text-white font-bold text-lg shadow-md hover:bg-orange/90 transition-all flex items-center justify-center gap-2 mt-4"
+                                    type="submit"
+                                    disabled={status === 'loading'}
+                                    className="w-full py-4 rounded-xl bg-orange text-white font-bold text-lg shadow-md hover:bg-orange/90 transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                                 >
-                                    Get a Free Consultation
-                                    <ArrowRight size={20} />
-                                </motion.a>
+                                    {status === 'loading' ? (
+                                        <Loader2 size={24} className="animate-spin" />
+                                    ) : (
+                                        <>
+                                            Send Message
+                                            <Send size={20} />
+                                        </>
+                                    )}
+                                </motion.button>
                             </form>
                         )}
                     </div>

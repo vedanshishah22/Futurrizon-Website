@@ -16,42 +16,42 @@ const steps = [
     {
         id: 'our-story',
         title: 'Our Story',
-        desc: 'Helping businesses unlock potential through intelligent digital transformation since 2022. We redesign the way businesses operate.',
+        desc: 'Helping businesses unlock their full potential through intelligent digital transformation and automation since 2022.',
         icon: <History size={24} />,
         color: '#002379'
     },
     {
         id: 'our-technology',
         title: 'Our Technology',
-        desc: 'Powered by Microsoft Cloud: Office 365, Power Platform, Azure, and AI to deliver secure, scalable, and intelligent systems.',
+        desc: 'Leveraging the Microsoft Cloud ecosystem to deliver secure, scalable, and intelligent enterprise-grade solutions.',
         icon: <Cpu size={24} />,
         color: '#FF5F00'
     },
     {
         id: 'our-approach',
         title: 'Our Approach',
-        desc: 'A delivery framework of Listen, Design, Automate, and Train that ensures measurable results and rapid deployment.',
+        desc: 'A proven delivery framework of Listen, Design, Automate, and Train that ensures rapid deployment and measurable results.',
         icon: <Compass size={24} />,
         color: '#002379'
     },
     {
         id: 'our-expertise',
         title: 'Our Expertise',
-        desc: 'Certified Microsoft cloud professionals delivering process engineering, data visualization, and digital excellence.',
+        desc: 'Certified Microsoft professionals delivering end-to-end process engineering, data visualization, and digital excellence.',
         icon: <Award size={24} />,
         color: '#FF5F00'
     },
     {
         id: 'our-quality',
         title: 'Our Quality',
-        desc: 'Dedicated Project Champions and live dashboards for 100% transparency. We turn vision into reality.',
+        desc: 'Ensuring 100% transparency through dedicated Project Champions and real-time progress monitoring dashboards.',
         icon: <Gem size={24} />,
         color: '#002379'
     },
     {
         id: 'our-communication',
         title: 'Our Communication',
-        desc: 'Transforming complexity into clarity. Secure-by-default and mobile-first experiences built for sustainable growth.',
+        desc: 'Transforming technical complexity into executive clarity with secure-by-default and mobile-first experiences.',
         icon: <MessageSquare size={24} />,
         color: '#FF5F00'
     }
@@ -144,7 +144,7 @@ const AboutSection = () => {
                                                 {step.title}
                                                 <ArrowRight size={18} className="text-orange opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" />
                                             </h3>
-                                            <p className="text-primary/60 leading-relaxed font-medium line-clamp-2">
+                                            <p className="text-primary/60 leading-relaxed font-medium">
                                                 {step.desc}
                                             </p>
                                         </div>

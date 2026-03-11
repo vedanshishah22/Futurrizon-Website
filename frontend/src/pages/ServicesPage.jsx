@@ -1,7 +1,10 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Zap, Brain, Users, Rocket } from 'lucide-react';
+import { 
+    Zap, Brain, Users, Rocket, ArrowRight, CheckCircle2, 
+    ArrowLeft, Layout, Shield, Smartphone, Layers
+} from 'lucide-react';
 import bgServices from '../assets/bg_services.png';
 import svc1 from '../assets/services/1.png';
 import svc2 from '../assets/services/2.png';
@@ -12,6 +15,8 @@ import svc6 from '../assets/services/6.jpg';
 import svc7 from '../assets/services/7.png';
 import svc8 from '../assets/services/8.jpg';
 import svc9 from '../assets/services/9.png';
+
+import bgCTA from '../assets/digitalfuture.jpg';
 
 /* ─── Logo Imports ────────────────────────────────────── */
 import logoM365 from '../assets/logos/Microsoft_365.svg.svg';
@@ -859,14 +864,28 @@ export default function ServicesPage() {
             </section>
 
             {/* ── CTA SECTION ──────────────────────────────── */}
-            <section className="bg-primary py-28 relative overflow-hidden">
-                <div className="absolute inset-0">
-
-                </div>
+            <section 
+                className="relative py-28 overflow-hidden bg-primary"
+                style={{
+                    backgroundImage: `linear-gradient(to right, rgba(0, 31, 84, 0.95), rgba(0, 31, 84, 0.8)), url(${bgCTA})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                }}
+            >
+                <div className="absolute inset-0 opacity-10"
+                    style={{
+                        backgroundImage: 'radial-gradient(circle, rgba(255,95,0,0.15) 1px, transparent 1px)',
+                        backgroundSize: '32px 32px',
+                    }}
+                />
                 <div className="container mx-auto px-6 relative z-10 text-center">
                     <AnimatedSection>
                         <div className="max-w-3xl mx-auto">
-                            <div className="text-6xl mb-6">🏗️</div>
+                        <div className="flex justify-center mb-8">
+                            <div className="w-20 h-20 rounded-3xl bg-orange/10 flex items-center justify-center text-orange shadow-inner border border-orange/20">
+                                <Rocket className="w-10 h-10" strokeWidth={1.5} />
+                            </div>
+                        </div>
                             <h2 className="text-4xl lg:text-6xl font-display font-bold text-cream leading-tight">
                                 Let's Build Your
                                 <span className="text-orange block mt-2">Digital Future</span>
@@ -879,7 +898,7 @@ export default function ServicesPage() {
                                     href="https://calendly.com/futurrizon/30min?month=2026-03"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="px-8 py-4 rounded-xl bg-orange text-white font-semibold text-sm hover:bg-orange/90 shadow-xl shadow-orange/30 transition-all duration-200 hover:-translate-y-0.5"
+                                    className="px-8 py-4 rounded-xl bg-orange text-white font-semibold text-sm hover:bg-orange/90 shadow-lg shadow-orange/20 transition-all duration-200 hover:-translate-y-0.5"
                                 >
                                     Book a Free Consultation
                                 </a>

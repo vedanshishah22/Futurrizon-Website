@@ -39,6 +39,7 @@ import ga7 from '../assets/festivals/Gandhi Ashram/7.jpg';
 import ga8 from '../assets/festivals/Gandhi Ashram/8.jpg';
 
 import monkeyVideo from '../assets/festivals/Monekyman/Monkeyman Video.mp4';
+import republicDayBg from '../assets/events/republicday.jpg';
 
 /* ─── Animation helpers ─────────────────────────────── */
 const fadeUp = {
@@ -82,10 +83,11 @@ const events = [
         icon: <PartyPopper className="w-5 h-5 text-orange" />,
         title: 'Fun Friday × Republic Day',
         subtitle: 'When Patriotism Meets Teamwork & Fun',
-        desc: 'Yes we are a tech company, but apparently we can also cook! Republic Day called for a Boys vs Girls Cooking Competition and let\'s just say the rivalry was VERY real. Between the questionable dishes, suspicious ingredients, and way too much confidence from both sides, we somehow ended up having an absolute blast. Games, laughter, and zero productivity. 10/10 would do again!👩‍🍳',
+        desc: 'Yes we are a tech company, but apparently we can also cook! Republic Day called for a Boys vs Girls Cooking Competition and let\'s just say the rivalry was very real. Between the questionable dishes, suspicious ingredients, and way too much confidence from both sides, we somehow ended up having an absolute blast. Games, laughter, and zero productivity. 10/10 would do again!',
         tag: 'Fun Friday',
         accent: 'orange',
         images: [rep1, rep2, rep3, rep4],
+        bgImage: republicDayBg,
     },
     {
         category: 'Client Meet',
@@ -93,7 +95,7 @@ const events = [
         icon: <Star className="w-5 h-5 text-[#002379]" />,
         title: 'KORMAX Collaboration',
         subtitle: 'A Power-Packed Collaboration Begins!',
-        desc: 'Big day at Futurrizon HQ! We got to host our client KORMAX for a session that was equal parts inspiring and fun. Mr. Walter Davis, Director at KORMAX, brought his absolute best with some seriously sharp insights and a vision that just clicks with what we do at Futurrizon. Microsoft 365, Power Platform, Power Automate, Azure, AI solutions... yeah we covered it all. The whole KORMAX team brought so much energy and curiosity to the table that the meetup flew by way too fast. These are exactly the kind of partnerships that make us want to build bigger and better every single day. Here is to many more milestones together! 🤝🚀',
+        desc: 'Big day at Futurrizon HQ! We got to host our client KORMAX for a session that was equal parts inspiring and fun. Mr. Walter Davis, Director at KORMAX, brought his absolute best with some seriously sharp insights and a vision that just clicks with what we do at Futurrizon. Microsoft 365, Power Platform, Power Automate, Azure, AI solutions... yeah we covered it all. The whole KORMAX team brought so much energy and curiosity to the table that the meetup flew by way too fast. These are exactly the kind of partnerships that make us want to build bigger and better every single day. Here is to many more milestones together!',
         tag: 'Client Meet',
         accent: 'blue',
         images: [kor1, kor2, kor3],
@@ -104,7 +106,7 @@ const events = [
         icon: <Heart className="w-5 h-5 text-orange" />,
         title: 'Diwali Decor & Festive Vibes',
         subtitle: 'Work + Festive Fun = Perfect Diwali Vibes',
-        desc: 'Diwali at Futurrizon hit different this year! 🪔 We turned the whole office into a proper Diwali mela with decorations in every corner. The Rangoli competition got very competitive very fast and honestly the talent in this office is unfair. We then sat down for a team lunch that nobody wanted to end, and closed the day with sweets and gifts all around because mithai makes everything better. Happy Diwali from our very festive, slightly sugar-rushed team!🍬🪔',
+        desc: 'Diwali at Futurrizon hit different this year! We turned the whole office into a proper Diwali mela with decorations in every corner. The Rangoli competition got very competitive very fast and honestly the talent in this office is unfair. We then sat down for a team lunch that nobody wanted to end, and closed the day with sweets and gifts all around because mithai makes everything better. Happy Diwali from our very festive, slightly sugar-rushed team!',
         tag: 'Office Decor',
         accent: 'orange',
         images: [diwali1, diwali2, diwali3, diwali4, diwali5],
@@ -115,7 +117,7 @@ const events = [
         icon: <Camera className="w-5 h-5 text-purple-600" />,
         title: 'Futurrizon × MonkeyMan',
         subtitle: '"We Care" Turns Into "We Collaborate"',
-        desc: 'Plot twist: a watch brand and a tech company walked into Diwali together. Turns out MonkeyMan and Futurrizon have more in common than we thought, mainly the belief that good things happen when good people team up. Seeing our guys featured in their Diwali campaign was honestly a vibe. Unexpected collab, great vibes, big smiles all around. We love it when partnerships just make sense!⌚',
+        desc: 'Plot twist: a watch brand and a tech company walked into Diwali together. Turns out MonkeyMan and Futurrizon have more in common than we thought, mainly the belief that good things happen when good people team up. Seeing our guys featured in their Diwali campaign was honestly a vibe. Unexpected collab, great vibes, big smiles all around. We love it when partnerships just make sense!',
         tag: 'Brand Collab',
         accent: 'orange',
         images: [monkeyVideo],
@@ -126,7 +128,7 @@ const events = [
         icon: <Handshake className="w-5 h-5 text-[#002379]" />,
         title: 'TexTaxUS × Gandhi Ashram Visit',
         subtitle: 'Adam Minow & TexTaxUS at Futurrizon HQ',
-        desc: 'Adam Minow from TexTaxUS flew in, and we made sure he got the full Ahmedabad experience. After productive meetings, we took a serene visit to the Gandhi Ashram where we shared many stories, views, and memories with Adam. We topped it off with an amazing team lunch where the conversations got way too good to stop. Great clients, great laughs, and the kind of partnership that just keeps getting better. More milestones incoming! 💙',
+        desc: 'Adam Minow from TexTaxUS flew in, and we made sure he got the full Ahmedabad experience. After productive meetings, we took a serene visit to the Gandhi Ashram where we shared many stories, views, and memories with Adam. We topped it off with an amazing team lunch where the conversations got way too good to stop. Great clients, great laughs, and the kind of partnership that just keeps getting better. More milestones incoming!',
         tag: 'Client Visit',
         accent: 'blue',
         images: [ga1, ga2, ga3, ga4, ga5, ga6, ga7, ga8],
@@ -137,7 +139,7 @@ const events = [
         icon: <Star className="w-5 h-5 text-green-600" />,
         title: 'Christmas at Futurrizon 🎄',
         subtitle: 'Joy, Warmth & Festive Cheer in the Office',
-        desc: 'We are a Microsoft company but on Christmas we turn into absolute elves. 🎅 Secret Santa happened and nobody played it cool. The office got decorated, the team got together for a proper Christmas lunch, and then games broke out and things got surprisingly competitive for a bunch of tech folks. Honestly one of the best days of the year. Merry Christmas from the gang at Futurrizon! 🎄🌟',
+        desc: 'We are a Microsoft company but on Christmas we turn into absolute elves. Secret Santa happened and nobody played it cool. The office got decorated, the team got together for a proper Christmas lunch, and then games broke out and things got surprisingly competitive for a bunch of tech folks. Honestly one of the best days of the year. Merry Christmas from the gang at Futurrizon!',
         tag: 'Company Event',
         accent: 'orange',
         images: [chr1, chr2, chr3, chr4],
@@ -305,16 +307,18 @@ export default function LifePage() {
                         <motion.p variants={fadeUp} className="mt-6 text-white/65 text-lg max-w-xl leading-relaxed">
                             We don't just build technology. We build a workplace where people thrive, celebrate, and grow together. Take a peek inside our world.
                         </motion.p>
-                        <motion.div variants={fadeUp} className="mt-12 flex flex-wrap gap-10">
+                        <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-8">
                             {[
-                                [<PartyPopper className="w-6 h-6 text-orange mx-auto mb-1" />, '20+', 'Events a Year'],
-                                [<Globe className="w-6 h-6 text-orange mx-auto mb-1" />, '5+', 'Global Clients'],
-                                [<Briefcase className="w-6 h-6 text-orange mx-auto mb-1" />, '∞', 'Memories Made'],
+                                [<PartyPopper className="w-5 h-5 text-orange" strokeWidth={1.5} />, '20+', 'Events a Year'],
+                                [<Globe className="w-5 h-5 text-orange" strokeWidth={1.5} />, '50+', 'Global Clients'],
+                                [<Camera className="w-5 h-5 text-orange" strokeWidth={1.5} />, '∞', 'Memories Made'],
                             ].map(([icon, num, label]) => (
-                                <div key={label} className="text-center">
-                                    {icon}
+                                <div key={label} className="text-center flex flex-col items-center group">
+                                    <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-white/5 border border-white/10 mb-3 shadow-lg backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300">
+                                        {icon}
+                                    </div>
                                     <div className="text-3xl font-display font-black text-orange">{num}</div>
-                                    <div className="text-white/40 text-xs mt-1 uppercase tracking-widest font-semibold">{label}</div>
+                                    <div className="text-white/50 text-xs mt-1 uppercase tracking-wider font-semibold">{label}</div>
                                 </div>
                             ))}
                         </motion.div>
@@ -390,12 +394,23 @@ export default function LifePage() {
                                     <motion.div
                                         variants={fadeUp}
                                         whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                                        className="bg-[#FAFAF8] rounded-3xl overflow-hidden border border-primary/6 hover:border-primary/12 shadow-sm hover:shadow-2xl hover:shadow-primary/8 transition-all duration-400 h-full flex flex-col group"
+                                        className="bg-[#FAFAF8] rounded-3xl overflow-hidden border border-primary/6 hover:border-primary/12 shadow-sm hover:shadow-2xl hover:shadow-primary/8 transition-all duration-400 h-full flex flex-col group relative"
                                     >
+                                        {/* Background Image with Low Opacity */}
+                                        {ev.bgImage && (
+                                            <div 
+                                                className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none group-hover:opacity-[0.08] transition-opacity duration-500"
+                                                style={{ 
+                                                    backgroundImage: `url(${ev.bgImage})`,
+                                                    backgroundSize: 'cover',
+                                                    backgroundPosition: 'center'
+                                                }}
+                                            />
+                                        )}
                                         {/* Top colour bar */}
-                                        <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${accentHex}, ${accentHex}44)` }} />
+                                        <div className="h-1 w-full relative z-10" style={{ background: `linear-gradient(90deg, ${accentHex}, ${accentHex}44)` }} />
 
-                                        <div className="p-6 flex flex-col flex-1">
+                                        <div className="p-6 flex flex-col flex-1 relative z-10">
                                             {/* Header badges */}
                                             <div className="flex items-center justify-between mb-5">
                                                 <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border ${ev.categoryColor}`}>
