@@ -27,7 +27,7 @@ const INITIAL_BOT_MESSAGE = {
     id: 'init',
     role: 'bot',
     type: 'text',
-    text: "Hello! I'm **Furi** — Your Tech Buddy from Futurrizon.\n\nBefore we begin, may I please have your **name** so I can assist you better?",
+    text: "Hello! I'm **Furi** — Your Tech Buddy from Futurrizon.\n\nHow can I assist you today? Feel free to ask about our services, company, working hours, or anything else.",
     time: timeStr(),
 };
 
@@ -174,7 +174,7 @@ export default function FuriChat() {
     const [messages, setMessages] = useState([INITIAL_BOT_MESSAGE]);
     const [inputVal, setInputVal] = useState('');
     const [isTyping, setIsTyping] = useState(false);
-    const [collectPhase, setCollectPhase] = useState('name'); // 'name' | 'email' | 'done'
+    const [collectPhase, setCollectPhase] = useState('done'); // Skip collection phase
     const [userName, setUserName] = useState('');
     const [userEmail, setUserEmail] = useState('');
     const [ctaShown, setCtaShown] = useState(false);
@@ -421,7 +421,7 @@ export default function FuriChat() {
             <button
                 onClick={() => setIsOpen((o) => !o)}
                 aria-label={isOpen ? 'Close Furi chat' : 'Open Furi chat'}
-                className="fixed bottom-5 right-5 z-[9999] w-14 h-14 rounded-full shadow-xl flex items-center justify-center transition-transform duration-200 hover:scale-110 active:scale-95"
+                className={`fixed bottom-5 right-5 z-[9999] w-14 h-14 rounded-full shadow-xl flex items-center justify-center transition-transform duration-200 hover:scale-110 active:scale-95 ${!isOpen ? 'furi-launcher-bounce' : ''}`}
                 style={{
                     background: isOpen
                         ? 'linear-gradient(135deg, #333, #555)'
