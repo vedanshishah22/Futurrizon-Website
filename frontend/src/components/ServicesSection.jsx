@@ -101,6 +101,8 @@ const ServicesSection = () => {
     const { scrollX } = useScroll({ container: desktopContainerRef });
 
     const [activeIdx, setActiveIdx] = useState(0);
+    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+    const autoPlayIntervalRef = useRef(null);
 
     // Dynamic Layout Metrics State
     const [metrics, setMetrics] = useState({
@@ -142,6 +144,30 @@ const ServicesSection = () => {
             desktopContainerRef.current.scrollLeft = metrics.singleSetWidth;
         }
     }, [metrics.singleSetWidth]);
+
+    // ── Auto-Play Logic ──────────────────────────────────
+    useEffect(() => {
+        const startAutoPlay = () => {
+            if (autoPlayIntervalRef.current) clearInterval(autoPlayIntervalRef.current);
+            autoPlayIntervalRef.current = setInterval(() => {
+                if (desktopContainerRef.current && isAutoPlaying) {
+                    const step = metrics.cardWidth + metrics.gap;
+                    desktopContainerRef.current.scrollBy({
+                        left: step,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 3000); // 3 seconds for a faster pace
+        };
+
+        if (isAutoPlaying && metrics.singleSetWidth > 0) {
+            startAutoPlay();
+        }
+
+        return () => {
+            if (autoPlayIntervalRef.current) clearInterval(autoPlayIntervalRef.current);
+        };
+    }, [isAutoPlaying, metrics.cardWidth, metrics.gap, metrics.singleSetWidth]);
 
     // Seamless Circular Loop Logic with fluid width
     const handleScroll = (e) => {
@@ -219,6 +245,10 @@ const ServicesSection = () => {
                     <motion.div
                         ref={desktopContainerRef}
                         onScroll={handleScroll}
+                        onMouseEnter={() => setIsAutoPlaying(false)}
+                        onMouseLeave={() => setIsAutoPlaying(true)}
+                        onTouchStart={() => setIsAutoPlaying(false)}
+                        onTouchEnd={() => setIsAutoPlaying(true)}
                         style={{
                             paddingLeft: sidePadding,
                             paddingRight: sidePadding
