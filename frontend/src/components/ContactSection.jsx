@@ -72,7 +72,7 @@ const ContactSection = () => {
             <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-tr from-peach/10 to-transparent pointer-events-none"></div>
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                     {/* Left Info */}
                     <div className="text-cream">
                         <div className="inline-block px-4 py-1.5 rounded-full bg-orange/20 text-orange font-medium text-sm mb-6 border border-orange/30">
@@ -112,21 +112,6 @@ const ContactSection = () => {
                                     </p>
                                 </div>
                             </div>
-                            
-                            {/* Map Location */}
-                            <div className="w-full h-[300px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-                                <iframe 
-                                    title="Futurrizon Office Location"
-                                    src="https://maps.google.com/maps?width=100%25&amp;height=100%25&amp;hl=en&amp;q=FUTURRIZON%20TECHNOLOGIES%20PVT%20LTD,%20Ahmedabad&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                                    width="100%" 
-                                    height="100%" 
-                                    style={{ border: 0 }} 
-                                    allowFullScreen="" 
-                                    loading="lazy" 
-                                    referrerPolicy="no-referrer-when-downgrade"
-                                ></iframe>
-                            </div>
-
                         </div>
                     </div>
 
@@ -221,6 +206,20 @@ const ContactSection = () => {
                             </form>
                         )}
                     </div>
+                </div>
+
+                {/* Full Width Map Location - Added Below Grid */}
+                <div className="mt-16 w-full h-[300px] md:h-[450px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                    <iframe 
+                        title="Futurrizon Office Location"
+                        src="https://maps.google.com/maps?width=100%25&amp;height=100%25&amp;hl=en&amp;q=FUTURRIZON%20TECHNOLOGIES%20PVT%20LTD,%20Ahmedabad&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                        width="100%" 
+                        height="100%" 
+                        style={{ border: 0 }} 
+                        allowFullScreen="" 
+                        loading="lazy" 
+                        referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                 </div>
             </div>
         </section>
