@@ -59,26 +59,26 @@ const WhyChooseUs = () => {
                         transition={{ duration: 0.8 }}
                         className="w-full lg:w-1/2 relative"
                     >
-                        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div className="bg-cream p-8 rounded-2xl shadow-md border-l-4 border-orange transform sm:translate-y-12">
-                                <Users size={40} className="text-orange mb-4" />
-                                <h3 className="text-4xl font-bold text-primary mb-1">50+</h3>
-                                <p className="text-primary/50">Satisfied Clients</p>
+                        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                            <div className="bg-cream p-6 md:p-8 rounded-2xl shadow-md border-l-4 border-orange transform sm:translate-y-12">
+                                <Users size={32} className="text-orange mb-4 md:size-10" />
+                                <h3 className="text-3xl md:text-4xl font-bold text-primary mb-1">50+</h3>
+                                <p className="text-primary/50 text-sm md:text-base">Satisfied Clients</p>
                             </div>
-                            <div className="bg-primary p-8 rounded-2xl shadow-md border-l-4 border-peach text-cream">
-                                <Globe size={40} className="text-peach mb-4" />
-                                <h3 className="text-4xl font-bold mb-1">15+</h3>
-                                <p className="text-cream/60">Countries Served</p>
+                            <div className="bg-primary p-6 md:p-8 rounded-2xl shadow-md border-l-4 border-peach text-cream">
+                                <Globe size={32} className="text-peach mb-4 md:size-10" />
+                                <h3 className="text-3xl md:text-4xl font-bold mb-1">15+</h3>
+                                <p className="text-cream/60 text-sm md:text-base">Countries Served</p>
                             </div>
-                            <div className="bg-orange p-8 rounded-2xl shadow-md border-l-4 border-cream text-white">
-                                <Zap size={40} className="text-cream mb-4" />
-                                <h3 className="text-4xl font-bold mb-1">98%</h3>
-                                <p className="text-white/80">Project Success Rate</p>
+                            <div className="bg-orange p-6 md:p-8 rounded-2xl shadow-md border-l-4 border-cream text-white">
+                                <Zap size={32} className="text-cream mb-4 md:size-10" />
+                                <h3 className="text-3xl md:text-4xl font-bold mb-1">98%</h3>
+                                <p className="text-white/80 text-sm md:text-base">Project Success Rate</p>
                             </div>
-                            <div className="bg-cream p-8 rounded-2xl shadow-md border-l-4 border-peach transform sm:translate-y-12">
-                                <Award size={40} className="text-peach mb-4" />
-                                <h3 className="text-4xl font-bold text-primary mb-1">{yearsExperience}+</h3>
-                                <p className="text-primary/50">Years of Expertise</p>
+                            <div className="bg-cream p-6 md:p-8 rounded-2xl shadow-md border-l-4 border-peach transform sm:translate-y-12">
+                                <Award size={32} className="text-peach mb-4 md:size-10" />
+                                <h3 className="text-3xl md:text-4xl font-bold text-primary mb-1">{yearsExperience}+</h3>
+                                <p className="text-primary/50 text-sm md:text-base">Years of Expertise</p>
                             </div>
                         </div>
 

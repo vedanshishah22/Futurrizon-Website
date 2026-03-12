@@ -307,18 +307,18 @@ export default function LifePage() {
                         <motion.p variants={fadeUp} className="mt-6 text-white/65 text-lg max-w-xl leading-relaxed">
                             We don't just build technology. We build a workplace where people thrive, celebrate, and grow together. Take a peek inside our world.
                         </motion.p>
-                        <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-8">
+                        <motion.div variants={fadeUp} className="mt-10 sm:mt-14 flex flex-nowrap justify-start gap-6 sm:gap-12">
                             {[
-                                [<PartyPopper className="w-5 h-5 text-orange" strokeWidth={1.5} />, '20+', 'Events a Year'],
-                                [<Globe className="w-5 h-5 text-orange" strokeWidth={1.5} />, '50+', 'Global Clients'],
-                                [<Camera className="w-5 h-5 text-orange" strokeWidth={1.5} />, '∞', 'Memories Made'],
+                                [<PartyPopper className="w-4 h-4 sm:w-5 sm:h-5 text-orange" strokeWidth={1.5} />, '20+', 'Events/Year'],
+                                [<Globe className="w-4 h-4 sm:w-5 sm:h-5 text-orange" strokeWidth={1.5} />, '50+', 'Clients'],
+                                [<Camera className="w-4 h-4 sm:w-5 sm:h-5 text-orange" strokeWidth={1.5} />, '∞', 'Memories'],
                             ].map(([icon, num, label]) => (
-                                <div key={label} className="text-center flex flex-col items-center group">
-                                    <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-white/5 border border-white/10 mb-3 shadow-lg backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300">
+                                <div key={label} className="text-center flex flex-col items-center group min-w-0">
+                                    <div className="flex items-center justify-center w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 mb-2 sm:mb-3 shadow-lg backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shrink-0">
                                         {icon}
                                     </div>
-                                    <div className="text-3xl font-display font-black text-orange">{num}</div>
-                                    <div className="text-white/50 text-xs mt-1 uppercase tracking-wider font-semibold">{label}</div>
+                                    <div className="text-xl sm:text-3xl font-display font-black text-orange leading-none">{num}</div>
+                                    <div className="text-white/50 text-[9px] sm:text-xs mt-1 sm:mt-1.5 uppercase tracking-wider font-semibold truncate w-full">{label}</div>
                                 </div>
                             ))}
                         </motion.div>

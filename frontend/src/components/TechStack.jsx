@@ -93,7 +93,7 @@ const TechCard = ({ tech, index, state, onHover, onLeave }) => {
                         }
             }
             whileHover={floatAnim}
-            className="relative flex items-center gap-4 p-5 rounded-[18px] cursor-pointer overflow-hidden select-none bg-white"
+            className="relative flex items-center gap-2.5 sm:gap-4 p-3.5 sm:p-5 rounded-[18px] cursor-pointer overflow-hidden select-none bg-white"
             style={{
                 border: isActive
                     ? `1.5px solid ${accent.color}55`
@@ -111,10 +111,10 @@ const TechCard = ({ tech, index, state, onHover, onLeave }) => {
 
             {/* ── Logo container — img ONLY, no text ── */}
             <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300"
                 style={{
                     background: 'white',
-                    padding: '8px',
+                    padding: isActive ? '4px' : '6px',
                     boxShadow: isActive
                         ? `0 2px 8px ${accent.glow}`
                         : '0 1px 4px rgba(0,35,121,0.06)',
@@ -152,11 +152,15 @@ const TechCard = ({ tech, index, state, onHover, onLeave }) => {
 
             {/* Technology name */}
             <span
-                className="leading-snug transition-all duration-300"
+                className="leading-tight transition-all duration-300"
                 style={{
                     color: isActive ? accent.color : '#002379',
                     fontWeight: isActive ? 700 : 600,
-                    fontSize: '14px',
+                    fontSize: 'clamp(11px, 3.2vw, 14px)',
+                    display: '-webkit-box',
+                    WebkitLineClamp: '2',
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden',
                 }}
             >
                 {tech.name}
@@ -242,7 +246,7 @@ const TechStack = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: '-50px' }}
-                    className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4"
+                    className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4 px-3 sm:px-0"
                 >
                     {techs.map((tech, i) => (
                         <TechCard

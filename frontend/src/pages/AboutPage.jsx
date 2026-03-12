@@ -310,7 +310,7 @@ const AboutPage = () => {
                         <span>Our Communication</span>
                     </div>
                     <h2 className="text-4xl text-center md:text-5xl font-extrabold mb-6">Clarity Into Advantage</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 mb-20">
                         {[
                             { title: 'High-Speed Execution', icon: <Zap /> },
                             { title: 'Secure-By-Default', icon: <Shield /> },
@@ -318,14 +318,16 @@ const AboutPage = () => {
                             { title: 'Quality Validation', icon: <CheckCircle2 /> },
                             { title: 'Sustainable Growth', icon: <Layers /> }
                         ].map((item, i) => (
-                            <div key={i} className="p-8 bg-white border border-primary/5 rounded-3xl text-center hover:shadow-lg transition-all">
-                                <div className="w-16 h-16 rounded-full bg-cream mx-auto mb-6 flex items-center justify-center text-orange">{item.icon}</div>
-                                <h4 className="text-xl font-extrabold">{item.title}</h4>
+                            <div key={i} className="p-4 sm:p-8 bg-white border border-primary/5 rounded-2xl sm:rounded-3xl text-center hover:shadow-lg transition-all flex flex-col items-center justify-center">
+                                <div className="w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-cream mx-auto mb-3 sm:mb-6 flex items-center justify-center text-orange shrink-0">
+                                    {React.cloneElement(item.icon, { size: window.innerWidth < 640 ? 20 : 24 })}
+                                </div>
+                                <h4 className="text-sm sm:text-xl font-extrabold leading-tight">{item.title}</h4>
                             </div>
                         ))}
-                        <div className="lg:col-span-1 p-8 bg-orange rounded-3xl text-white flex flex-col justify-center items-center text-center shadow-lg">
-                            <h4 className="text-xl font-extrabold mb-4 italic">"Your success isn't a metric, it's our mission."</h4>
-                            <p className="font-bold opacity-80 uppercase text-xs">Futurrizon Team</p>
+                        <div className="col-span-2 lg:col-span-1 p-6 sm:p-8 bg-orange rounded-2xl sm:rounded-3xl text-white flex flex-col justify-center items-center text-center shadow-lg min-h-[120px]">
+                            <h4 className="text-base sm:text-xl font-extrabold mb-2 sm:mb-4 italic">"Your success isn't a metric, it's our mission."</h4>
+                            <p className="font-bold opacity-80 uppercase text-[10px] sm:text-xs">Futurrizon Team</p>
                         </div>
                     </div>
                     <div className="text-center">

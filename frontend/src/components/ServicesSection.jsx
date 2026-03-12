@@ -223,7 +223,7 @@ const ServicesSection = () => {
                             paddingLeft: sidePadding,
                             paddingRight: sidePadding
                         }}
-                        className="flex gap-4 md:gap-8 overflow-x-auto pt-6 pb-12 md:pb-16 scrollbar-hide cursor-grab active:cursor-grabbing snap-x snap-mandatory"
+                        className="flex gap-4 md:gap-8 overflow-x-auto pt-6 pb-12 md:pb-16 scrollbar-hide cursor-grab active:cursor-grabbing snap-x snap-mandatory px-4 md:px-0"
                     >
                         {INFINITE_SERVICES.map((svc, i) => (
                             <PortfolioCard

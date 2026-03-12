@@ -64,7 +64,7 @@ const IndustriesSection = () => {
                             Tailored IT solutions for diverse sectors, ensuring compliance, security, and growth.
                         </p>
                     </div>
-                    <Link to="/industries" className="px-6 py-3 rounded-xl border border-orange/40 hover:bg-orange text-cream hover:text-white transition-all duration-300 font-medium whitespace-nowrap">
+                    <Link to="/industries" className="mx-auto md:mx-0 px-6 py-3 rounded-xl border border-orange/40 hover:bg-orange text-cream hover:text-white transition-all duration-300 font-medium whitespace-nowrap">
                         Explore All Industries →
                     </Link>
                 </div>

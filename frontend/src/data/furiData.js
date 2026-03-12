@@ -22,9 +22,7 @@ export const hrData = {
                 "Saturday and Sunday generally off unless business requirements arise.",
         },
         working_hours: {
-            total_daily_hours: 9,
-            productive_hours: 8,
-            break_hours: 1,
+            schedule: "Monday to Friday, 9:30 AM – 6:30 PM IST",
             office_presence_required: true,
         },
     },
@@ -113,8 +111,7 @@ export const contactData = {
             country: "India",
         },
         business_hours: {
-            monday_to_friday: "10:00 AM – 7:00 PM IST",
-            saturday: "10:00 AM – 2:00 PM IST",
+            monday_to_friday: "9:30 AM – 6:30 PM IST",
             timezone: "India Standard Time (IST)",
         },
     },

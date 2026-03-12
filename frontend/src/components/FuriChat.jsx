@@ -27,7 +27,7 @@ const INITIAL_BOT_MESSAGE = {
     id: 'init',
     role: 'bot',
     type: 'text',
-    text: "Hello! I'm **Furi** — Your Tech Buddy from Futurrizon.\n\nHow can I assist you today? Feel free to ask about our services, company, working hours, or anything else.",
+    text: "Hello! I'm **Furi** — Your Tech Buddy from Futurrizon.\n\nHow can I assist you today? Feel free to ask about our services, company, office hours, or anything else.",
     time: timeStr(),
 };
 
@@ -309,10 +309,10 @@ export default function FuriChat() {
             {/* ── Floating Chat Panel ── */}
             {isOpen && (
                 <div
-                    className="furi-panel fixed bottom-24 right-5 z-[9999] flex flex-col"
+                    className="furi-panel fixed bottom-24 right-5 sm:right-6 z-[9999] flex flex-col"
                     style={{
-                        width: 'min(380px, calc(100vw - 24px))',
-                        height: 'min(560px, calc(100vh - 130px))',
+                        width: 'min(380px, calc(100vw - 32px))',
+                        height: 'min(560px, calc(100vh - 160px))',
                         borderRadius: '20px',
                         overflow: 'hidden',
                         boxShadow: '0 24px 64px rgba(0,35,121,0.18), 0 4px 16px rgba(0,0,0,0.08)',

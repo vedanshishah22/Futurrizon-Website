@@ -105,18 +105,18 @@ export default function OurTeamPage() {
                             A team of certified Microsoft experts, creative problem-solvers, and digital strategists driving transformation for businesses worldwide.
                         </motion.p>
 
-                        <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-8">
+                        <motion.div variants={fadeUp} className="mt-10 flex flex-nowrap justify-start gap-6 sm:gap-8">
                             {[
-                                [<Users className="w-6 h-6 text-orange group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />, '20+', 'Team Members'],
-                                [<Trophy className="w-6 h-6 text-orange group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />, `${yearsExperience}+`, 'Years Expertise'],
-                                [<ClipboardList className="w-6 h-6 text-orange group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />, '100+', 'Projects'],
+                                [<Users className="w-4 h-4 sm:w-6 sm:h-6 text-orange group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />, '20+', 'Members'],
+                                [<Trophy className="w-4 h-4 sm:w-6 sm:h-6 text-orange group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />, `${yearsExperience}+`, 'Years'],
+                                [<ClipboardList className="w-4 h-4 sm:w-6 sm:h-6 text-orange group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />, '100+', 'Projects'],
                             ].map(([icon, num, label]) => (
-                                <div key={label} className="text-center flex flex-col items-center group">
-                                    <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-white/5 border border-white/10 mb-3 shadow-lg backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300">
+                                <div key={label} className="text-center flex flex-col items-center group min-w-0">
+                                    <div className="flex items-center justify-center w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 mb-2 sm:mb-3 shadow-lg backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shrink-0">
                                         {icon}
                                     </div>
-                                    <div className="text-3xl font-display font-black text-orange">{num}</div>
-                                    <div className="text-cream/50 text-xs mt-1 uppercase tracking-wider font-semibold">{label}</div>
+                                    <div className="text-xl sm:text-3xl font-display font-black text-orange leading-none">{num}</div>
+                                    <div className="text-cream/50 text-[9px] sm:text-xs mt-1 sm:mt-1.5 uppercase tracking-wider font-semibold truncate w-full">{label}</div>
                                 </div>
                             ))}
                         </motion.div>
@@ -268,7 +268,7 @@ export default function OurTeamPage() {
                         </motion.p>
                     </AnimatedSection>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto">
                         {teamMembers.map((t, i) => (
                             <AnimatedSection key={i}>
                                 <motion.div
@@ -285,8 +285,8 @@ export default function OurTeamPage() {
                                             {t.count}
                                         </span>
                                     </div>
-                                    <h3 className="font-display font-bold text-primary text-sm mb-1 group-hover:text-orange transition-colors">{t.name}</h3>
-                                    <p className="text-primary/45 text-xs leading-relaxed">{t.desc}</p>
+                                    <h3 className="font-display font-bold text-primary text-[11px] sm:text-sm mb-1 group-hover:text-orange transition-colors">{t.name}</h3>
+                                    <p className="text-primary/45 text-[10px] sm:text-xs leading-relaxed line-clamp-2">{t.desc}</p>
                                 </motion.div>
                             </AnimatedSection>
                         ))}
@@ -353,7 +353,7 @@ export default function OurTeamPage() {
                         </motion.h2>
                     </AnimatedSection>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 max-w-5xl mx-auto">
                         {values.map((v, i) => (
                             <AnimatedSection key={i}>
                                 <motion.div
@@ -364,8 +364,8 @@ export default function OurTeamPage() {
                                     <div className="w-14 h-14 rounded-2xl bg-orange/5 border border-orange/10 shadow-sm flex items-center justify-center mb-5 group-hover:bg-orange/10 group-hover:scale-110 transition-all duration-300">
                                         {v.icon}
                                     </div>
-                                    <h3 className="font-display font-bold text-primary text-base mb-2 group-hover:text-orange transition-colors">{v.title}</h3>
-                                    <p className="text-primary/50 text-sm leading-relaxed">{v.desc}</p>
+                                    <h3 className="font-display font-bold text-primary text-[13px] sm:text-base mb-2 group-hover:text-orange transition-colors">{v.title}</h3>
+                                    <p className="text-primary/50 text-[11px] sm:text-sm leading-relaxed line-clamp-2">{v.desc}</p>
                                 </motion.div>
                             </AnimatedSection>
                         ))}

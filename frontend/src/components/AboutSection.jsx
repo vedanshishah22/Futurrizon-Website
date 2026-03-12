@@ -134,10 +134,10 @@ const AboutSection = () => {
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true, margin: "-100px" }}
                                         transition={{ duration: 0.7, ease: "easeOut" }}
-                                        className="w-full md:w-[45%] p-8 bg-white rounded-[2rem] border border-primary/5 shadow-md transition-all duration-500 group-hover:shadow-lg group-hover:shadow-primary/5 group-hover:-translate-y-2 relative overflow-hidden"
+                                        className="w-full md:w-[45%] p-6 md:p-8 bg-white rounded-[2rem] border border-primary/5 shadow-md transition-all duration-500 group-hover:shadow-lg group-hover:shadow-primary/5 group-hover:-translate-y-2 relative overflow-hidden"
                                     >
                                         <div className="relative z-10">
-                                            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl text-white mb-6 md:hidden shadow-md" style={{ backgroundColor: step.color }}>
+                                            <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-xl text-white mb-6 md:hidden shadow-md" style={{ backgroundColor: step.color }}>
                                                 {step.icon}
                                             </div>
                                             <h3 className="text-2xl font-extrabold text-primary mb-3 flex items-center gap-3">

@@ -114,7 +114,7 @@ const ContactSection = () => {
                             </div>
                             
                             {/* Map Location */}
-                            <div className="mt-8 rounded-2xl overflow-hidden border border-cream/10 h-64 w-full shadow-lg shadow-black/20">
+                            <div className="w-full h-[300px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                                 <iframe 
                                     title="Futurrizon Office Location"
                                     src="https://maps.google.com/maps?width=100%25&amp;height=100%25&amp;hl=en&amp;q=FUTURRIZON%20TECHNOLOGIES%20PVT%20LTD,%20Ahmedabad&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"

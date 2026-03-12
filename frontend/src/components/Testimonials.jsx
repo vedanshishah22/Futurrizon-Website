@@ -44,7 +44,7 @@ const testimonials = [
     {
         quote: "I have had the pleasure of working with Yashesh Nagori in the past, and I am a testament to his engineering capabilities and genius. In the almost two years project we collaborated on together, I was constantly impressed by Yashesh's practical approach to our engineering challenges. I strongly recommend Yashesh to any Engineering team looking to augment their staff.",
         author: "Zoty De La Mota",
-        role: "Sr. Data Professional (Architecture/Engineering/Analytical/Cloud/Agentic AI/Data Governance)",
+        role: "Sr. Data Professional (Engineer/Cloud/Agentic AI/Data Governance)",
         image: zotyImg
     },
     {
@@ -79,10 +79,10 @@ const Testimonials = () => {
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-orange to-transparent z-10"></div>
             <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-peach to-transparent z-10"></div>
 
-            <div className="container mx-auto px-6 text-center relative z-10">
-                <div className="mb-16">
-                    <h2 className="text-4xl font-bold text-primary mb-4">Client Success Stories</h2>
-                    <p className="text-xl text-primary/50">Don't just take our word for it.</p>
+            <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
+                <div className="mb-12 md:mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Client Success Stories</h2>
+                    <p className="text-lg md:text-xl text-primary/60">Don't just take our word for it.</p>
                 </div>
 
                 <div className="relative max-w-4xl mx-auto">
@@ -100,7 +100,7 @@ const Testimonials = () => {
                                 transition={{ duration: 0.5 }}
                                 className="flex flex-col items-center"
                             >
-                                <p className="text-lg md:text-xl font-light text-primary italic leading-relaxed mb-8">
+                                <p className="text-base md:text-xl font-medium text-primary/90 italic leading-relaxed mb-8">
                                     "{testimonials[current].quote}"
                                 </p>
 
@@ -117,11 +117,11 @@ const Testimonials = () => {
                         </AnimatePresence>
 
                         {/* Navigation Buttons */}
-                        <div className="flex gap-4 absolute bottom-8 right-8">
-                            <button onClick={prevSlide} className="p-2 rounded-full bg-cream shadow-sm hover:bg-orange hover:text-white transition-colors text-primary">
+                        <div className="flex gap-4 absolute bottom-6 right-6 md:bottom-8 md:right-8">
+                            <button onClick={prevSlide} className="p-3 md:p-2 rounded-full bg-cream shadow-md md:shadow-sm hover:bg-orange hover:text-white transition-all text-primary border border-orange/10">
                                 <ArrowLeft size={20} />
                             </button>
-                            <button onClick={nextSlide} className="p-2 rounded-full bg-cream shadow-sm hover:bg-orange hover:text-white transition-colors text-primary">
+                            <button onClick={nextSlide} className="p-3 md:p-2 rounded-full bg-cream shadow-md md:shadow-sm hover:bg-orange hover:text-white transition-all text-primary border border-orange/10">
                                 <ArrowRight size={20} />
                             </button>
                         </div>

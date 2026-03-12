@@ -197,18 +197,18 @@ export default function CareerPage() {
                             </button>
                         </motion.div>
 
-                        <motion.div variants={fadeUp} className="mt-14 flex flex-wrap gap-8">
+                        <motion.div variants={fadeUp} className="mt-10 sm:mt-14 flex flex-nowrap justify-start gap-6 sm:gap-12">
                             {[
-                                [<Building2 className="w-5 h-5 text-orange" strokeWidth={1.5} />, `${displayJobs.length}+`, 'Open Roles'],
-                                [<Globe className="w-5 h-5 text-orange" strokeWidth={1.5} />, '15+', 'Countries Served'],
-                                [<Star className="w-5 h-5 text-orange" strokeWidth={1.5} />, '4.8', 'Glassdoor Rating'],
+                                [<Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-orange" strokeWidth={1.5} />, `${displayJobs.length}+`, 'Open Roles'],
+                                [<Globe className="w-4 h-4 sm:w-5 sm:h-5 text-orange" strokeWidth={1.5} />, '15+', 'Countries'],
+                                [<Star className="w-4 h-4 sm:w-5 sm:h-5 text-orange" strokeWidth={1.5} />, '4.8', 'Glassdoor'],
                             ].map(([icon, num, label]) => (
-                                <div key={label} className="text-center flex flex-col items-center group">
-                                    <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-white/5 border border-white/10 mb-3 shadow-lg backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300">
+                                <div key={label} className="text-center flex flex-col items-center group min-w-0">
+                                    <div className="flex items-center justify-center w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 mb-2 sm:mb-3 shadow-lg backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shrink-0">
                                         {icon}
                                     </div>
-                                    <div className="text-3xl font-display font-black text-orange">{num}</div>
-                                    <div className="text-cream/50 text-xs mt-1 uppercase tracking-wider font-semibold">{label}</div>
+                                    <div className="text-xl sm:text-3xl font-display font-black text-orange leading-none">{num}</div>
+                                    <div className="text-cream/50 text-[9px] sm:text-xs mt-1 sm:mt-1.5 uppercase tracking-wider font-semibold truncate w-full">{label}</div>
                                 </div>
                             ))}
                         </motion.div>
@@ -270,16 +270,16 @@ export default function CareerPage() {
                             What We Stand For
                         </motion.h2>
                     </AnimatedSection>
-                    <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+                    <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-center gap-3 sm:gap-4 max-w-3xl mx-auto">
                         {values.map((v, i) => (
                             <AnimatedSection key={i}>
                                 <motion.div
                                     variants={fadeUp}
                                     whileHover={{ scale: 1.05 }}
-                                    className="px-5 py-2.5 rounded-full border border-white/15 bg-white/8 text-cream text-sm font-medium inline-flex items-center gap-2 cursor-default"
+                                    className="w-full px-4 sm:px-5 py-2.5 rounded-xl sm:rounded-full border border-white/15 bg-white/8 text-cream text-[11px] sm:text-sm font-medium flex items-center justify-center gap-2 cursor-default h-full"
                                 >
-                                    <span>{v.emoji}</span>
-                                    {v.label}
+                                    <span className="shrink-0">{v.emoji}</span>
+                                    <span className="truncate">{v.label}</span>
                                 </motion.div>
                             </AnimatedSection>
                         ))}

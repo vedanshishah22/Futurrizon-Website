@@ -111,51 +111,53 @@ const HeroSection = () => {
                             </motion.div>
                         </div>
 
-                        <h1 className="text-3xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-8 tracking-tight text-center lg:text-left">
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-8 tracking-tight text-center lg:text-left">
                             Revolutionize <br />
                             Your <span className="text-[#E96523]">Workflow</span>
                         </h1>
 
-                        <p className="text-lg md:text-xl text-white/70 max-w-xl mb-12 leading-relaxed font-medium text-center lg:text-left mx-auto lg:mx-0">
+                        <p className="text-base md:text-xl text-white/70 max-w-xl mb-12 leading-relaxed font-medium text-center lg:text-left mx-auto lg:mx-0 px-4 md:px-0">
                             Empowering your team with autonomous AI agents and seamless Microsoft 365 integrations for peak productivity.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row items-center sm:justify-start justify-center gap-5">
+                        <div className="flex flex-row items-center lg:justify-start justify-center gap-3 sm:gap-5 px-2 md:px-0">
                             <motion.a
                                 href="https://calendly.com/futurrizon/30min?month=2026-03"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 whileHover={{ scale: 1.05, y: -2 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="w-full sm:w-auto px-8 py-4 bg-[#E76426] text-white rounded-xl font-bold text-lg shadow-md shadow-orange-500/10 flex items-center justify-center gap-2 group transition-all duration-300 whitespace-nowrap"
+                                className="flex-1 sm:flex-none px-4 sm:px-8 py-3.5 sm:py-4 bg-[#E76426] text-white rounded-xl font-bold text-sm md:text-lg shadow-md shadow-orange-500/10 flex items-center justify-center gap-2 group transition-all duration-300 whitespace-nowrap"
                             >
-                                Start Free Consultation
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                <span className="hidden sm:inline">Start Free Consultation</span>
+                                <span className="sm:hidden">Consult</span>
+                                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                             </motion.a>
 
                             <motion.button
                                 onClick={() => navigate('/services')}
                                 whileHover={{ scale: 1.05, y: -2 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="w-full sm:w-auto px-8 py-4 bg-[#082071] text-white rounded-xl font-bold text-lg border border-white/10 hover:bg-[#0a288a] transition-all duration-300 flex items-center justify-center gap-2 shadow-md shadow-blue-900/10 whitespace-nowrap"
+                                className="flex-1 sm:flex-none px-4 sm:px-8 py-3.5 sm:py-4 bg-[#082071] text-white rounded-xl font-bold text-sm md:text-lg border border-white/10 hover:bg-[#0a288a] transition-all duration-300 flex items-center justify-center gap-2 shadow-md shadow-blue-900/10 whitespace-nowrap"
                             >
-                                Explore Solutions
-                                <ChevronRight className="w-5 h-5" />
+                                <span className="hidden sm:inline">Explore Solutions</span>
+                                <span className="sm:hidden">Explore</span>
+                                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
                             </motion.button>
                         </div>
 
                         {/* Problem Tags Replacement for Trust Badges */}
-                        <div className="mt-8 pt-6 flex flex-wrap gap-2.5 max-w-2xl justify-center lg:justify-start">
+                        <div className="mt-8 pt-4 sm:pt-6 flex flex-wrap gap-2 sm:gap-2.5 max-w-2xl justify-center lg:justify-start px-2 md:px-0">
                             {problemPoints.map((point, idx) => (
                                 <motion.div
                                     key={idx}
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.1 + (idx * 0.05) }}
-                                    className="bg-white/95 backdrop-blur-sm px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full flex items-center gap-2 hover:scale-[1.02] transition-transform cursor-default"
+                                    className="bg-white/95 backdrop-blur-sm px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full flex items-center gap-2 hover:scale-[1.02] transition-transform cursor-default border border-blue-500/10"
                                 >
-                                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-500" />
-                                    <span className="text-navy/80 text-[11px] sm:text-[13px] font-bold tracking-tight whitespace-nowrap">
+                                    <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-blue-500 flex-shrink-0" />
+                                    <span className="text-navy/80 text-[10px] sm:text-[13px] font-bold tracking-tight whitespace-nowrap">
                                         {point}
                                     </span>
                                 </motion.div>
