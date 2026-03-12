@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import ScrollToTop from './components/ScrollToTop';
-import FuriChat from './components/FuriChat';
+// import FuriChat from './components/FuriChat';
 
 // Lazy load the detail pages for better performance
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
@@ -55,7 +55,7 @@ function AppContent() {
         </Routes>
       </Suspense>
       {!isAdminPath && <Footer />}
-      {!isAdminPath && <FuriChat />}
+      {/* {!isAdminPath && <FuriChat />} */}
     </div>
   );
 }
