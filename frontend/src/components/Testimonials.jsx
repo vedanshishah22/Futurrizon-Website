@@ -14,7 +14,7 @@ const testimonials = [
     {
         quote: "Working with the Futurrizon team has been a great experience. Their willingness to solve problems and go the extra mile to find the right solution truly stands out. We were especially impressed with their expertise in Azure and AI services and would highly recommend them for related projects",
         author: "Andrew Satanovsky",
-        role: "Associate Director, Motion Graphics, Graphic Design and Web Design",
+        role: "Associate Director, Motion Graphics, Graphic and Web Design",
         image: andrewImg
     },
     {
@@ -44,7 +44,7 @@ const testimonials = [
     {
         quote: "I have had the pleasure of working with Yashesh Nagori in the past, and I am a testament to his engineering capabilities and genius. In the almost two years project we collaborated on together, I was constantly impressed by Yashesh's practical approach to our engineering challenges. I strongly recommend Yashesh to any Engineering team looking to augment their staff.",
         author: "Zoty De La Mota",
-        role: "Sr. Data Professional (Engineer/Cloud/Agentic AI/Data Governance)",
+        role: "Sr. Data Professional",
         image: zotyImg
     },
     {

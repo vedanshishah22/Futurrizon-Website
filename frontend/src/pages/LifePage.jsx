@@ -39,7 +39,7 @@ import ga7 from '../assets/festivals/Gandhi Ashram/7.jpg';
 import ga8 from '../assets/festivals/Gandhi Ashram/8.jpg';
 
 import monkeyVideo from '../assets/festivals/Monekyman/Monkeyman Video.mp4';
-import republicDayBg from '../assets/events/republicday.jpg';
+import eventsBg from '../assets/events.png';
 
 /* ─── Animation helpers ─────────────────────────────── */
 const fadeUp = {
@@ -87,7 +87,7 @@ const events = [
         tag: 'Fun Friday',
         accent: 'orange',
         images: [rep1, rep2, rep3, rep4],
-        bgImage: republicDayBg,
+        bgImage: eventsBg,
     },
     {
         category: 'Client Meet',
@@ -99,6 +99,7 @@ const events = [
         tag: 'Client Meet',
         accent: 'blue',
         images: [kor1, kor2, kor3],
+        bgImage: eventsBg,
     },
     {
         category: 'Celebration',
@@ -110,6 +111,7 @@ const events = [
         tag: 'Office Decor',
         accent: 'orange',
         images: [diwali1, diwali2, diwali3, diwali4, diwali5],
+        bgImage: eventsBg,
     },
     {
         category: 'Campaign',
@@ -121,6 +123,7 @@ const events = [
         tag: 'Brand Collab',
         accent: 'orange',
         images: [monkeyVideo],
+        bgImage: eventsBg,
     },
     {
         category: 'Client Meet',
@@ -132,6 +135,7 @@ const events = [
         tag: 'Client Visit',
         accent: 'blue',
         images: [ga1, ga2, ga3, ga4, ga5, ga6, ga7, ga8],
+        bgImage: eventsBg,
     },
     {
         category: 'Celebration',
@@ -143,6 +147,7 @@ const events = [
         tag: 'Company Event',
         accent: 'orange',
         images: [chr1, chr2, chr3, chr4],
+        bgImage: eventsBg,
     },
     {
         category: 'Cultural',
@@ -154,6 +159,7 @@ const events = [
         tag: 'Cultural Event',
         accent: 'orange',
         images: [nav1, nav2, nav3],
+        bgImage: eventsBg,
     },
 ];
 
@@ -398,9 +404,9 @@ export default function LifePage() {
                                     >
                                         {/* Background Image with Low Opacity */}
                                         {ev.bgImage && (
-                                            <div 
-                                                className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none group-hover:opacity-[0.08] transition-opacity duration-500"
-                                                style={{ 
+                                            <div
+                                                className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none group-hover:opacity-[0.10] transition-opacity duration-500"
+                                                style={{
                                                     backgroundImage: `url(${ev.bgImage})`,
                                                     backgroundSize: 'cover',
                                                     backgroundPosition: 'center'

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { projects } from '../data/projects';
 
 // ── Components ───────────────────────────────────────────
-const PortfolioCard = ({ svc, index, scrollX, metrics }) => {
+const PortfolioCard = ({ svc, index, scrollX, metrics, setIsAutoPlaying }) => {
     const navigate = useNavigate();
 
     const { cardWidth, gap, containerWidth } = metrics;
@@ -45,6 +45,8 @@ const PortfolioCard = ({ svc, index, scrollX, metrics }) => {
     return (
         <motion.div
             onClick={handleCardClick}
+            onMouseEnter={() => setIsAutoPlaying(false)}
+            onMouseLeave={() => setIsAutoPlaying(true)}
             style={{
                 width: cardWidth,
                 height: 'auto',
@@ -262,6 +264,7 @@ const ServicesSection = () => {
                                 index={i}
                                 scrollX={scrollX}
                                 metrics={metrics}
+                                setIsAutoPlaying={setIsAutoPlaying}
                             />
                         ))}
                     </motion.div>

@@ -42,7 +42,6 @@ const Navbar = () => {
             hasDropdown: true,
             dropdownKey: 'company',
             subLinks: [
-                { name: 'About Us', href: '/about' },
                 { name: 'Portfolio', href: '/#portfolio' },
                 { name: 'Career', href: '/career' },
                 { name: 'Life at Futurrizon', href: '/life' },
@@ -51,6 +50,7 @@ const Navbar = () => {
                 { name: 'Blogs', href: '/blogs' },
             ]
         },
+        { name: 'About Us', href: '/about' },
         {
             name: 'Services',
             href: '/services',
@@ -69,7 +69,6 @@ const Navbar = () => {
             ]
         },
         { name: 'Industries', href: '/industries' },
-        { name: 'Contact', href: '/#contact' },
     ];
 
     return (
@@ -111,7 +110,6 @@ const Navbar = () => {
                                     className="text-primary/70 hover:text-primary transition-colors text-sm font-medium tracking-wide flex items-center gap-1"
                                 >
                                     {link.name}
-                                    {link.hasDropdown && <ChevronDown size={14} />}
                                 </Link>
                             ) : (
                                 <a
@@ -119,7 +117,6 @@ const Navbar = () => {
                                     className="text-primary/70 hover:text-primary transition-colors text-sm font-medium tracking-wide flex items-center gap-1"
                                 >
                                     {link.name}
-                                    {link.hasDropdown && <ChevronDown size={14} />}
                                 </a>
                             )}
                             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange to-peach transition-all duration-300 group-hover:w-full"></span>
@@ -143,7 +140,7 @@ const Navbar = () => {
                         </div>
                     ))}
                     <Link to="/#contact" className="px-6 py-2 rounded-xl bg-orange text-white font-semibold text-sm hover:bg-orange/90 shadow-sm hover:shadow-md transition-all duration-200">
-                        Get Started
+                        Contact Us
                     </Link>
                 </div>
 
@@ -242,7 +239,7 @@ const Navbar = () => {
                                 </div>
                             ))}
                             <Link to="/#contact" onClick={closeMobileMenu} className="block text-center w-full py-4 rounded-xl bg-orange text-white font-semibold text-lg shadow-sm">
-                                Get Started
+                                Contact Us
                             </Link>
                         </div>
                     </motion.div>
