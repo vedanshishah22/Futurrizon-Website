@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Edit2, Trash2, X, Save, Image as ImageIcon, Linkedin, Loader2 } from 'lucide-react';
+import { Plus, Edit2, Trash2, X, Save, Image as ImageIcon, Linkedin, Loader2, Users } from 'lucide-react';
 
 export default function TeamManager() {
     const [team, setTeam] = useState([]);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Edit2, Trash2, X, Save, Image as ImageIcon, Loader2 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function BlogManager() {
     const [blogs, setBlogs] = useState([]);
